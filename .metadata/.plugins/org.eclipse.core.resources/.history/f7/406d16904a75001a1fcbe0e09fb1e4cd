@@ -1,0 +1,9 @@
+namespace Hazel {
+
+	__declspec(ddlimport) void Print();
+
+}
+
+void main() {
+	Hazel::Print();
+}
