@@ -1,8 +1,9 @@
 package com.harmony.game.entity;
 
-import com.harmony.game.GamePanel;
+import com.harmony.game.Game;
 import com.harmony.game.graphics.Animation;
 import com.harmony.game.graphics.Camera;
+import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.tiles.ObjectTileMap;
@@ -27,7 +28,7 @@ public class Player extends Entity {
     private int currentAnimation;
 
     public Player(ObjectTileMap objectTileMap) {
-        super(new Vector2f((GamePanel.width / 2f) - 32, (GamePanel.height / 2f) - 32), objectTileMap, 64, 64);
+        super(new Vector2f((Display.width / 2f) - 32, (Display.height / 2f) - 32), objectTileMap, 64, 64);
 
         this.maxMoveSpeed = 4f;
         this.acceleration = 3f;
@@ -50,49 +51,54 @@ public class Player extends Entity {
 
     @Override
     public void update() {
-        up     = Input.isKey(KeyEvent.VK_W);
-        left   = Input.isKey(KeyEvent.VK_A);
-        down   = Input.isKey(KeyEvent.VK_S);
-        right  = Input.isKey(KeyEvent.VK_D);
+        up = Input.isKey(KeyEvent.VK_W);
+        left = Input.isKey(KeyEvent.VK_A);
+        down = Input.isKey(KeyEvent.VK_S);
+        right = Input.isKey(KeyEvent.VK_D);
 
         if (Input.isKeyDown(KeyEvent.VK_W)) currentAnimation = ANIMATION_UP;
         else if (Input.isKeyDown(KeyEvent.VK_A)) currentAnimation = ANIMATION_LEFT;
         else if (Input.isKeyDown(KeyEvent.VK_S)) currentAnimation = ANIMATION_DOWN;
         else if (Input.isKeyDown(KeyEvent.VK_D)) currentAnimation = ANIMATION_RIGHT;
-        else { isIdle = true; }
+        else {
+            isIdle = true;
+        }
 
-        if(up) {
+        if (up) {
             dy -= acceleration;
-            if(dy < -maxMoveSpeed) dy = -maxMoveSpeed;
-        } else if(down) {
+            if (dy < -maxMoveSpeed) dy = -maxMoveSpeed;
+        } else if (down) {
             dy += acceleration;
-            if(dy > maxMoveSpeed) dy = maxMoveSpeed;
+            if (dy > maxMoveSpeed) dy = maxMoveSpeed;
         } else {
             dy = 0;
         }
 
-        if(right) {
+        if (right) {
             dx += acceleration;
-            if(dx > maxMoveSpeed) dx = maxMoveSpeed;
-        } else if(left) {
+            if (dx > maxMoveSpeed) dx = maxMoveSpeed;
+        } else if (left) {
             dx -= acceleration;
-            if(dx < -maxMoveSpeed) dx = -maxMoveSpeed;
+            if (dx < -maxMoveSpeed) dx = -maxMoveSpeed;
         } else {
             dx = 0;
         }
 
-        if(up || down || right || left) isIdle = false;
-        else { dy = 0; dx = 0; }
+        if (up || down || right || left) isIdle = false;
+        else {
+            dy = 0;
+            dx = 0;
+        }
 
         // Adjust for Delta Time
-        dx *= GamePanel.deltaTime * speedMultiplier;
-        dy *= GamePanel.deltaTime * speedMultiplier;
+        dx *= Game.deltaTime * speedMultiplier;
+        dy *= Game.deltaTime * speedMultiplier;
 
-        if(!boxCollider.collisionTile(dx, 0)) {
+        if (!boxCollider.collisionTile(dx, 0)) {
             Camera.position.x += dx;
         }
 
-        if(!boxCollider.collisionTile(0, dy)) {
+        if (!boxCollider.collisionTile(0, dy)) {
             Camera.position.y += dy;
         }
     }
@@ -101,7 +107,7 @@ public class Player extends Entity {
     public void draw(Graphics2D g) {
         g.drawImage(animation.animate(currentAnimation, getDelay(currentAnimation)), (int) position.x, (int) position.y,
                 width, height, null);
-        if(GamePanel.debugMode) {
+        if(Game.debugMode) {
             g.setColor(Color.BLUE);
             g.drawRect((int) (position.x + boxCollider.getOffset().x), (int) (position.y + boxCollider.getOffset().y),
                     boxCollider.getWidth(), boxCollider.getHeight());

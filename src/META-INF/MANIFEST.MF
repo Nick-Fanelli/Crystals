@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
 Main-Class: com.harmony.game.Launcher
-
+Built-By: Nick Fanelli
+Created-By: Nick Fanelli and Marc Fanelli

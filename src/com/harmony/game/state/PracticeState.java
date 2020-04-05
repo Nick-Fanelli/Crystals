@@ -4,8 +4,10 @@ import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Console;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.tiles.TileManager;
+import com.harmony.game.utils.Input;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class PracticeState extends State {
 
@@ -65,7 +67,6 @@ public class PracticeState extends State {
     @Override
     public void draw(Graphics2D g) {
         tileManager.draw(g);
-
         player.draw(g);
 
         console.draw(g);

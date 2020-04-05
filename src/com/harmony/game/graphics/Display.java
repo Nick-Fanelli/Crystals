@@ -1,0 +1,80 @@
+package com.harmony.game.graphics;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+
+public class Display {
+
+    public static int width;
+    public static int height;
+
+    private static int absWidth;
+    private static int absHeight;
+
+    private JFrame frame;
+    private BufferedImage image;
+    private Canvas canvas;
+    private BufferStrategy bs;
+    private Graphics g;
+
+    public Display(String title, int width, int height) {
+        Display.width = width;
+        Display.height = height;
+
+        Display.absWidth = width;
+        Display.absHeight = height;
+
+        image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        canvas = new Canvas();
+        Dimension d = new Dimension(width, height);
+        canvas.setPreferredSize(d);
+
+        frame = new JFrame(title);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.setLayout(new BorderLayout());
+        frame.add(canvas, BorderLayout.CENTER);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(true);
+
+        canvas.createBufferStrategy(2);
+        bs = canvas.getBufferStrategy();
+        g = bs.getDrawGraphics();
+
+        frame.setVisible(true);
+
+        handleResize();
+    }
+
+    private void handleResize() {
+        frame.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                if(frame.getWidth() <= 0 || frame.getHeight() <= 0) return;
+                absWidth = frame.getWidth();
+                absHeight = frame.getHeight();
+                canvas.createBufferStrategy(2);
+                bs = canvas.getBufferStrategy();
+                g = bs.getDrawGraphics();
+            }
+        });
+    }
+
+    public void update() {
+        try {
+            g.drawImage(image, 0, 0, absWidth, absHeight, null);
+            bs.show();
+        } catch(Exception e) {}
+    }
+
+    public JFrame getFrame() { return frame; }
+    public BufferedImage getImage() { return image; }
+    public Canvas getCanvas() { return canvas; }
+    public BufferStrategy getBufferStrategy() { return bs; }
+    public Graphics getFrameGraphics() { return g; }
+}
