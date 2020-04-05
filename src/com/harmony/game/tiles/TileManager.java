@@ -88,4 +88,5 @@ public class TileManager {
         }
     }
 
+    public TileMap getObjectsMap() { return tileMaps.get(0); }
 }

@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="" />
+    <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/physics/collision/BoxCollider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/physics/collision/BoxCollider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/BoxCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/BoxCollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/PracticeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/PracticeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/NormalTileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/NormalTileMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/ObjectTileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/ObjectTileMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/block/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/block/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/block/ObjectBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/block/ObjectBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/Vector2f.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +31,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1a69d41QlIKYRdnLPI8qv8HO9O5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,8 +43,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -67,42 +89,51 @@
     </state>
     <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1586106131953" />
     <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586104789615" />
-    <state width="1878" height="166" key="GridCell.Tab.0.bottom" timestamp="1586106806509">
+    <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586123875033">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="166" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1586106806509" />
-    <state width="1878" height="167" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586105096159" />
-    <state width="1878" height="166" key="GridCell.Tab.0.center" timestamp="1586106806508">
+    <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1586123875033" />
+    <state width="1878" height="181" key="GridCell.Tab.0.bottom" timestamp="1586123823564">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="166" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1586106806508" />
-    <state width="1878" height="167" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586105096158" />
-    <state width="1878" height="166" key="GridCell.Tab.0.left" timestamp="1586106806508">
+    <state width="1878" height="181" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1586123823564" />
+    <state width="1878" height="181" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586122734490" />
+    <state width="1878" height="181" key="GridCell.Tab.0.center" timestamp="1586123823563">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="166" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1586106806508" />
-    <state width="1878" height="167" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586105096158" />
-    <state width="1878" height="166" key="GridCell.Tab.0.right" timestamp="1586106806508">
+    <state width="1878" height="181" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1586123823563" />
+    <state width="1878" height="181" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586122734488" />
+    <state width="1878" height="181" key="GridCell.Tab.0.left" timestamp="1586123823563">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="166" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586106806508" />
-    <state width="1878" height="167" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586105096159" />
-    <state x="448" y="133" key="SettingsEditor" timestamp="1586051108994">
+    <state width="1878" height="181" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1586123823563" />
+    <state width="1878" height="181" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586122734487" />
+    <state width="1878" height="181" key="GridCell.Tab.0.right" timestamp="1586123823564">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state width="1878" height="181" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586123823564" />
+    <state width="1878" height="181" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586122734489" />
+    <state x="448" y="133" key="SettingsEditor" timestamp="1586123878904">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="448" y="133" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1586123878904" />
     <state x="448" y="133" key="SettingsEditor/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051108994" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1586051629440">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1586119482871">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1586051629440" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1586119482871" />
+    <state x="648" y="308" width="624" height="486" key="find.popup" timestamp="1586123576431">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="648" y="308" width="624" height="486" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586123576431" />
     <state x="389" y="174" key="new project wizard" timestamp="1586051094188">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="389" y="174" key="new project wizard/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051094188" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1586106528455">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1586123842835">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586106528455" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586123842835" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586104777862" />
   </component>
 </project>

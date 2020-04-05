@@ -20,4 +20,9 @@ public class Vector2f {
         return new Vector2f(this.x - Camera.position.x, this.y - Camera.position.y);
     }
 
+    @Override
+    public String toString() {
+        return "X: " + x + ", Y: " + y;
+    }
+
 }

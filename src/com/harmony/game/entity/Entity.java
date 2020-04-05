@@ -3,6 +3,7 @@ package com.harmony.game.entity;
 import com.harmony.game.graphics.Animation;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -14,6 +15,8 @@ public abstract class Entity {
     public float dy;
     public int width;
     public int height;
+
+    protected ObjectTileMap objectTileMap;
 
     protected boolean up      = false;
     protected boolean down    = false;
@@ -37,8 +40,9 @@ public abstract class Entity {
 
     protected boolean isDead = false;
 
-    public Entity(Vector2f position, int width, int height) {
+    public Entity(Vector2f position, ObjectTileMap objectTileMap, int width, int height) {
         this.position = position;
+        this.objectTileMap = objectTileMap;
         this.width = width;
         this.height = height;
 

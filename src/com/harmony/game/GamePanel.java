@@ -21,7 +21,7 @@ public class GamePanel extends JPanel implements Runnable {
     private static int scaledWidth;
     private static int scaledHeight;
 
-    public static boolean debugMode = true;
+    public static boolean debugMode = false;
 
     private Thread gameThread;
     private JFrame frame;

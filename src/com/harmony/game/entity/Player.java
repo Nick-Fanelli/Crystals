@@ -5,6 +5,7 @@ import com.harmony.game.graphics.Animation;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.Vector2f;
 
@@ -25,8 +26,8 @@ public class Player extends Entity {
 
     private int currentAnimation;
 
-    public Player() {
-        super(new Vector2f((GamePanel.width / 2f) - 32, (GamePanel.height / 2f) - 32), 64, 64);
+    public Player(ObjectTileMap objectTileMap) {
+        super(new Vector2f((GamePanel.width / 2f) - 32, (GamePanel.height / 2f) - 32), objectTileMap, 64, 64);
 
         this.maxMoveSpeed = 4f;
         this.acceleration = 3f;
@@ -34,7 +35,7 @@ public class Player extends Entity {
         this.health = 10;
         this.damage = 2;
 
-        boxCollider = new BoxCollider(this, new Vector2f(12, 40), 42, 20);
+        boxCollider = new BoxCollider(this, objectTileMap, new Vector2f(12, 40), 42, 20);
 
         sprite = new Sprite("/entity/player.png", 32, 32);
         animation = new Animation(sprite);
@@ -87,10 +88,13 @@ public class Player extends Entity {
         dx *= GamePanel.deltaTime * speedMultiplier;
         dy *= GamePanel.deltaTime * speedMultiplier;
 
-        boxCollider.update();
+        if(!boxCollider.collisionTile(dx, 0)) {
+            Camera.position.x += dx;
+        }
 
-        Camera.position.x += dx;
-        Camera.position.y += dy;
+        if(!boxCollider.collisionTile(0, dy)) {
+            Camera.position.y += dy;
+        }
     }
 
     @Override

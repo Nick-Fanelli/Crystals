@@ -12,10 +12,12 @@ import java.util.ArrayList;
 public class ObjectTileMap extends TileMap {
 
     private ArrayList<Block> blocks;
+    private ArrayList<Block> bounds;
 
     public ObjectTileMap(String data, Sprite sprite, int width, int height, int tileWidth, int tileHeight, int tileColumns) {
         Block tempBlock;
         blocks = new ArrayList<>();
+        bounds = new ArrayList<>();
 
         String[] block = data.split(",");
         for(int i = 0; i < (width * height); i++) {
@@ -27,6 +29,7 @@ public class ObjectTileMap extends TileMap {
                 } else {
                     tempBlock = new ObjectBlock(sprite.getSprite((int) ((temp - 1) % tileColumns), ((temp - 1) / tileColumns)),
                             new Vector2f((i % width) * tileWidth, (i / height) * tileHeight), tileWidth, tileHeight);
+                    bounds.add(tempBlock);
                 }
                 blocks.add(tempBlock);
             }
@@ -39,4 +42,7 @@ public class ObjectTileMap extends TileMap {
             blocks.get(i).render(g);
         }
     }
+
+    public ArrayList<Block> getBlocks() { return blocks; }
+    public ArrayList<Block> getBounds() { return bounds; }
 }
