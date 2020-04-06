@@ -1,6 +1,8 @@
 package com.harmony.game.tiles.block;
 
+import com.harmony.game.Game;
 import com.harmony.game.entity.Entity;
+import com.harmony.game.graphics.Camera;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -8,7 +10,11 @@ import java.awt.image.BufferedImage;
 
 public abstract class Block {
 
-    public static final int CHEST_ID = 253;
+    public static final int CHEST_TILE_POSITION = 254;
+
+    public static final int TYPE_NORMAL = 0;
+    public static final int TYPE_HOLE   = 1;
+    public static final int TYPE_OBJECT = 2;
 
     public int width;
     public int height;
@@ -25,10 +31,27 @@ public abstract class Block {
 
     public abstract boolean update(Entity entity);
 
-    public void render(Graphics2D g) {
-        g.drawImage(image, (int) position.getWorldPosition().x, (int) position.getWorldPosition().y, width, height, null);
+    public void render(Graphics2D g, int type) {
+        if(Camera.shouldShowTile(this)) {
+            g.drawImage(image, (int) position.getWorldPosition().x, (int) position.getWorldPosition().y, width, height, null);
+            if(Game.debugMode) {
+                Color color;
+                if(type == TYPE_OBJECT) {
+                    color = Color.WHITE;
+                } else if(type == TYPE_HOLE) {
+                    color = Color.GREEN;
+                } else {
+                    return;
+                }
+                g.setColor(color);
+                g.drawRect((int) position.getWorldPosition().x, (int) position.getWorldPosition().y, width, height);
+            }
+        }
     }
 
     public Vector2f getTilePosition() { return new Vector2f(position.x / width, position.y / height); }
+    public Vector2f getAbsPosition() { return position; }
+    public int getWidth() { return width; }
+    public int getHeight() { return height; }
 
 }

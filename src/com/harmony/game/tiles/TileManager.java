@@ -41,6 +41,7 @@ public class TileManager {
         try {
             DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
+            System.out.println("Loading Tile Map: " + path);
             Document doc = builder.parse(TileManager.class.getResourceAsStream(path));
             doc.getDocumentElement().normalize();
 

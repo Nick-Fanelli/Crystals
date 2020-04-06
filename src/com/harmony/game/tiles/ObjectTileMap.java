@@ -40,7 +40,7 @@ public class ObjectTileMap extends TileMap {
     @Override
     public void draw(Graphics2D g) {
         for(int i = 0; i < blocks.size(); i++) {
-            blocks.get(i).render(g);
+            blocks.get(i).render(g, 0);
         }
     }
 

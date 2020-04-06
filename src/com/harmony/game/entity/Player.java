@@ -47,6 +47,8 @@ public class Player extends Entity {
         isIdle = false;
     }
 
+    public void setSpeed(int speed) { this.maxMoveSpeed = speed; }
+
     @Override
     public void onCreate() {
         currentAnimation = ANIMATION_RIGHT;

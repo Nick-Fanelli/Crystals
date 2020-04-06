@@ -1,6 +1,5 @@
 package com.harmony.game.tiles.block;
 
-import com.harmony.game.Game;
 import com.harmony.game.entity.Entity;
 import com.harmony.game.utils.Vector2f;
 
@@ -20,11 +19,7 @@ public class HoleBlock extends Block {
     }
 
     @Override
-    public void render(Graphics2D g) {
-        super.render(g);
-        if(Game.debugMode) {
-            g.setColor(Color.GREEN);
-            g.drawRect((int) position.getWorldPosition().x, (int) position.getWorldPosition().y, width, height);
-        }
+    public void render(Graphics2D g, int type) {
+        super.render(g, Block.TYPE_HOLE);
     }
 }

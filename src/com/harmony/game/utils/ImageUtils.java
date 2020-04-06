@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 public class ImageUtils {
 
     public static BufferedImage loadImage(String path) {
+        System.out.println("Loading Image: " + path);
         try {
             return ImageIO.read(ImageUtils.class.getResourceAsStream(path));
         } catch (Exception e) {

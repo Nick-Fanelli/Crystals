@@ -1,5 +1,10 @@
 package com.harmony.game.state;
 
+import com.harmony.game.graphics.Camera;
+import com.harmony.game.graphics.Display;
+import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.utils.Vector2f;
+
 import java.awt.*;
 
 public class GameStateManager {
@@ -7,8 +12,13 @@ public class GameStateManager {
     public static final int PRACTICE_STATE = 0;
 
     private static State currentState;
+    private static boolean run = false;
+
+    private Camera camera = new Camera(new BoxCollider(null, new Vector2f(0, 0), Display.width, Display.height));
 
     public static void setCurrentState(int currentState) {
+        run = false;
+
         if(GameStateManager.currentState != null) GameStateManager.currentState.onDestroy();
 
         State tempState = null;
@@ -18,11 +28,23 @@ public class GameStateManager {
         }
 
         if(tempState == null) return;
-        tempState.onCreate();
         GameStateManager.currentState = tempState;
+        tempState.onCreate();
+        run = true;
     }
 
-    public void update()           { if(currentState != null) currentState.update() ; }
-    public void draw(Graphics2D g) { if(currentState != null) currentState.draw(g)  ; }
+    public void update() {
+        if(currentState == null || !run) return;
+        currentState.update();
+        Camera.update();
+    }
+
+    public void draw(Graphics2D g) {
+        if(currentState == null || !run) return;
+        currentState.draw(g);
+        Camera.draw(g);
+    }
+
+    public static State getCurrentState() { return currentState; }
 
 }

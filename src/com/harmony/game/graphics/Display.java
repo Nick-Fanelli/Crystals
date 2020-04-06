@@ -38,6 +38,7 @@ public class Display {
 
         frame.setLayout(new BorderLayout());
         frame.add(canvas, BorderLayout.CENTER);
+        frame.setIgnoreRepaint(true);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setResizable(true);

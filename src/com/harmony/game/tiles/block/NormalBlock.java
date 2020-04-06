@@ -13,9 +13,6 @@ public class NormalBlock extends Block {
 
     @Override
     public boolean update(Entity entity) {
-        // TODO: ADD COLLISION
         return false;
     }
-
-
 }

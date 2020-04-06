@@ -6,6 +6,8 @@ import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.tiles.block.Block;
 import com.harmony.game.utils.Vector2f;
 
+import java.awt.*;
+
 public class BoxCollider {
 
     private Entity entity;
@@ -33,14 +35,17 @@ public class BoxCollider {
         return false;
     }
 
+    public Rectangle getBoundsAsRect() {
+        return new Rectangle((int) (entity.position.x), (int) (entity.position.y),
+            width, height);
+    }
+
     public Vector2f getOffset() {
         return offset;
     }
-
     public int getWidth() {
         return width;
     }
-
     public int getHeight() {
         return height;
     }

@@ -48,7 +48,7 @@ public class Console {
     public void sendMessage(String text) {
         if(!showConsole) {
             System.err.println("Must show console first before: \"" + text + "\"");
-            System.exit(-1);
+            return;
         }
 
         currentMessage = "";

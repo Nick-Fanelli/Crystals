@@ -53,6 +53,8 @@ public abstract class Entity {
     public float getAcceleration() { return acceleration; }
     public int getHealth() { return health; }
     public int getDamage() { return damage; }
+    public BoxCollider getBoxCollider() { return boxCollider; }
+    public Vector2f getPosition() { return position; }
 
     public void hit(int damage) {
         health -= damage;
