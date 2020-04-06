@@ -31,6 +31,7 @@ public class ObjectTileMap extends TileMap {
                             new Vector2f((i % width) * tileWidth, (i / height) * tileHeight), tileWidth, tileHeight);
                     bounds.add(tempBlock);
                 }
+
                 blocks.add(tempBlock);
             }
         }

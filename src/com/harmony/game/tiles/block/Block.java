@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 
 public abstract class Block {
 
+    public static final int CHEST_ID = 253;
+
     public int width;
     public int height;
 
