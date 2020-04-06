@@ -8,16 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Game_jar/Game.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Game_jar/Game.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/state/PracticeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/state/PracticeState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/tilemap.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/res/tile/practice/tilemap.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/tilemap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/BoxCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/BoxCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/PracticeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/PracticeState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
