@@ -4,10 +4,8 @@ import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Console;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.tiles.TileManager;
-import com.harmony.game.utils.Input;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 
 public class PracticeState extends State {
 
@@ -25,7 +23,7 @@ public class PracticeState extends State {
 
     @Override
     public void onCreate() {
-        tileManager = new TileManager("/tile/tilemap.tmx");
+        tileManager = new TileManager("/tile/practice/tilemap.tmx");
 
         console = new Console();
         player = new Player((ObjectTileMap) tileManager.getObjectsMap());

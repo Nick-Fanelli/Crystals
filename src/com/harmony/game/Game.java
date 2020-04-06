@@ -94,7 +94,7 @@ public class Game implements Runnable {
     }
 
     private synchronized void draw() {
-        g.setColor(new Color(47, 123, 255));
+        g.setColor(new Color(33, 30, 39));
         g.fillRect(0, 0, Display.width, Display.height);
         gsm.draw(g);
     }

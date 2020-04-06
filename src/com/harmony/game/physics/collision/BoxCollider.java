@@ -10,19 +10,17 @@ public class BoxCollider {
 
     private Entity entity;
     private Vector2f offset;
-    private ObjectTileMap tileMap;
     private int width;
     private int height;
 
-    public BoxCollider(Entity entity, ObjectTileMap tileMap, Vector2f offset, int width, int height) {
+    public BoxCollider(Entity entity, Vector2f offset, int width, int height) {
         this.entity = entity;
-        this.tileMap = tileMap;
         this.offset = offset;
         this.width = width;
         this.height = height;
     }
 
-    public boolean collisionTile(float ax, float ay) {
+    public boolean collisionTile(ObjectTileMap tileMap, float ax, float ay) {
         for(int c = 0; c < 4; c++) {
 
             int ex = (int) ((entity.position.x + ax + Camera.position.x) + (c % 2) * width + offset.x)  / 64;
