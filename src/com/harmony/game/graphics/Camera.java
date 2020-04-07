@@ -1,6 +1,7 @@
 package com.harmony.game.graphics;
 
 import com.harmony.game.Game;
+import com.harmony.game.object.GameObject;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.tiles.TileManager;
 import com.harmony.game.tiles.block.Block;
@@ -24,13 +25,25 @@ public final class Camera {
         if(!created) return;
     }
 
-    public static boolean shouldShowTile(Block block) {
+    public static boolean shouldHandleTile(Block block) {
         if(!created) { System.err.println("Must create the camera first before asking to show tile"); return false; }
 
         if(block.getAbsPosition().x >= (position.x + collisionCam.getOffset().x) - block.getWidth())
             if(block.getAbsPosition().x <= position.x + collisionCam.getWidth() + collisionCam.getOffset().x)
                 if(block.getAbsPosition().y >= (position.y + collisionCam.getOffset().y) - block.getHeight())
                     if(block.getAbsPosition().y <= position.y + collisionCam.getHeight() + collisionCam.getOffset().y)
+                        return true;
+
+        return false;
+    }
+
+    public static boolean shouldHandleGameObject(GameObject object) {
+        if(!created) { System.err.println("Must create the camera first before asking to show game object"); return false; }
+
+        if(object.position.x >= (position.x + collisionCam.getOffset().x) - object.getWidth())
+            if(object.position.x <= position.x + collisionCam.getWidth() + collisionCam.getOffset().x)
+                if(object.position.y >= (position.y + collisionCam.getOffset().y) - object.getHeight())
+                    if(object.position.y <= position.y + collisionCam.getHeight() + collisionCam.getOffset().y)
                         return true;
 
         return false;

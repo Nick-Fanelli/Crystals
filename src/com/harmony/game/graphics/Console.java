@@ -1,5 +1,6 @@
 package com.harmony.game.graphics;
 
+import com.harmony.game.audio.AudioClip;
 import com.harmony.game.utils.ImageUtils;
 
 import java.awt.*;
@@ -9,6 +10,7 @@ import java.util.Arrays;
 public class Console {
 
     public Font font = Font.TRANSPARENT_FONT;
+    // public AudioClip typeClip = new AudioClip("/audio/console_letter_sound.wav");
 
     private boolean showConsole = false;
     private boolean hasText = false;
@@ -37,6 +39,7 @@ public class Console {
 
         if(currentChar < lines[currentLine].length()) {
             outputLines[currentLine] += lines[currentLine].charAt(currentChar);
+            // typeClip.play();
             currentChar++;
         } else {
             if(currentLine < lines.length - 1) {

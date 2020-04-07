@@ -1,5 +1,6 @@
 package com.harmony.game.object;
 
+import com.harmony.game.audio.SoundEffects;
 import com.harmony.game.entity.Entity;
 import com.harmony.game.entity.Player;
 import com.harmony.game.item.Item;
@@ -31,6 +32,7 @@ public class Chest extends GameObject {
     public void update() {
         if(isColliding && !collected && Input.isKeyDown(KeyEvent.VK_E)) {
             collected = true;
+            SoundEffects.keyPickup.play();
             GUI.hasKey = true;
         }
     }

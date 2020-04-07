@@ -7,17 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/item/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/audio/AudioClip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/audio/SoundEffects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/object/Door.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/graphics/Console.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/graphics/Console.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/object/Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/object/Chest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/state/GameStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/state/GameStateManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/state/PracticeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/state/PracticeState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/tiles/NormalTileMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/tiles/NormalTileMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/tiles/block/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/tiles/block/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/com/harmony/game/utils/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/com/harmony/game/utils/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/practice/tilemap.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/tile/practice/tilemap.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/object/Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/object/Chest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/PracticeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/PracticeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/NormalTileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/NormalTileMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/block/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/block/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,10 +100,10 @@
       <screen x="1920" y="23" width="1280" height="777" />
     </state>
     <state x="2024" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125844914" />
-    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser" timestamp="1586199473384">
+    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser" timestamp="1586294210550">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1586199473384" />
+    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1586294210550" />
     <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586128953318" />
     <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586130183786">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -108,33 +115,33 @@
     </state>
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1586199645631" />
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586128609853" />
-    <state width="1878" height="199" key="GridCell.Tab.0.bottom" timestamp="1586225861607">
+    <state width="1878" height="199" key="GridCell.Tab.0.bottom" timestamp="1586294863667">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="199" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1586225861607" />
-    <state width="1878" height="162" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586193205395" />
+    <state width="1878" height="199" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1586294863667" />
+    <state width="1878" height="199" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586275026746" />
     <state width="1238" height="126" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848084" />
-    <state width="1878" height="199" key="GridCell.Tab.0.center" timestamp="1586225861606">
+    <state width="1878" height="199" key="GridCell.Tab.0.center" timestamp="1586294863666">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="199" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1586225861606" />
-    <state width="1878" height="162" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586193205394" />
+    <state width="1878" height="199" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1586294863666" />
+    <state width="1878" height="199" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586275026741" />
     <state width="1238" height="126" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848080" />
-    <state width="1878" height="199" key="GridCell.Tab.0.left" timestamp="1586225861606">
+    <state width="1878" height="199" key="GridCell.Tab.0.left" timestamp="1586294863666">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1586193470939" />
-    <state width="1878" height="199" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1586225861606" />
-    <state width="1878" height="162" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586193205393" />
+    <state width="1878" height="199" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1586294863666" />
+    <state width="1878" height="199" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586275026741" />
     <state width="1238" height="126" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848078" />
-    <state width="1878" height="199" key="GridCell.Tab.0.right" timestamp="1586225861607">
+    <state width="1878" height="199" key="GridCell.Tab.0.right" timestamp="1586294863667">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="199" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586225861607" />
-    <state width="1878" height="162" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586193205394" />
+    <state width="1878" height="199" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586294863667" />
+    <state width="1878" height="199" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586275026744" />
     <state width="1238" height="126" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848083" />
     <state width="1878" height="143" key="GridCell.Tab.1.bottom" timestamp="1586137982969">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -183,11 +190,11 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="389" y="174" key="new project wizard/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051094188" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1586224131175">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1586294794403">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="417" y="196" width="670" height="497" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1586193390923" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586224131175" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586294794403" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586193199396" />
   </component>
 </project>

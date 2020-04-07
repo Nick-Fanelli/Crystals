@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 public abstract class Block {
 
     public static final int CHEST_TILE_POSITION = 254;
+    public static final int LEVEL_DOOR_POSITION = 170;
 
     public static final int TYPE_NORMAL = 0;
     public static final int TYPE_HOLE   = 1;
@@ -32,7 +33,7 @@ public abstract class Block {
     public abstract boolean update(Entity entity);
 
     public void render(Graphics2D g, int type) {
-        if(Camera.shouldShowTile(this)) {
+        if(Camera.shouldHandleTile(this)) {
             g.drawImage(image, (int) position.getWorldPosition().x, (int) position.getWorldPosition().y, width, height, null);
             if(Game.debugMode) {
                 Color color;
