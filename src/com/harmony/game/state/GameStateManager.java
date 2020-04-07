@@ -3,6 +3,7 @@ package com.harmony.game.state;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -37,12 +38,14 @@ public class GameStateManager {
         if(currentState == null || !run) return;
         currentState.update();
         Camera.update();
+        GUI.update();
     }
 
     public void draw(Graphics2D g) {
         if(currentState == null || !run) return;
         currentState.draw(g);
         Camera.draw(g);
+        GUI.draw(g);
     }
 
     public static State getCurrentState() { return currentState; }

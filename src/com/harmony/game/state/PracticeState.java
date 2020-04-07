@@ -2,12 +2,13 @@ package com.harmony.game.state;
 
 import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Console;
+import com.harmony.game.item.Item;
 import com.harmony.game.object.Chest;
 import com.harmony.game.object.GameObject;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.tiles.TileManager;
+import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Input;
-import com.harmony.game.utils.PlayerHelp;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -22,6 +23,7 @@ public class PracticeState extends State {
 
     private boolean loadTimer = false;
     private boolean endTimer = false;
+    private boolean hasKey = false;
 
     private double stopTime;
     private int delay = 2000;
@@ -45,7 +47,8 @@ public class PracticeState extends State {
     private void gameObjectCollision() {
         for(GameObject gameObject : getGameObjects()) {
             if(gameObject instanceof Chest) {
-                ((Chest) (gameObject)).isCollidingWith(player);
+                if(((Chest) gameObject).getItem() == Item.EMPTY) ((Chest) gameObject).setItem(Item.KEY);
+                gameObject.isCollidingWith(player);
             }
         }
     }
@@ -81,6 +84,15 @@ public class PracticeState extends State {
                 console.setShowConsole(false);
                 endTimer = false;
             }
+        }
+
+        if(!hasKey && GUI.hasKey) {
+            hasKey = true;
+            console.setShowConsole(true);
+            console.sendMessage("Great Job... Notice the key collected in the upper right hand corner.\n\n" +
+                    "Now try and find the door to move on.");
+            endTimer = true;
+            stopTime = System.currentTimeMillis() + 6500;
         }
 
         console.update();
