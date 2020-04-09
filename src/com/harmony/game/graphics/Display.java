@@ -1,5 +1,7 @@
 package com.harmony.game.graphics;
 
+import com.harmony.game.utils.ImageUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
@@ -30,8 +32,7 @@ public class Display {
 
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         canvas = new Canvas();
-        Dimension d = new Dimension(width, height);
-        canvas.setPreferredSize(d);
+        canvas.setPreferredSize(new Dimension(width, height));
 
         frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,6 +51,15 @@ public class Display {
         frame.setVisible(true);
 
         handleResize();
+
+        g.drawImage(ImageUtils.loadImage("/ui/loading.png"), 0, 0, width, height, null);
+        bs.show();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private void handleResize() {

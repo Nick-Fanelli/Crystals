@@ -3,6 +3,8 @@ package com.harmony.game.state;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.state.levels.Level1;
+import com.harmony.game.state.levels.PracticeState;
 import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Vector2f;
 
@@ -11,6 +13,7 @@ import java.awt.*;
 public class GameStateManager {
 
     public static final int PRACTICE_STATE = 0;
+    public static final int LEVEL_1_STATE = 1;
 
     private static State currentState;
     private static boolean run = false;
@@ -25,7 +28,8 @@ public class GameStateManager {
         State tempState = null;
 
         switch (currentState) {
-            case PRACTICE_STATE: tempState = new PracticeState(); break;
+            case PRACTICE_STATE: tempState = new PracticeState();       break;
+            case LEVEL_1_STATE: tempState = new Level1();          break;
         }
 
         if(tempState == null) return;

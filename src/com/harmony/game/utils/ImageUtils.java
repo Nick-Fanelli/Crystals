@@ -1,7 +1,9 @@
 package com.harmony.game.utils;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class ImageUtils {
 
@@ -11,9 +13,9 @@ public class ImageUtils {
             return ImageIO.read(ImageUtils.class.getResourceAsStream(path));
         } catch (Exception e) {
             System.err.println("Could not load resource: \"" + path + "\"");
+            e.printStackTrace();
             System.exit(-1);
         }
         return null;
     }
-
 }
