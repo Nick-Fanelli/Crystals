@@ -27,13 +27,16 @@ public abstract class Entity {
     protected boolean isIdle  =  true;
 
     protected Sprite sprite;
-    protected Animation animation;
     protected BoxCollider boxCollider;
+
+    protected Animation animation;
+    protected int currentAnimation;
 
     protected float maxMoveSpeed;
     protected float acceleration;
 
-    protected int health;
+    public int health;
+    public int maxHealth;
     protected int damage;
 
     protected float speedMultiplier = 35f;
@@ -56,8 +59,12 @@ public abstract class Entity {
     public BoxCollider getBoxCollider() { return boxCollider; }
     public Vector2f getPosition() { return position; }
 
+    public void setCurrentAnimation(int currentAnimation) { this.currentAnimation = currentAnimation; }
+
     public void hit(int damage) {
+        if(isDead) return;
         health -= damage;
+        System.out.println("-> " + getClass().getSimpleName() + " Hit - Damage: " + damage + ", Current Health: " + health);
         if(health <= 0) isDead = true;
         onDestroy();
     }

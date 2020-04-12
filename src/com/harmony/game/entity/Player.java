@@ -1,12 +1,17 @@
 package com.harmony.game.entity;
 
 import com.harmony.game.Game;
+import com.harmony.game.audio.AudioClip;
+import com.harmony.game.entity.enemy.Enemy;
 import com.harmony.game.graphics.Animation;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.state.State;
+import com.harmony.game.state.levels.Level;
 import com.harmony.game.tiles.ObjectTileMap;
+import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.Vector2f;
 
@@ -14,6 +19,8 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Player extends Entity {
+
+    public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
 
     public static final int ANIMATION_RIGHT = 0;
     public static final int ANIMATION_LEFT  = 1;
@@ -25,23 +32,28 @@ public class Player extends Entity {
     public static final int ANIMATION_ATTACK_DOWN  = 7;
     public static final int ANIMATION_ATTACK_UP    = 8;
 
-    private BoxCollider attackCollider;
+    public static int staticHealth;
 
-    private int currentAnimation;
+    private Level level;
 
-    public Player(ObjectTileMap objectTileMap) {
+    private final BoxCollider attackCollider;
+
+    public Player(Level level, ObjectTileMap objectTileMap) {
         super(new Vector2f((Display.width / 2f) - 32, (Display.height / 2f) - 32), objectTileMap, 64, 64);
+
+        this.level = level;
 
         this.maxMoveSpeed = 4f;
         this.acceleration = 3f;
 
-        this.health = 10;
+        health = maxHealth = 10;
         this.damage = 2;
 
         boxCollider = new BoxCollider(this, new Vector2f(12, 40), 42, 20);
-        attackCollider = new BoxCollider(this, new Vector2f(0, 0), width, height);
+        attackCollider = new BoxCollider(this, new Vector2f(-30, -30), width + 60, height + 60);
 
         sprite = new Sprite("/entity/player.png", 32, 32);
+
         animation = new Animation(sprite);
 
         isIdle = false;
@@ -56,6 +68,8 @@ public class Player extends Entity {
 
     @Override
     public void update() {
+        staticHealth = health;
+
         up = Input.isKey(KeyEvent.VK_W);
         left = Input.isKey(KeyEvent.VK_A);
         down = Input.isKey(KeyEvent.VK_S);
@@ -69,22 +83,16 @@ public class Player extends Entity {
         else if (Input.isKeyDown(KeyEvent.VK_SPACE)) {
             if(currentAnimation == ANIMATION_RIGHT || currentAnimation == ANIMATION_ATTACK_RIGHT) {
                 currentAnimation = ANIMATION_ATTACK_RIGHT;
-                attackCollider.getOffset().x = width - width / 2f;
             } else if(currentAnimation == ANIMATION_UP || currentAnimation == ANIMATION_ATTACK_UP) {
                 currentAnimation = ANIMATION_ATTACK_UP;
-                attackCollider.getOffset().y = -height + height / 2f;
             } else if(currentAnimation == ANIMATION_DOWN || currentAnimation == ANIMATION_ATTACK_DOWN) {
                 currentAnimation = ANIMATION_ATTACK_DOWN;
-                attackCollider.getOffset().y = height - height / 2f;
             } else if(currentAnimation == ANIMATION_LEFT || currentAnimation == ANIMATION_ATTACK_LEFT) {
                 currentAnimation = ANIMATION_ATTACK_LEFT;
-                attackCollider.getOffset().x = -width + width / 2f;
             }
         }
         else {
             isIdle = true;
-            attackCollider.getOffset().x = 0;
-            attackCollider.getOffset().y = 0;
         }
 
         if (up) {
@@ -113,16 +121,29 @@ public class Player extends Entity {
             dx = 0;
         }
 
+        checkAttack();
+
         // Adjust for Delta Time
         dx *= Game.deltaTime * speedMultiplier;
         dy *= Game.deltaTime * speedMultiplier;
 
-        if (!boxCollider.collisionTile(objectTileMap, dx, 0)) {
+        if (!boxCollider.collisionTilePlayer(objectTileMap, dx, 0)) {
             Camera.position.x += dx;
         }
 
-        if (!boxCollider.collisionTile(objectTileMap, 0, dy)) {
+        if (!boxCollider.collisionTilePlayer(objectTileMap, 0, dy)) {
             Camera.position.y += dy;
+        }
+    }
+
+    private void checkAttack() {
+        for(Enemy enemy : level.getEnemies()) {
+            if(!Camera.shouldHandleEntity(enemy)) return;
+
+            if(attack && attackCollider.getBoundsAsAbsRect().intersects(enemy.getBoxCollider().getBoundsAsRelativeRect())) {
+                enemy.hit(damage);
+                attack = false;
+            }
         }
     }
 
@@ -144,6 +165,12 @@ public class Player extends Entity {
     }
 
     @Override
+    public void hit(int damage) {
+        GUI.hit = true;
+        super.hit(damage);
+    }
+
+    @Override
     public void onDestroy() {
 
     }
@@ -157,5 +184,4 @@ public class Player extends Entity {
         if(animation == ANIMATION_FALL) return 350;
         return 0;
     }
-
 }

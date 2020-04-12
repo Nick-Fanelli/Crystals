@@ -1,6 +1,7 @@
 package com.harmony.game.state.levels;
 
 import com.harmony.game.entity.Player;
+import com.harmony.game.entity.enemy.Enemy;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Console;
 import com.harmony.game.item.Item;
@@ -10,16 +11,20 @@ import com.harmony.game.object.GameObject;
 import com.harmony.game.state.State;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.tiles.TileManager;
+import com.harmony.game.utils.GUI;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public abstract class Level extends State {
 
     private final String tilemapLocation;
 
-    private Console console;
-    private Player player;
-    private TileManager tileManager;
+    protected Console console;
+    protected Player player;
+    protected TileManager tileManager;
+
+    protected ArrayList<Enemy> enemies = new ArrayList<>();
 
     public Level(String tilemapLocation) { this.tilemapLocation = tilemapLocation; }
 
@@ -28,7 +33,9 @@ public abstract class Level extends State {
         tileManager = new TileManager(tilemapLocation);
 
         console = new Console();
-        player = new Player((ObjectTileMap) tileManager.getObjectsMap());
+        player = new Player(this, (ObjectTileMap) tileManager.getObjectsMap());
+
+        GUI.showGui = true;
     }
 
     private void gameObjectCollision() {
@@ -51,6 +58,8 @@ public abstract class Level extends State {
         player.update();
         super.update();
 
+        try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception e) {}
+
         gameObjectCollision();
 
         console.update();
@@ -62,6 +71,8 @@ public abstract class Level extends State {
 
         super.draw(g);
 
+        for(Enemy enemy : enemies) enemy.draw(g);
+
         player.draw(g);
 
         console.draw(g);
@@ -71,4 +82,6 @@ public abstract class Level extends State {
     public void onDestroy() {
         super.onDestroy();
     }
+
+    public ArrayList<Enemy> getEnemies() { return enemies; }
 }

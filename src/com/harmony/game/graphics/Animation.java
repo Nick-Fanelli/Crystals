@@ -15,6 +15,8 @@ public class Animation {
 
     public Animation(Sprite sprite) { this.sprite = sprite; }
 
+    public void setCurrentFrame(int frame) { this.currentFrame = frame; }
+
     public BufferedImage animate(int animation, int delayMillis) {
         if(this.animation != animation) {
             delay = false;

@@ -4,7 +4,6 @@ import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.state.levels.Level1;
-import com.harmony.game.state.levels.PracticeState;
 import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Vector2f;
 

@@ -44,11 +44,11 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
     public static Vector2f getMouse() { return mouse; }
     public static int getScroll() { return scroll; }
 
-    @Override public void keyPressed(KeyEvent e) { keys[e.getKeyCode()] = true; }
-    @Override public void keyReleased(KeyEvent e) { keys[e.getKeyCode()] = false; }
+    @Override public void keyPressed(KeyEvent e) { if(e.getKeyCode() <= keys.length) keys[e.getKeyCode()] = true; }
+    @Override public void keyReleased(KeyEvent e) { if(e.getKeyCode() <= keys.length) keys[e.getKeyCode()] = false; }
 
-    @Override public void mousePressed(MouseEvent e) { buttons[e.getButton()] = true; }
-    @Override public void mouseReleased(MouseEvent e) { buttons[e.getButton()] = false; }
+    @Override public void mousePressed(MouseEvent e) { if(e.getButton() <= buttons.length) buttons[e.getButton()] = true; }
+    @Override public void mouseReleased(MouseEvent e) { if(e.getButton() <= buttons.length) buttons[e.getButton()] = false; }
 
     @Override public void mouseDragged(MouseEvent e) { mouse.x = e.getX(); mouse.y = e.getY(); }
     @Override public void mouseMoved(MouseEvent e) { mouse.x = e.getX(); mouse.y = e.getY(); }

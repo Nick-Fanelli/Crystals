@@ -52,7 +52,11 @@ public class Display {
 
         handleResize();
 
-        g.drawImage(ImageUtils.loadImage("/ui/loading.png"), 0, 0, width, height, null);
+//        showSplashScreen();
+    }
+
+    private void showSplashScreen() {
+        g.drawImage(ImageUtils.loadImage("/ui/loading.png"), -1, -1, width + 1, height + 2, null);
         bs.show();
 
         try {

@@ -46,6 +46,12 @@ public class AudioClip {
         while (!clip.isRunning()) clip.start();
     }
 
+    public void forcePlay(int num) {
+        if(clip == null) return;
+        clip.loop(num);
+        play();
+    }
+
     public void stop() {
         if (clip.isRunning()) clip.stop();
     }

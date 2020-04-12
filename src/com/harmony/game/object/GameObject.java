@@ -24,7 +24,7 @@ public abstract class GameObject {
     public int getHeight() { return height ; }
 
     public boolean isCollidingWith(Entity entity) {
-        return entity.getBoxCollider().getBoundsAsRect().intersects(new Rectangle((int) position.getWorldPosition().x, (int) position.getWorldPosition().y, width, height));
+        return entity.getBoxCollider().getBoundsAsAbsRect().intersects(new Rectangle((int) position.getWorldPosition().x, (int) position.getWorldPosition().y, width, height));
     }
 
     public abstract void onCreate();
