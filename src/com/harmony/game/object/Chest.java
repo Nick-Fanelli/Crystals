@@ -33,7 +33,7 @@ public class Chest extends GameObject {
         if(isColliding && !collected && Input.isKeyDown(KeyEvent.VK_E)) {
             collected = true;
             SoundEffects.keyPickup.play();
-            System.out.println("-> Giving player key");
+            System.out.println("-> Giving Player: Key");
             GUI.hasKey = true;
         }
     }
@@ -53,10 +53,8 @@ public class Chest extends GameObject {
     }
 
     @Override
-    public boolean isCollidingWith(Entity entity) {
-        if(!(entity instanceof Player)) return super.isCollidingWith(entity);
-
-        if(!super.isCollidingWith(entity)) { isColliding = false; return false; }
+    public boolean isCollidingWith(Player player) {
+        if(!super.isCollidingWith(player)) { isColliding = false; return false; }
         isColliding = true;
 
         return true;

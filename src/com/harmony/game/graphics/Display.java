@@ -17,11 +17,11 @@ public class Display {
     private static int absWidth;
     private static int absHeight;
 
-    private JFrame frame;
-    private BufferedImage image;
-    private Canvas canvas;
-    private BufferStrategy bs;
-    private Graphics g;
+    private static JFrame frame;
+    private static BufferedImage image;
+    private static Canvas canvas;
+    private static BufferStrategy bs;
+    private static Graphics g;
 
     public Display(String title, int width, int height) {
         Display.width = width;
@@ -80,7 +80,7 @@ public class Display {
         });
     }
 
-    public void update() {
+    public static void update() {
         try {
             g.drawImage(image, 0, 0, absWidth, absHeight, null);
             bs.show();

@@ -36,9 +36,9 @@ public class Game implements Runnable {
 
         input = new Input(display.getFrame());
 
-        gsm = new GameStateManager();
+        gsm = new GameStateManager(g);
 
-        GameStateManager.setCurrentState(GameStateManager.LEVEL_1_STATE);
+        GameStateManager.setCurrentState(GameStateManager.PRACTICE_STATE);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class Game implements Runnable {
     private synchronized void draw() {
         g.setColor(new Color(33, 30, 39));
         g.fillRect(0, 0, Display.width, Display.height);
-        gsm.draw(g);
+        gsm.draw();
     }
 
 }

@@ -11,6 +11,7 @@ import com.harmony.game.object.GameObject;
 import com.harmony.game.state.State;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.tiles.TileManager;
+import com.harmony.game.item.Drops;
 import com.harmony.game.utils.GUI;
 
 import java.awt.*;
@@ -56,25 +57,20 @@ public abstract class Level extends State {
     @Override
     public void update() {
         player.update();
+        Drops.update(player);
         super.update();
-
         try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception e) {}
-
         gameObjectCollision();
-
         console.update();
     }
 
     @Override
     public void draw(Graphics2D g) {
         tileManager.draw(g);
-
+        Drops.draw(g);
         super.draw(g);
-
         for(Enemy enemy : enemies) enemy.draw(g);
-
         player.draw(g);
-
         console.draw(g);
     }
 

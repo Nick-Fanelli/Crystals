@@ -49,6 +49,11 @@ public class BoxCollider {
         return false;
     }
 
+    public boolean collisionRectPlayer(Rectangle rectangle) {
+        System.out.println(getBoundsAsAbsRect() + " " + rectangle);
+        return getBoundsAsRelativeRect().intersects(rectangle);
+    }
+
     public boolean collisionPlayer(Player player) {
         return player.getBoxCollider().getBoundsAsAbsRect().intersects(getBoundsAsRelativeRect());
     }

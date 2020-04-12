@@ -2,6 +2,7 @@ package com.harmony.game.object;
 
 import com.harmony.game.entity.Entity;
 import com.harmony.game.entity.Player;
+import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.PlayerHelp;
@@ -26,8 +27,9 @@ public class Door extends GameObject {
     @Override
     public void update() {
         if(isColliding && GUI.hasKey && Input.isKeyDown(KeyEvent.VK_E)) {
-            System.out.println("Move On");
             GUI.hasKey = false;
+            System.out.println("### Moving To The Next Level ###");
+            GameStateManager.nextLevel();
         }
     }
 
@@ -44,10 +46,9 @@ public class Door extends GameObject {
     }
 
     @Override
-    public boolean isCollidingWith(Entity entity) {
-        if(!(entity instanceof Player)) return super.isCollidingWith(entity);
+    public boolean isCollidingWith(Player player) {
 
-        if(!super.isCollidingWith(entity)) { isColliding = false; return false; }
+        if(!super.isCollidingWith(player)) { isColliding = false; return false; }
         isColliding = true;
 
         return true;

@@ -43,8 +43,8 @@ public class Player extends Entity {
 
         this.level = level;
 
-        this.maxMoveSpeed = 4f;
-        this.acceleration = 3f;
+        this.maxMoveSpeed = 4f; // Default 4
+        this.acceleration = 3f; // Default 3
 
         health = maxHealth = 10;
         this.damage = 2;
@@ -137,6 +137,7 @@ public class Player extends Entity {
     }
 
     private void checkAttack() {
+        if(level == null) return;
         for(Enemy enemy : level.getEnemies()) {
             if(!Camera.shouldHandleEntity(enemy)) return;
 
