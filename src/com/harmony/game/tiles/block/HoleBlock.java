@@ -14,7 +14,6 @@ public class HoleBlock extends Block {
 
     @Override
     public boolean update(Entity entity) {
-        // TODO: COLLISION
         return false;
     }
 

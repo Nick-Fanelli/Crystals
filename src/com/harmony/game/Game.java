@@ -2,6 +2,7 @@ package com.harmony.game;
 
 import com.harmony.game.graphics.Display;
 import com.harmony.game.state.GameStateManager;
+import com.harmony.game.state.MenuState;
 import com.harmony.game.utils.Input;
 
 import java.awt.*;
@@ -81,6 +82,9 @@ public class Game implements Runnable {
                 }
             }
         }
+
+        System.out.println("*** Cleaning Up ***");
+        cleanUp();
     }
 
     private synchronized void update() {
@@ -99,4 +103,12 @@ public class Game implements Runnable {
         gsm.draw();
     }
 
+    private void cleanUp() {
+        if(MenuState.saveData != null) MenuState.saveData.save();
+        System.out.println("*** Closing Game ***");
+        System.exit(1);
+    }
+
+    public static void setIsRunning(boolean isRunning) { Game.isRunning = isRunning; }
+    public static boolean isRunning() { return isRunning; }
 }

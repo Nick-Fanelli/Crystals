@@ -1,11 +1,14 @@
 package com.harmony.game.graphics;
 
+import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.ImageUtils;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
@@ -30,12 +33,14 @@ public class Display {
         Display.absWidth = width;
         Display.absHeight = height;
 
+        setProperties();
+
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
 
         frame = new JFrame(title);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         frame.setLayout(new BorderLayout());
         frame.add(canvas, BorderLayout.CENTER);
@@ -51,6 +56,7 @@ public class Display {
         frame.setVisible(true);
 
         handleResize();
+        handleQuit();
 
 //        showSplashScreen();
     }
@@ -66,6 +72,11 @@ public class Display {
         }
     }
 
+    private void setProperties() {
+        System.setProperty("apple.eawt.quitStrategy", "CLOSE_ALL_WINDOWS");
+
+    }
+
     private void handleResize() {
         frame.addComponentListener(new ComponentAdapter() {
             @Override
@@ -76,6 +87,15 @@ public class Display {
                 canvas.createBufferStrategy(2);
                 bs = canvas.getBufferStrategy();
                 g = bs.getDrawGraphics();
+            }
+        });
+    }
+
+    private void handleQuit() {
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                GameStateManager.requestCloseConfirmation();
             }
         });
     }

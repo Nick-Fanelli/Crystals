@@ -28,11 +28,10 @@ public class Player extends Entity {
     public static final int ANIMATION_LEFT  = 9;
     public static final int ANIMATION_DOWN  = 10;
     public static final int ANIMATION_UP    = 8;
-    public static final int ANIMATION_FALL  = 4;
-    public static final int ANIMATION_ATTACK_RIGHT = 5;
-    public static final int ANIMATION_ATTACK_LEFT  = 6;
-    public static final int ANIMATION_ATTACK_DOWN  = 7;
-    public static final int ANIMATION_ATTACK_UP    = 8;
+    public static final int ANIMATION_ATTACK_RIGHT = 15;
+    public static final int ANIMATION_ATTACK_LEFT  = 13;
+    public static final int ANIMATION_ATTACK_DOWN  = 14;
+    public static final int ANIMATION_ATTACK_UP    = 12;
 
     public static int staticHealth;
 
@@ -165,7 +164,7 @@ public class Player extends Entity {
 
     @Override
     public void draw(Graphics2D g) {
-        g.drawImage(animation.animate(currentAnimation, getDelay(currentAnimation), 9), (int) position.x, (int) position.y,
+        g.drawImage(animation.animate(currentAnimation, getDelay(currentAnimation), getFrames(currentAnimation)), (int) position.x, (int) position.y,
                 width, height, null);
         if(Game.debugMode) {
             g.setColor(Color.BLUE);
@@ -197,7 +196,14 @@ public class Player extends Entity {
                 || animation == ANIMATION_DOWN) return 100;
         if(animation == ANIMATION_ATTACK_RIGHT || animation == ANIMATION_ATTACK_LEFT || animation == ANIMATION_ATTACK_UP
                 || animation == ANIMATION_ATTACK_DOWN) return 10;
-        if(animation == ANIMATION_FALL) return 350;
+        return 0;
+    }
+
+    private int getFrames(int animation) {
+        if(animation == ANIMATION_RIGHT || animation == ANIMATION_LEFT || animation == ANIMATION_UP
+                || animation == ANIMATION_DOWN) return 9;
+        if(animation == ANIMATION_ATTACK_RIGHT || animation == ANIMATION_ATTACK_LEFT || animation == ANIMATION_ATTACK_UP
+                || animation == ANIMATION_ATTACK_DOWN) return 6;
         return 0;
     }
 }

@@ -14,7 +14,6 @@ public class ObjectBlock extends Block {
 
     @Override
     public boolean update(Entity entity) {
-        // TODO: ADD COLLISION
         return false;
     }
 
