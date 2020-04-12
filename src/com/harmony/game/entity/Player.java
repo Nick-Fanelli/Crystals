@@ -21,6 +21,7 @@ import java.awt.event.KeyEvent;
 public class Player extends Entity {
 
     public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
+    public static final AudioClip healthPoint = new AudioClip("/audio/health_point_audio.wav");
 
     public static final int ANIMATION_RIGHT = 0;
     public static final int ANIMATION_LEFT  = 1;
@@ -66,8 +67,14 @@ public class Player extends Entity {
         currentAnimation = ANIMATION_RIGHT;
     }
 
+    private void respawn() {
+        Camera.position.reset();
+    }
+
     @Override
     public void update() {
+        if(isDead) respawn();
+
         staticHealth = health;
 
         up = Input.isKey(KeyEvent.VK_W);
@@ -146,6 +153,13 @@ public class Player extends Entity {
                 attack = false;
             }
         }
+    }
+
+    public void awardHealth(int amount) {
+        System.out.println("-> Awarding Player " + amount + " Health");
+        healthPoint.play();
+        health += amount;
+        if(health > maxHealth) health = maxHealth;
     }
 
     @Override

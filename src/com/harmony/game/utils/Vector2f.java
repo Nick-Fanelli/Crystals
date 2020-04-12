@@ -1,6 +1,9 @@
 package com.harmony.game.utils;
 
 import com.harmony.game.graphics.Camera;
+import com.harmony.game.physics.collision.BoxCollider;
+
+import java.awt.*;
 
 public class Vector2f {
 
@@ -25,5 +28,9 @@ public class Vector2f {
     public void reset() {
         this.x = 0;
         this.y = 0;
+    }
+
+    public Rectangle toRectangle(int width, int height) {
+        return new Rectangle((int) x, (int) y, width, height);
     }
 }

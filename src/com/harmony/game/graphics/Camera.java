@@ -2,12 +2,14 @@ package com.harmony.game.graphics;
 
 import com.harmony.game.Game;
 import com.harmony.game.entity.Entity;
+import com.harmony.game.item.drops.Drop;
 import com.harmony.game.object.GameObject;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.tiles.TileManager;
 import com.harmony.game.tiles.block.Block;
 import com.harmony.game.utils.Vector2f;
 
+import javax.swing.*;
 import java.awt.*;
 
 public final class Camera {
@@ -66,6 +68,21 @@ public final class Camera {
             if (entity.position.x <= position.x + collisionCam.getWidth() + collisionCam.getOffset().x)
                 if (entity.position.y >= (position.y + collisionCam.getOffset().y) - entity.height)
                     if (entity.position.y <= position.y + collisionCam.getHeight() + collisionCam.getOffset().y)
+                        return true;
+
+        return false;
+    }
+
+    public static boolean shouldHandleDrop(Drop drop) {
+        if(!created) {
+            System.err.println("Must create the camera first before asking to show drop");
+            return false;
+        }
+
+        if(drop.position.getWorldPosition().x + drop.rectangle.width >= collisionCam.getOffset().x)
+            if(drop.position.getWorldPosition().x <= collisionCam.getOffset().x + Display.width)
+                if(drop.position.getWorldPosition().y + drop.rectangle.height >= collisionCam.getOffset().y)
+                    if(drop.position.getWorldPosition().y <= collisionCam.getOffset().y + Display.height)
                         return true;
 
         return false;
