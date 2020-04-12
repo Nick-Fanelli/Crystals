@@ -8,6 +8,7 @@ import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.state.MenuState;
 import com.harmony.game.state.State;
 import com.harmony.game.state.levels.Level;
 import com.harmony.game.tiles.ObjectTileMap;
@@ -23,10 +24,10 @@ public class Player extends Entity {
     public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
     public static final AudioClip healthPoint = new AudioClip("/audio/health_point_audio.wav");
 
-    public static final int ANIMATION_RIGHT = 0;
-    public static final int ANIMATION_LEFT  = 1;
-    public static final int ANIMATION_DOWN  = 2;
-    public static final int ANIMATION_UP    = 3;
+    public static final int ANIMATION_RIGHT = 11;
+    public static final int ANIMATION_LEFT  = 9;
+    public static final int ANIMATION_DOWN  = 10;
+    public static final int ANIMATION_UP    = 8;
     public static final int ANIMATION_FALL  = 4;
     public static final int ANIMATION_ATTACK_RIGHT = 5;
     public static final int ANIMATION_ATTACK_LEFT  = 6;
@@ -53,7 +54,7 @@ public class Player extends Entity {
         boxCollider = new BoxCollider(this, new Vector2f(12, 40), 42, 20);
         attackCollider = new BoxCollider(this, new Vector2f(-30, -30), width + 60, height + 60);
 
-        sprite = new Sprite("/entity/player.png", 32, 32);
+        sprite = new Sprite(MenuState.saveData.playerSave.getPlayerImage(), 64, 64);
 
         animation = new Animation(sprite);
 
@@ -164,7 +165,7 @@ public class Player extends Entity {
 
     @Override
     public void draw(Graphics2D g) {
-        g.drawImage(animation.animate(currentAnimation, getDelay(currentAnimation)), (int) position.x, (int) position.y,
+        g.drawImage(animation.animate(currentAnimation, getDelay(currentAnimation), 9), (int) position.x, (int) position.y,
                 width, height, null);
         if(Game.debugMode) {
             g.setColor(Color.BLUE);

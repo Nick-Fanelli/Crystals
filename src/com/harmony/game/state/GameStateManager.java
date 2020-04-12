@@ -14,6 +14,7 @@ import java.awt.*;
 public class GameStateManager {
 
     public static final int MENU_STATE     = -1;
+    public static final int PLAYER_STATE   = -2;
     public static final int PRACTICE_STATE = 0;
     public static final int LEVEL_1_STATE  = 1;
 
@@ -40,8 +41,9 @@ public class GameStateManager {
 
         switch (currentState) {
             case MENU_STATE:     tempState = new MenuState();           break;
+            case PLAYER_STATE:   tempState = new PlayerState();         break;
             case PRACTICE_STATE: tempState = new PracticeState();       break;
-            case LEVEL_1_STATE: tempState  = new Level1();              break;
+            case LEVEL_1_STATE:  tempState = new Level1();              break;
         }
 
         if(tempState == null) return;
@@ -81,7 +83,7 @@ public class GameStateManager {
     }
 
     public static void nextLevel() {
-        new SaveData(currentStateId + 1).save();
+        //TODO FIX: new SaveData(currentStateId + 1).save();
         setCurrentState(currentStateId + 1);
     }
 

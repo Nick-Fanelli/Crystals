@@ -8,8 +8,12 @@ public class SaveData implements Serializable {
     private static final File file = new File(SAVE_LOCATION);
 
     public final int currentLevel;
+    public final PlayerSave playerSave;
 
-    public SaveData(int currentLevel) { this.currentLevel = currentLevel; }
+    public SaveData(int currentLevel, PlayerSave playerSave) {
+        this.currentLevel = currentLevel;
+        this.playerSave = playerSave;
+    }
 
     public void save() {
         try {

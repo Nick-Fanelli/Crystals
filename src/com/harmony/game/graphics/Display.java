@@ -87,6 +87,8 @@ public class Display {
         } catch(Exception e) {}
     }
 
+    public static void setCursor(int type) { frame.setCursor(new Cursor(type)); }
+
     public JFrame getFrame() { return frame; }
     public BufferedImage getImage() { return image; }
     public Canvas getCanvas() { return canvas; }

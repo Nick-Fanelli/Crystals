@@ -4,8 +4,9 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class ImageUtils {
+public class ImageUtils implements Serializable {
 
     public static BufferedImage loadImage(String path) {
         System.out.println("Loading Image: " + path);
