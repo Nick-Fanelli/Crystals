@@ -34,11 +34,11 @@ public class Game implements Runnable {
         display = new Display("Game", 1280, 720);
         g = (Graphics2D) display.getImage().getGraphics();
 
-        input = new Input(display.getFrame());
+        input = new Input(display.getFrame(), display.getCanvas());
 
         gsm = new GameStateManager(g);
 
-        GameStateManager.setCurrentState(GameStateManager.PRACTICE_STATE);
+        GameStateManager.setCurrentState(GameStateManager.MENU_STATE);
     }
 
     @Override

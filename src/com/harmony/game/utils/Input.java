@@ -1,34 +1,44 @@
 package com.harmony.game.utils;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class Input implements KeyListener, MouseListener, MouseMotionListener, MouseWheelListener {
 
     public static final int NUM_KEYS = 256;
-    private static boolean[] keys     = new boolean[NUM_KEYS];
-    private static boolean[] keysLast = new boolean[NUM_KEYS];
+    private static final boolean[] keys     = new boolean[NUM_KEYS];
+    private static final boolean[] keysLast = new boolean[NUM_KEYS];
 
     public static final int NUM_BUTTONS = 5;
-    private static boolean[] buttons     = new boolean[NUM_BUTTONS];
-    private static boolean[] buttonsLast = new boolean[NUM_BUTTONS];
+    private static final boolean[] buttons     = new boolean[NUM_BUTTONS];
+    private static final boolean[] buttonsLast = new boolean[NUM_BUTTONS];
 
-    private static Vector2f mouse = new Vector2f();
+    private static final Vector2f mouse = new Vector2f();
     private static int scroll;
 
-    public Input(JFrame frame) {
+    public Input(JFrame frame, Canvas canvas) {
         scroll = 0;
 
         frame.addKeyListener(this);
-        frame.addMouseListener(this);
-        frame.addMouseMotionListener(this);
-        frame.addMouseWheelListener(this);
+        canvas.addMouseListener(this);
+        canvas.addMouseMotionListener(this);
+        canvas.addMouseWheelListener(this);
+
+        canvas.setFocusable(true);
+        canvas.requestFocus();
     }
 
     public void update() {
         for(int i = 0; i < NUM_KEYS; i++)       keysLast[i] =    keys[i];
         for(int i = 0; i < NUM_BUTTONS; i++) buttonsLast[i] = buttons[i];
     }
+
+    public static boolean hoverRectangle(Rectangle rectangle) {
+        return mouse.x >= rectangle.x && mouse.x <= rectangle.x + rectangle.width &&
+               mouse.y >= rectangle.y && mouse.y <= rectangle.y + rectangle.height;
+    }
+
 
     // Keys
     public static boolean isKey(int keycode) { return keys[keycode]; }
