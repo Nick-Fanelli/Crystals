@@ -1,4 +1,6 @@
-package com.harmony.game.graphics;
+package com.harmony.game.animation;
+
+import com.harmony.game.graphics.Sprite;
 
 import java.awt.image.BufferedImage;
 
@@ -19,6 +21,8 @@ public class Animation {
     public void setCurrentFrame(int frame) { this.currentFrame = frame; }
 
     public boolean hasPlayedOnce(int animation) { if(this.animation == animation) return playedOnce; else return false; }
+
+    public int getCurrentFrame() { return currentFrame; }
 
     public BufferedImage animate(int animation, int delayMillis, int frameCount) {
         if(this.animation != animation) {

@@ -1,6 +1,6 @@
 package com.harmony.game.utils;
 
-import com.harmony.game.graphics.Animation;
+import com.harmony.game.animation.Animation;
 import com.harmony.game.graphics.Sprite;
 
 import java.awt.*;

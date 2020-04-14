@@ -3,7 +3,7 @@ package com.harmony.game.entity.enemy;
 import com.harmony.game.Game;
 import com.harmony.game.audio.AudioClip;
 import com.harmony.game.entity.Player;
-import com.harmony.game.graphics.Animation;
+import com.harmony.game.animation.Animation;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.item.Drops;

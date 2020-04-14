@@ -24,7 +24,7 @@ public class Game implements Runnable {
     private GameStateManager gsm;
     private Input input;
 
-    private static boolean isRunning = false;
+    private static boolean isRunning;
 
     public Game() {
         gameThread = new Thread(this, "_GameThread_");

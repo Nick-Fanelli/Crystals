@@ -14,7 +14,6 @@ public class ImageUtils implements Serializable {
             return ImageIO.read(ImageUtils.class.getResourceAsStream(path));
         } catch (Exception e) {
             System.err.println("Could not load resource: \"" + path + "\"");
-            e.printStackTrace();
             System.exit(-1);
         }
         return null;

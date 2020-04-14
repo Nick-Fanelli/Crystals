@@ -20,6 +20,8 @@ public class Display {
     private static int absWidth;
     private static int absHeight;
 
+    private static Dimension d;
+
     private static JFrame frame;
     private static BufferedImage image;
     private static Canvas canvas;
@@ -33,9 +35,12 @@ public class Display {
         Display.absWidth = width;
         Display.absHeight = height;
 
+        Display.d = new Dimension(width, height);
+
         setProperties();
 
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
 
@@ -74,7 +79,6 @@ public class Display {
 
     private void setProperties() {
         System.setProperty("apple.eawt.quitStrategy", "CLOSE_ALL_WINDOWS");
-
     }
 
     private void handleResize() {

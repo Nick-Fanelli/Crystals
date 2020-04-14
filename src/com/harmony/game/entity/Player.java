@@ -3,13 +3,12 @@ package com.harmony.game.entity;
 import com.harmony.game.Game;
 import com.harmony.game.audio.AudioClip;
 import com.harmony.game.entity.enemy.Enemy;
-import com.harmony.game.graphics.Animation;
+import com.harmony.game.animation.Animation;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.state.MenuState;
-import com.harmony.game.state.State;
 import com.harmony.game.state.levels.Level;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.utils.GUI;
@@ -53,7 +52,8 @@ public class Player extends Entity {
         boxCollider = new BoxCollider(this, new Vector2f(12, 40), 42, 20);
         attackCollider = new BoxCollider(this, new Vector2f(-30, -30), width + 60, height + 60);
 
-        sprite = new Sprite(MenuState.saveData.playerSave.getPlayerImage(), 64, 64);
+        if(MenuState.saveData == null) sprite = new Sprite("/entity/player/male_light.png", 64, 64);
+        else sprite = new Sprite(MenuState.saveData.playerSave.getPlayerImage(), 64, 64);
 
         animation = new Animation(sprite);
 

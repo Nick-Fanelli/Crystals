@@ -1,11 +1,11 @@
 package com.harmony.game.state;
 
+import com.harmony.game.animation.scene.Scene;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.save.SaveData;
-import com.harmony.game.state.levels.Level1;
 import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
@@ -16,16 +16,16 @@ public class GameStateManager {
 
     public static final int MENU_STATE          = -1;
     public static final int PLAYER_STATE        = -2;
-    public static final int PRACTICE_STATE      = 0;
-    public static final int LEVEL_1_STATE       = 1;
 
     private static QuitConfirmation quitConfirmationState;
+    private static Scene scene;
 
     private static State currentState;
     private static int currentStateId;
 
     private static boolean pause = true;
     private static boolean quitConfirmation = false;
+    private static boolean cutScene = false;
 
     private static Graphics2D g;
     private static Timer timer = new Timer();
@@ -50,8 +50,6 @@ public class GameStateManager {
         switch (currentState) {
             case MENU_STATE:     tempState = new MenuState();           break;
             case PLAYER_STATE:   tempState = new PlayerState();         break;
-            case PRACTICE_STATE: tempState = new PracticeState();       break;
-            case LEVEL_1_STATE:  tempState = new Level1();              break;
         }
 
         if(tempState == null) return;
@@ -69,6 +67,18 @@ public class GameStateManager {
 
     public void update() {
         if(quitConfirmation) quitConfirmationState.update();
+
+        if(cutScene) {
+            scene.update();
+            pause = true;
+            if(scene.isDone()) {
+                scene.onDestroy();
+                scene = null;
+                cutScene = false;
+                pause = false;
+            }
+        }
+
         if(currentState == null || pause) return;
         if(timer.done()) currentState.update();
         Camera.update();
@@ -77,6 +87,7 @@ public class GameStateManager {
 
     public void draw() {
         if(quitConfirmation) quitConfirmationState.draw(g);
+        if(cutScene) scene.draw(g);
         if(currentState == null || pause) return;
         currentState.draw(g);
         Camera.draw(g);
@@ -103,6 +114,13 @@ public class GameStateManager {
         pause = true;
         quitConfirmationState = new QuitConfirmation();
         quitConfirmation = true;
+    }
+
+    public static void showCutScene(Scene scene) {
+        GameStateManager.scene = scene;
+        scene.onCreate();
+        pause = true;
+        cutScene = true;
     }
 
     public static State getCurrentState() { return currentState; }

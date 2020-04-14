@@ -47,7 +47,7 @@ public class Console {
         if(System.currentTimeMillis() < stopTime) return;
 
         if(currentChar < lines[currentLine].length()) {
-            if(!typeClip.isPlaying()) typeClip.play();
+            if(!typeClip.isActive()) typeClip.play();
             outputLines[currentLine] += lines[currentLine].charAt(currentChar);
             currentChar++;
         } else {

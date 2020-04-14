@@ -1,6 +1,6 @@
 package com.harmony.game.entity;
 
-import com.harmony.game.graphics.Animation;
+import com.harmony.game.animation.Animation;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.tiles.ObjectTileMap;

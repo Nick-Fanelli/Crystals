@@ -36,7 +36,8 @@ public class AudioClip {
 
     public void setGain(float gain) { this.gainControl.setValue(gain); }
     public float getGain() { return this.gainControl.getValue(); }
-    public boolean isPlaying() { return clip.isRunning(); }
+    public boolean isActive() { return clip.isRunning(); }
+    public boolean isPlaying() { return clip.isActive(); }
     public Clip getClip() { return clip; }
 
     public void play() {

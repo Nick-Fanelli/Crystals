@@ -9,6 +9,12 @@ import java.awt.image.BufferedImage;
 
 public class GUI {
 
+    public static final Sprite blueCrystals = new Sprite("/item/crystals/blue-crystals.png", 32, 32);
+    public static final Sprite greenCrystals = new Sprite("/item/crystals/green-crystals.png", 32, 32);
+    public static final Sprite greyCrystals = new Sprite("/item/crystals/grey-crystals.png", 32, 32);
+    public static final Sprite orangeCrystals = new Sprite("/item/crystals/orange-crystals.png", 32, 32);
+    public static final Sprite yellowCrystals = new Sprite("/item/crystals/yellow-crystals.png", 32, 32);
+
     private static final BufferedImage mainGUI = ImageUtils.loadImage("/ui/hud/main_gui.png");
 
     private static final Sprite increments = new Sprite("/ui/hud/increments.png", 8, 12);

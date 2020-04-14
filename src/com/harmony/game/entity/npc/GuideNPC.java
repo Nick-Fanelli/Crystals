@@ -1,7 +1,7 @@
 package com.harmony.game.entity.npc;
 
 import com.harmony.game.entity.Player;
-import com.harmony.game.graphics.Animation;
+import com.harmony.game.animation.Animation;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Console;
 import com.harmony.game.graphics.Sprite;
