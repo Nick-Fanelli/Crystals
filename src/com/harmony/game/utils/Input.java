@@ -1,5 +1,7 @@
 package com.harmony.game.utils;
 
+import com.harmony.game.graphics.Display;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -60,8 +62,16 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
     @Override public void mousePressed(MouseEvent e) { if(e.getButton() <= buttons.length) buttons[e.getButton()] = true; }
     @Override public void mouseReleased(MouseEvent e) { if(e.getButton() <= buttons.length) buttons[e.getButton()] = false; }
 
-    @Override public void mouseDragged(MouseEvent e) { mouse.x = e.getX(); mouse.y = e.getY(); }
-    @Override public void mouseMoved(MouseEvent e) { mouse.x = e.getX(); mouse.y = e.getY(); }
+    @Override public void mouseDragged(MouseEvent e) {
+        mouse.x = e.getX() / (Display.absWidth / Display.width);
+        mouse.y = e.getY() / (Display.absHeight / Display.height);
+    }
+
+    @Override public void mouseMoved(MouseEvent e) {
+        mouse.x = e.getX() / (Display.absWidth / Display.width);
+        mouse.y = e.getY() / (Display.absHeight / Display.height);
+    }
+
     @Override public void mouseWheelMoved(MouseWheelEvent e) { scroll = e.getWheelRotation(); }
 
     @Deprecated @Override public void keyTyped(KeyEvent keyEvent) {}

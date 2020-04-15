@@ -25,6 +25,7 @@ public class Chapter1Scene1 extends Scene {
     private Animation explosionAnimation;
 
     private AudioClip explosionAudio;
+    private AudioClip crow;
 
     private boolean explosion = false;
     private boolean doneExplosion = false;
@@ -63,7 +64,10 @@ public class Chapter1Scene1 extends Scene {
         explosionOverlay = new Sprite(ImageUtils.loadImage("/scenes/chapter1/explosion-overlay.png"), 640, 360);
         explosionAnimation = new Animation(explosionOverlay);
 
-        explosionAudio = new AudioClip("/audio/sfx/explosion-subtle.wav");
+        explosionAudio = new AudioClip("/audio/sfx/implosion.wav");
+        crow = new AudioClip("/audio/sfx/crow-effect.wav");
+        explosionAudio.setGain(2);
+        crow.setGain(2);
 
         timer.delay(700);
     }
@@ -115,6 +119,11 @@ public class Chapter1Scene1 extends Scene {
 
         if(!line7.isPlaying() && currentLine == 7) {
             line7.close();
+
+            crow.play();
+            Display.showSplashScreen();
+            Game.sleep(1000);
+
             isDone = true;
         }
     }
@@ -166,6 +175,7 @@ public class Chapter1Scene1 extends Scene {
     public void onDestroy() {
         background.flush();
         explosionAudio.close();
+        crow.close();
     }
 
 }

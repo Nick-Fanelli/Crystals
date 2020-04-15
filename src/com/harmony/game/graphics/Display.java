@@ -1,5 +1,6 @@
 package com.harmony.game.graphics;
 
+import com.harmony.game.Game;
 import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.ImageUtils;
 
@@ -19,8 +20,8 @@ public class Display {
     public static int width;
     public static int height;
 
-    private static int absWidth;
-    private static int absHeight;
+    public static float absWidth;
+    public static float absHeight;
 
     private static Dimension d;
 
@@ -65,18 +66,14 @@ public class Display {
         handleResize();
         handleQuit();
 
-//        showSplashScreen();
+        showSplashScreen();
     }
 
-    private void showSplashScreen() {
-        g.drawImage(ImageUtils.loadImage("/ui/loading.png"), -1, -1, width + 1, height + 2, null);
+    public static void showSplashScreen() {
+        g.drawImage(logo, 0, 0, null);
         bs.show();
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Game.sleep(2000);
     }
 
     private void setProperties() {
@@ -108,7 +105,7 @@ public class Display {
 
     public static void update() {
         try {
-            g.drawImage(image, 0, 0, absWidth, absHeight, null);
+            g.drawImage(image, 0, 0, (int) absWidth, (int) absHeight, null);
             bs.show();
         } catch(Exception e) {}
     }

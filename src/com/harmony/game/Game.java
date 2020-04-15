@@ -110,6 +110,14 @@ public class Game implements Runnable {
         System.exit(1);
     }
 
+    public static void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void setIsRunning(boolean isRunning) { Game.isRunning = isRunning; }
     public static boolean isRunning() { return isRunning; }
 }

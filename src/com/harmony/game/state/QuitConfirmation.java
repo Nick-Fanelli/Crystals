@@ -19,7 +19,7 @@ public class QuitConfirmation extends State {
     private int cancelAnimation = 0;
 
     // TODO: DEPLOY - REMOVE
-    public QuitConfirmation() { Game.setIsRunning(false); }
+    public QuitConfirmation() { /*Game.setIsRunning(false);*/ }
 
     @Override
     public void update() {

@@ -76,7 +76,7 @@ public class GameStateManager {
     }
 
     public void update() {
-        if(quitConfirmation) quitConfirmationState.update();
+        if(quitConfirmation) { quitConfirmationState.update(); cutScene = false; }
 
         if(cutScene) {
             scene.update();
