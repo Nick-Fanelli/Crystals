@@ -17,7 +17,7 @@ public class QuitConfirmation extends State {
 
     private int saveQuitAnimation = 0;
     private int cancelAnimation = 0;
-q
+
     // TODO: DEPLOY - REMOVE
     public QuitConfirmation() { Game.setIsRunning(false); }
 

@@ -94,7 +94,7 @@ public class PlayerState extends State {
             else Display.setCursor(Cursor.DEFAULT_CURSOR);
 
             if(Input.hoverRectangle(keepButton) && Input.isButtonUp(1)) {
-                MenuState.saveData = new SaveData(0, new PlayerSave(gender, skinTone));
+                MenuState.saveData = new SaveData(1, new PlayerSave(gender, skinTone));
                 MenuState.saveData.save();
                 GameStateManager.setCurrentState(MenuState.saveData.currentLevel);
             } else if(Input.hoverRectangle(discardButton) && Input.isButtonUp(1)) {

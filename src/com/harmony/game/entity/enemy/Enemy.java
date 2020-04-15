@@ -5,7 +5,7 @@ import com.harmony.game.entity.Entity;
 import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.physics.collision.BoxCollider;
-import com.harmony.game.state.levels.Level;
+import com.harmony.game.state.chapters.Chapter;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.utils.Vector2f;
 
@@ -15,12 +15,12 @@ public abstract class Enemy extends Entity  {
 
     protected BoxCollider detectionCollider;
 
-    private Level level;
+    private Chapter chapter;
 
-    public Enemy(Vector2f position, Level level, Player player, ObjectTileMap objectTileMap, int width, int height) {
+    public Enemy(Vector2f position, Chapter chapter, Player player, ObjectTileMap objectTileMap, int width, int height) {
         super(position, objectTileMap, width, height);
 
-        this.level = level;
+        this.chapter = chapter;
         this.player = player;
     }
 
@@ -32,7 +32,7 @@ public abstract class Enemy extends Entity  {
     public void update() {
         if(isDead) {
             playHitEffect();
-            level.getEnemies().remove(this);
+            chapter.getEnemies().remove(this);
             return;
         }
         if(!Camera.shouldHandleEntity(this)) return;

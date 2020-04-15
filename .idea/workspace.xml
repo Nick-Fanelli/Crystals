@@ -25,64 +25,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/audio/sfx/explosion-subtle.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/entity/enemy/dark-lord.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/item/crystals/blue-crystals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/item/crystals/green-crystals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/item/crystals/grey-crystals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/item/crystals/orange-crystals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/item/crystals/yellow-crystals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/dark_lords_dungeon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/explosion-overlay.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/line1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/line2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/line3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/line4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/line5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/line6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/scenes/chapter1/line7.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/animation/scene/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/animation/scene/chapter1/Chapter1Scene1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tile/TilesetGraveyard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tile/buildings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tile/places/kebir.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tile/terrain_atlas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/ui/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Game_jar/Game.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Game_jar/Game.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/META-INF/Crystals.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Crystals/_save_data/player.data" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/_save_data/player.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/audio/AudioClip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/audio/AudioClip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/animation/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/animation/Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/animation/scene/chapter1/Chapter1Scene1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/animation/scene/chapter1/Chapter1Scene1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/enemy/Enemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/enemy/Slime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/enemy/Slime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/npc/GuideNPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/npc/GuideNPC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Animation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Console.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Console.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Display$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Display$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Display$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Display$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Sprite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/object/Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/object/Chest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/GameStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/GameStateManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/PracticeState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/MenuState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/MenuState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/PlayerState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/PlayerState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/QuitConfirmation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/QuitConfirmation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/levels/Level1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/block/HoleBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/block/HoleBlock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/block/ObjectBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/block/ObjectBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/levels/Level.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/NormalTileMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/NormalTileMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/ObjectTileMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/ObjectTileMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/ImageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/ImageUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/PlayerHelp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/PlayerHelp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/TilesetGraveyard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/buildings.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/terrain_atlas.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/res/_save_data/player.data" beforeDir="false" afterPath="$PROJECT_DIR$/res/_save_data/player.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tile/TilesetGraveyard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tile/buildings.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tile/terrain_atlas.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/audio/AudioClip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/audio/AudioClip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Slime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/npc/GuideNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/npc/GuideNPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/animation/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Font.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Font.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/PracticeState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/PlayerState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/PlayerState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/QuitConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/QuitConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/levels/Level1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/ImageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/PlayerHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/PlayerHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/levels/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/NormalTileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/NormalTileMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/ObjectTileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/ObjectTileMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,25 +101,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/scenes/chapter1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/tile" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/tile" />
+      <recent name="$PROJECT_DIR$/res/scenes/chapter1" />
+      <recent name="$PROJECT_DIR$/res/item/crystals" />
+      <recent name="$PROJECT_DIR$/res/entity/enemy" />
+      <recent name="$PROJECT_DIR$/res/cut_scenes/chapter1" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/scenes/chapter1" />
       <recent name="$PROJECT_DIR$/res/item" />
       <recent name="$PROJECT_DIR$/res/audio/player/male" />
       <recent name="$PROJECT_DIR$/res/ui/hud" />
       <recent name="$PROJECT_DIR$/res/entity/npc" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/scenes/chapter1" />
-      <recent name="$PROJECT_DIR$/res/item/crystals" />
-      <recent name="$PROJECT_DIR$/res/entity/enemy" />
-      <recent name="$PROJECT_DIR$/res/cut_scenes/chapter1" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,38 +202,42 @@
     </state>
     <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1586123875033" />
     <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586130183786" />
+    <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586833351932">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586833351932" />
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586821070937">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1586199645631" />
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586821070937" />
-    <state width="1878" height="169" key="GridCell.Tab.0.bottom" timestamp="1586823316966">
+    <state width="1878" height="166" key="GridCell.Tab.0.bottom" timestamp="1586909168135">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="169" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1586823316966" />
-    <state width="1878" height="169" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586821240554" />
+    <state width="1878" height="166" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1586909168135" />
+    <state width="1878" height="166" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586899539701" />
     <state width="1238" height="126" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848084" />
-    <state width="1878" height="169" key="GridCell.Tab.0.center" timestamp="1586823316965">
+    <state width="1878" height="166" key="GridCell.Tab.0.center" timestamp="1586909168134">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="169" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1586823316965" />
-    <state width="1878" height="169" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586821240553" />
+    <state width="1878" height="166" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1586909168134" />
+    <state width="1878" height="166" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586899539699" />
     <state width="1238" height="126" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848080" />
-    <state width="1878" height="169" key="GridCell.Tab.0.left" timestamp="1586823316965">
+    <state width="1878" height="166" key="GridCell.Tab.0.left" timestamp="1586909168132">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1586193470939" />
-    <state width="1878" height="169" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1586823316965" />
-    <state width="1878" height="169" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586821240553" />
+    <state width="1878" height="166" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1586909168132" />
+    <state width="1878" height="166" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586899539697" />
     <state width="1238" height="126" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848078" />
-    <state width="1878" height="169" key="GridCell.Tab.0.right" timestamp="1586823316966">
+    <state width="1878" height="166" key="GridCell.Tab.0.right" timestamp="1586909168134">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1238" height="162" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="169" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586823316966" />
-    <state width="1878" height="169" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586821240554" />
+    <state width="1878" height="166" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586909168134" />
+    <state width="1878" height="166" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586899539700" />
     <state width="1238" height="126" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848083" />
     <state width="1878" height="143" key="GridCell.Tab.1.bottom" timestamp="1586137982969">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -283,12 +277,12 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="761" y="248" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1586135973973" />
-    <state x="648" y="309" width="999" height="662" key="find.popup" timestamp="1586802590793">
+    <state x="648" y="309" width="999" height="662" key="find.popup" timestamp="1586892158894">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="432" y="233" width="666" height="486" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1586125404048" />
     <state x="648" y="308" width="624" height="486" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586706931943" />
-    <state x="648" y="309" width="999" height="662" key="find.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586802590793" />
+    <state x="648" y="309" width="999" height="662" key="find.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586892158894" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1586700489566">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -297,11 +291,11 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="389" y="174" key="new project wizard/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051094188" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1586821116615">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1586908334870">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="417" y="196" width="670" height="497" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1586193390923" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586726947009" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586821116615" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1586908334870" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586892608377" />
   </component>
 </project>

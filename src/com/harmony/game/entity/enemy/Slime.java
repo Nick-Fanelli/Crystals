@@ -8,7 +8,7 @@ import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.item.Drops;
 import com.harmony.game.physics.collision.BoxCollider;
-import com.harmony.game.state.levels.Level;
+import com.harmony.game.state.chapters.Chapter;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.utils.Vector2f;
 
@@ -23,8 +23,8 @@ public class Slime extends Enemy {
     public static final int ANIMATION_UP    = 2;
     public static final int ANIMATION_DOWN  = 3;
 
-    public Slime(Vector2f position, Level level, Player player, ObjectTileMap objectTileMap, int width, int height) {
-        super(position, level, player, objectTileMap, width, height);
+    public Slime(Vector2f position, Chapter chapter, Player player, ObjectTileMap objectTileMap, int width, int height) {
+        super(position, chapter, player, objectTileMap, width, height);
     }
 
     @Override

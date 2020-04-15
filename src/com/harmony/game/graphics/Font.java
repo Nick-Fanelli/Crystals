@@ -24,7 +24,7 @@ public class Font {
 
         for(int i = 0; i < chars.length; i++) {
             sprites[i] = sprite.getSprite(chars[i]);
-        }
+         }
 
         return sprites;
     }

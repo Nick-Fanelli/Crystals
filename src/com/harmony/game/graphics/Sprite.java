@@ -16,7 +16,7 @@ public class Sprite {
     private int numColumns;
     private int numRows;
 
-    private BufferedImage[] sprites;
+    private BufferedImage[][] sprites;
 
     public Sprite(BufferedImage sheet, int tileWidth, int tileHeight) {
         this.sheet = sheet;
@@ -27,14 +27,14 @@ public class Sprite {
         this.tileWidth = tileWidth;
         this.tileHeight = tileHeight;
 
-        numColumns = sheetWidth  / tileWidth  ;
         numRows    = sheetHeight / tileHeight ;
+        numColumns = sheetWidth  / tileWidth  ;
 
-        sprites = new BufferedImage[numRows * numColumns];
+        sprites = new BufferedImage[numRows + 10][numColumns + 10];
 
         for(int x = 0; x < numColumns; x++) {
             for(int y = 0; y < numRows; y++) {
-                sprites[x + y * numColumns] = this.sheet.getSubimage(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
+                sprites[x][y] = this.sheet.getSubimage(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
             }
         }
     }
@@ -50,8 +50,19 @@ public class Sprite {
     public int getNumColumns() { return numColumns; }
     public int getNumRows() { return numRows; }
     public BufferedImage getSpriteSheet() { return sheet; }
-    public BufferedImage[] getSprites() { return sprites; }
+    public BufferedImage[][] getSprites() { return sprites; }
 
-    public BufferedImage getSprite(int col, int row) { return sprites[col + row * numColumns]; }
-    public BufferedImage getSprite(int i) { return sprites[i]; }
+    public BufferedImage getSprite(double col, double row) { return sprites[(int) col][(int) row]; }
+    public BufferedImage getSprite(int id) {
+        int col = 0;
+        int row = 0;
+        for(int i = 0; i < id; i++) {
+            col++;
+            if(col >= numColumns) { row++; col = 0; }
+        }
+
+        if(col > numColumns || row > numRows) return getSprite(numColumns, numRows);
+
+        return getSprite(col, row);
+    }
 }

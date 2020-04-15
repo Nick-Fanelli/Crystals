@@ -13,9 +13,11 @@ public class Game implements Runnable {
     public static double targetFps = 60.0;
     public static final double UPDATE_CAP = 1.0 / targetFps;
 
-    public static double deltaTime = 0;
+    public static double deltaTime = 0.02909437066215713;
 
     public static boolean debugMode = false;
+
+    public static Color backgroundColor = new Color(34, 30, 39);
 
     private Thread gameThread;
     private Display display;
@@ -65,7 +67,6 @@ public class Game implements Runnable {
             deltaTime += passedTime;
 
             while(deltaTime >= UPDATE_CAP) {
-                Game.deltaTime = deltaTime;
                 deltaTime -= UPDATE_CAP;
                 draw = true;
                 update();
@@ -98,7 +99,7 @@ public class Game implements Runnable {
     }
 
     private synchronized void draw() {
-        g.setColor(new Color(33, 30, 39));
+        g.setColor(backgroundColor);
         g.fillRect(0, 0, Display.width, Display.height);
         gsm.draw();
     }

@@ -14,6 +14,8 @@ import java.awt.image.BufferedImage;
 
 public class Display {
 
+    public static final BufferedImage logo = ImageUtils.loadImage("/ui/logo.png");
+
     public static int width;
     public static int height;
 

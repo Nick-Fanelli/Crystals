@@ -2439,7 +2439,7 @@
   <commands xmi:id="_MKFvbHVJEeqE1IVkEmMMRQ" elementId="org.eclipse.search.ui.openSearchDialog" commandName="Open Search Dialog" description="Open the Search dialog" category="_MJ13vXVJEeqE1IVkEmMMRQ"/>
   <commands xmi:id="_MKFvbXVJEeqE1IVkEmMMRQ" elementId="org.eclipse.ui.edit.text.contentAssist.proposals" commandName="Content Assist" description="Content Assist" category="_MJ0pkHVJEeqE1IVkEmMMRQ"/>
   <commands xmi:id="_MKFvbnVJEeqE1IVkEmMMRQ" elementId="org.eclipse.cdt.ui.edit.text.c.select.previous" commandName="Select Previous C/C++ Element" description="Expand the selection to enclosing C/C++ element" category="_MJ0pkHVJEeqE1IVkEmMMRQ"/>
-  <commands xmi:id="_MKFvb3VJEeqE1IVkEmMMRQ" elementId="org.eclipse.ui.navigate.up" commandName="Up" description="Navigate up one level" category="_MJ13tHVJEeqE1IVkEmMMRQ"/>
+  <commands xmi:id="_MKFvb3VJEeqE1IVkEmMMRQ" elementId="org.eclipse.ui.navigate.up" commandName="Up" description="Navigate up one chapter" category="_MJ13tHVJEeqE1IVkEmMMRQ"/>
   <commands xmi:id="_MKFvcHVJEeqE1IVkEmMMRQ" elementId="org.eclipse.ui.window.activateEditor" commandName="Activate Editor" description="Activate the editor" category="_MJ1QqXVJEeqE1IVkEmMMRQ"/>
   <commands xmi:id="_MKFvcXVJEeqE1IVkEmMMRQ" elementId="sed.tabletree.expandAll" commandName="Expand All" category="_MJ1QtXVJEeqE1IVkEmMMRQ"/>
   <commands xmi:id="_MKFvcnVJEeqE1IVkEmMMRQ" elementId="org.eclipse.ui.edit.text.delete.line.to.end" commandName="Delete to End of Line" description="Delete to the end of a line of text" category="_MJ0pknVJEeqE1IVkEmMMRQ"/>

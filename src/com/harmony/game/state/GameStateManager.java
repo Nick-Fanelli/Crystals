@@ -6,16 +6,22 @@ import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.save.SaveData;
+import com.harmony.game.state.chapters.Chapter1;
 import com.harmony.game.utils.GUI;
+import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class GameStateManager {
 
+    private static BufferedImage loadingImage = ImageUtils.loadImage("/ui/loading.png");
+
     public static final int MENU_STATE          = -1;
     public static final int PLAYER_STATE        = -2;
+    public static final int CHAPTER_1           =  1;
 
     private static QuitConfirmation quitConfirmationState;
     private static Scene scene;
@@ -39,6 +45,9 @@ public class GameStateManager {
     public static void setCurrentState(int currentState) {
         pause = true;
 
+        g.drawImage(loadingImage, 0, 0, Display.width, Display.height, null);
+        Display.update();
+
         System.out.println("# Setting Current State To ID: " + currentState);
 
         currentStateId = currentState;
@@ -50,6 +59,7 @@ public class GameStateManager {
         switch (currentState) {
             case MENU_STATE:     tempState = new MenuState();           break;
             case PLAYER_STATE:   tempState = new PlayerState();         break;
+            case CHAPTER_1:      tempState = new Chapter1();            break;
         }
 
         if(tempState == null) return;

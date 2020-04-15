@@ -21,13 +21,13 @@ public class ObjectTileMap extends TileMap {
 
         String[] block = data.split(",");
         for(int i = 0; i < (width * height); i++) {
-            int temp = Integer.parseInt(block[i].replaceAll("\\s+", ""));
+            double temp = Double.parseDouble(block[i].replaceAll("\\s+", ""));
             if(temp != 0) {
                 if(temp == 172) {
-                    tempBlock = new HoleBlock(sprite.getSprite((int) ((temp - 1) % tileColumns), ((temp - 1) / tileColumns)),
+                    tempBlock = new HoleBlock(sprite.getSprite((int) ((temp - 1) % tileColumns), (int) ((temp - 1) / tileColumns)),
                             new Vector2f((i % width) * tileWidth, (i / height) * tileHeight), tileWidth, tileHeight);
                 } else {
-                    tempBlock = new ObjectBlock(sprite.getSprite((int) ((temp - 1) % tileColumns), ((temp - 1) / tileColumns)),
+                    tempBlock = new ObjectBlock(sprite.getSprite((int) ((temp - 1) % tileColumns), (int) ((temp - 1) / tileColumns)),
                             new Vector2f((i % width) * tileWidth, (i / height) * tileHeight), tileWidth, tileHeight);
                     bounds.add(tempBlock);
                 }

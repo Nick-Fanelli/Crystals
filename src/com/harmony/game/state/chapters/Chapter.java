@@ -1,4 +1,4 @@
-package com.harmony.game.state.levels;
+package com.harmony.game.state.chapters;
 
 import com.harmony.game.entity.Player;
 import com.harmony.game.entity.enemy.Enemy;
@@ -17,7 +17,7 @@ import com.harmony.game.utils.GUI;
 import java.awt.*;
 import java.util.ArrayList;
 
-public abstract class Level extends State {
+public abstract class Chapter extends State {
 
     private final String tilemapLocation;
 
@@ -27,7 +27,7 @@ public abstract class Level extends State {
 
     protected ArrayList<Enemy> enemies = new ArrayList<>();
 
-    public Level(String tilemapLocation) { this.tilemapLocation = tilemapLocation; }
+    public Chapter(String tilemapLocation) { this.tilemapLocation = tilemapLocation; }
 
     @Override
     public void onCreate() {

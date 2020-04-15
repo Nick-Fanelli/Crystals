@@ -19,12 +19,12 @@ public class NormalTileMap extends TileMap {
 
         String[] block = data.split(",");
         for(int i = 0; i < (width * height); i++) {
-            int temp = Integer.parseInt(block[i].replaceAll("\\s+", ""));
+            double temp = Double.parseDouble(block[i].replaceAll("\\s+", ""));
             if(temp != 0) {
                 if(temp == Block.CHEST_TILE_POSITION) new Chest(new Vector2f((i % width) * tileWidth, (i / height) * tileHeight), tileWidth, tileHeight);
                 if(temp == Block.LEVEL_DOOR_POSITION) new Door (new Vector2f((i % width) * tileWidth, (i / height) * tileHeight), tileWidth, tileHeight);
 
-                blocks.add(new NormalBlock(sprite.getSprite((int) ((temp - 1) % tileColumns), ((temp - 1) / tileColumns)),
+                blocks.add(new NormalBlock(sprite.getSprite((int) (temp - 1)),
                         new Vector2f((i % width) * tileWidth, (i / height) * tileHeight), tileWidth, tileHeight));
             }
         }

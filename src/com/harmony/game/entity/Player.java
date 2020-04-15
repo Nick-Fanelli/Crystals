@@ -9,7 +9,7 @@ import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.state.MenuState;
-import com.harmony.game.state.levels.Level;
+import com.harmony.game.state.chapters.Chapter;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Input;
@@ -34,14 +34,14 @@ public class Player extends Entity {
 
     public static int staticHealth;
 
-    private Level level;
+    private Chapter chapter;
 
     private final BoxCollider attackCollider;
 
-    public Player(Level level, ObjectTileMap objectTileMap) {
-        super(new Vector2f((Display.width / 2f) - 32, (Display.height / 2f) - 32), objectTileMap, 64, 64);
+    public Player(Chapter chapter, ObjectTileMap objectTileMap) {
+        super(new Vector2f((Display.width / 2f) - 32, (Display.height / 2f) - 32), objectTileMap, 128, 128);
 
-        this.level = level;
+        this.chapter = chapter;
 
         this.maxMoveSpeed = 4f; // Default 4
         this.acceleration = 3f; // Default 3
@@ -144,8 +144,8 @@ public class Player extends Entity {
     }
 
     private void checkAttack() {
-        if(level == null) return;
-        for(Enemy enemy : level.getEnemies()) {
+        if(chapter == null) return;
+        for(Enemy enemy : chapter.getEnemies()) {
             if(!Camera.shouldHandleEntity(enemy)) return;
 
             if(attack && attackCollider.getBoundsAsAbsRect().intersects(enemy.getBoxCollider().getBoundsAsRelativeRect())) {
