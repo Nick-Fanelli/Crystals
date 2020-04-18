@@ -30,7 +30,7 @@ public class Chapter1 extends Chapter {
 
         super.npcs.add(npcMrCrow = new NPC(new Vector2f(1686, 3050), tileManager.getObjectsMap(), player, console,
                 new Sprite("/entity/npc/mr-crow.png", 64, 64), 128, 128,
-                "Would you look at my nice wheat. It think it's time to harvest that."));
+                "Would you look at my nice wheat. I think it's time to harvest that."));
 
         Camera.position = new Vector2f(1000, 1000);
 

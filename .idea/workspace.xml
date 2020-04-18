@@ -25,53 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/audio/ambience/outside_ambience.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/entity/npc/mr-crow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/ConsoleMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/audio/cave_ambience.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/audio/sfx/explosion-subtle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/audio/BackgroundMusic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/npc/GuideNPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/npc/NPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/entity/npc/NPC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Console.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Console.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/graphics/Sprite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/chapters/Chapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/chapters/Chapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/chapters/Chapter1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/state/chapters/Chapter1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/tiles/TileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/com/harmony/game/utils/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/entity/npc/guide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/TilesetGraveyard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/dungeon_tiles_formatted_v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/level_1/dungeon_map.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/level_2/tilemap.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/places/kebir.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Crystals/tile/places/kebir.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Crystals/tile/practice/tilemap.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/cave_ambience.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/audio/ambience/cave_ambience.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/sfx/explosion-subtle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/entity/npc/guide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/TilesetGraveyard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/dungeon_tiles_formatted_v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/level_1/dungeon_map.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/level_2/tilemap.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/places/kebir.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/res/tile/places/kebir.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/practice/tilemap.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/audio/BackgroundMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/audio/BackgroundAmbience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/npc/GuideNPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/npc/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/npc/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ui/console.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/ui/console.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/tiles/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/tiles/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/audio/sfx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/ui" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -154,6 +110,14 @@
       <option name="presentableId" value="Default" />
       <updated>1586045260982</updated>
     </task>
+    <task id="LOCAL-00001" summary="Did a lot of refactoring:&#10;    1.  Refactored BackgroundAmbience&#10;    2.  Added ConsoleMessage.java to speed up the console messages.&#10;    3.  Removed Extra files from GUI.java&#10;    4.  Update the kebir.tmx tilemap.&#10;    5.  Removed the dungeon_map.tmx.&#10;    6.  Changed the explosions sound to an implosion sound.&#10;    7.  Removed the guide NPC.&#10;    8.  Added Chapter 1&#10;    9.  Implemented the cleanUp method in most classes that need to clean up.&#10;    10. Did some code analysis and cleaned up some warnings.">
+      <created>1587235468078</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587235468078</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,7 +139,8 @@
       <path value="$PROJECT_DIR$/resources" />
     </ignored-roots>
     <MESSAGE value="Did a lot of refactoring:&#10;    1. Refactored BackgroundAmbience&#10;    2. Added ConsoleMessage.java to speed up the console messages.&#10;    3. Removed Extra files from GUI.java&#10;    4. Update the kebir.tmx tilemap.&#10;    5. Removed the dungeon_map.tmx.&#10;    6. Changed the explosions sound to an implosion sound.&#10;    7. Removed the guide NPC.&#10;    8. Added Chapter 1&#10;    9. Implemented the cleanUp method in most classes that need to clean up." />
-    <option name="LAST_COMMIT_MESSAGE" value="Did a lot of refactoring:&#10;    1. Refactored BackgroundAmbience&#10;    2. Added ConsoleMessage.java to speed up the console messages.&#10;    3. Removed Extra files from GUI.java&#10;    4. Update the kebir.tmx tilemap.&#10;    5. Removed the dungeon_map.tmx.&#10;    6. Changed the explosions sound to an implosion sound.&#10;    7. Removed the guide NPC.&#10;    8. Added Chapter 1&#10;    9. Implemented the cleanUp method in most classes that need to clean up." />
+    <MESSAGE value="Did a lot of refactoring:&#10;    1.  Refactored BackgroundAmbience&#10;    2.  Added ConsoleMessage.java to speed up the console messages.&#10;    3.  Removed Extra files from GUI.java&#10;    4.  Update the kebir.tmx tilemap.&#10;    5.  Removed the dungeon_map.tmx.&#10;    6.  Changed the explosions sound to an implosion sound.&#10;    7.  Removed the guide NPC.&#10;    8.  Added Chapter 1&#10;    9.  Implemented the cleanUp method in most classes that need to clean up.&#10;    10. Did some code analysis and cleaned up some warnings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Did a lot of refactoring:&#10;    1.  Refactored BackgroundAmbience&#10;    2.  Added ConsoleMessage.java to speed up the console messages.&#10;    3.  Removed Extra files from GUI.java&#10;    4.  Update the kebir.tmx tilemap.&#10;    5.  Removed the dungeon_map.tmx.&#10;    6.  Changed the explosions sound to an implosion sound.&#10;    7.  Removed the guide NPC.&#10;    8.  Added Chapter 1&#10;    9.  Implemented the cleanUp method in most classes that need to clean up.&#10;    10. Did some code analysis and cleaned up some warnings." />
   </component>
   <component name="WindowStateProjectService">
     <state x="846" y="379" key="#Custom_Plugin_Repositories" timestamp="1586456924945">
@@ -298,11 +263,11 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="389" y="174" key="new project wizard/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051094188" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587234889358">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587235868335">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="417" y="196" width="670" height="497" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1586193390923" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1587234889358" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1587235868335" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586892608377" />
   </component>
 </project>
