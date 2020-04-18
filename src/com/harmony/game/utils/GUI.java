@@ -26,9 +26,8 @@ public class GUI {
     public static boolean hit = false;
     private static Timer hitTimer = new Timer();
 
-    public static void update() {
 
-    }
+    public static void update() {}
 
     public static void draw(Graphics2D g) {
         if(hit) {
@@ -49,12 +48,12 @@ public class GUI {
             for(int i = 0; i < Player.staticHealth; i++) {
                 g.drawImage(increments.getSprite(0, 0), 136 + (i * 14) - (i / 2), 16, 12, 21,null);
             }
-
-            if (!hasKey) g.drawImage(collectables.getSprite(2, 0), Display.width - 70, 6, 64, 64, null);
-            else g.drawImage(collectables.getSprite(3, 0), Display.width - 70, 6, 64, 64, null);
         }
     }
 
     public Sprite getCollectables() { return collectables; }
 
+    public static void cleanUp() {
+        mainGUI.flush();
+    }
 }

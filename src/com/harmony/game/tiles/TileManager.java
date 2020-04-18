@@ -31,9 +31,8 @@ public class TileManager {
         int height = 0;
         int tileWidth;
         int tileHeight;
-        int tileCount;
         int tileColumns;
-        int layers = 0;
+        int layers;
         Sprite sprite;
 
         String[] data = new String[10];
@@ -52,7 +51,6 @@ public class TileManager {
             imagePath = eElement.getAttribute("name");
             tileWidth = Integer.parseInt(eElement.getAttribute("tilewidth"));
             tileHeight = Integer.parseInt(eElement.getAttribute("tileheight"));
-            tileCount = Integer.parseInt(eElement.getAttribute("tilecount"));
             tileColumns = Integer.parseInt(eElement.getAttribute("columns"));
             sprite = new Sprite("/tile/" + imagePath + ".png", tileWidth, tileHeight);
 
@@ -88,5 +86,5 @@ public class TileManager {
         }
     }
 
-    public TileMap getObjectsMap() { return tileMaps.get(0); }
+    public ObjectTileMap getObjectsMap() { return (ObjectTileMap) tileMaps.get(0); }
 }

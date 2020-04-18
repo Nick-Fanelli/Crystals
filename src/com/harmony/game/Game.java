@@ -1,8 +1,10 @@
 package com.harmony.game;
 
+import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.state.GameStateManager;
 import com.harmony.game.state.MenuState;
+import com.harmony.game.utils.GUI;
 import com.harmony.game.utils.Input;
 
 import java.awt.*;
@@ -41,7 +43,7 @@ public class Game implements Runnable {
 
         gsm = new GameStateManager(g);
 
-        GameStateManager.setCurrentState(GameStateManager.MENU_STATE);
+        GameStateManager.setCurrentState(GameStateManager.CHAPTER_1);
     }
 
     @Override
@@ -53,7 +55,7 @@ public class Game implements Runnable {
 
         double firstTime;
         double lastTime = System.nanoTime() / 1000000000.0;
-        double passedTime = 0;
+        double passedTime;
         double deltaTime = 0;
 
         while(isRunning) {
@@ -74,7 +76,7 @@ public class Game implements Runnable {
 
             if(draw) {
                 draw();
-                display.update();
+                Display.update();
             } else {
                 try {
                     Thread.sleep(1);
@@ -106,8 +108,11 @@ public class Game implements Runnable {
 
     private void cleanUp() {
         if(MenuState.saveData != null) MenuState.saveData.save();
-        System.out.println("*** Closing Game ***");
-        System.exit(1);
+
+        BackgroundAmbience.cleanUp();
+        GUI.cleanUp();
+
+        System.out.println("*** Closing Game ***");             System.exit(1);
     }
 
     public static void sleep(int millis) {

@@ -114,5 +114,7 @@ public class Console {
     public boolean isWaiting() { return waiting; }
     public boolean getShowConsole() { return showConsole; }
 
-
+    public void cleanUp() {
+        typeClip.close();
+    }
 }

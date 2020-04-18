@@ -187,7 +187,8 @@ public class Player extends Entity {
 
     @Override
     public void onDestroy() {
-
+        maleAttack.close();
+        healthPoint.close();
     }
 
     private int getDelay(int animation) {

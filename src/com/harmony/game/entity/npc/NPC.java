@@ -1,74 +1,103 @@
 package com.harmony.game.entity.npc;
 
+import com.harmony.game.Game;
+import com.harmony.game.animation.Animation;
+import com.harmony.game.audio.AudioClip;
 import com.harmony.game.entity.Entity;
 import com.harmony.game.entity.Player;
+import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Console;
+import com.harmony.game.graphics.ConsoleMessage;
+import com.harmony.game.graphics.Sprite;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.PlayerHelp;
+import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public abstract class NPC extends Entity {
+public class NPC extends Entity {
 
-    protected String[] lines;
-    protected int currentLine;
+    public static final int ANIMATION_RIGHT = 11;
+    public static final int ANIMATION_LEFT  = 9;
+    public static final int ANIMATION_DOWN  = 10;
+    public static final int ANIMATION_UP    = 8;
 
     protected BoxCollider talkCollider;
 
     protected Player player;
     protected Console console;
+    protected ConsoleMessage message;
+
+    protected Sprite sprite;
 
     /**
-     * @param lines separate by new line.
+     * @param lines separate by a ~.
      */
-    public NPC(Vector2f position, ObjectTileMap objectTileMap, Player player, Console console, int width, int height, String lines) {
+    public NPC(Vector2f position, ObjectTileMap objectTileMap, Player player, Console console, Sprite sprite,
+               int width, int height, String lines) {
         super(position, objectTileMap, width, height);
 
         this.player = player;
         this.console = console;
+        this.sprite = sprite;
 
-        this.lines = lines.split("~");
-        this.currentLine = 0;
+        message = new ConsoleMessage(console, lines);
+
+        this.onCreate();
     }
 
-    private boolean words = false;
-    private int i = 0;
+    @Override
+    public void onCreate() {
+        maxMoveSpeed = 3f;
 
-    private void launchWords() {
-        if(console.isWaiting()) return;
+        animation = new Animation(sprite);
+        boxCollider = new BoxCollider(this, new Vector2f(), width, height);
+        talkCollider = new BoxCollider(this, new Vector2f(-50, -50), width + 100, height + 100);
 
-        if(i >= lines.length) {
-            console.setShowConsole(false);
-            words = false;
-            return;
-        }
-
-        if(i <= 0) console.setShowConsole(true);
-
-        console.sendMessage(lines[i]);
-        i++;
+        currentAnimation = ANIMATION_RIGHT;
     }
 
     @Override
     public void update() {
-        if(talkCollider.collisionPlayer(player) && Input.isKeyDown(KeyEvent.VK_T) && !words) {
-            words = true;
-            i = 0;
+        if(!Camera.shouldHandleEntity(this)) return;
+
+        if(talkCollider.collisionPlayer(player) && Input.isKeyDown(KeyEvent.VK_T) && !message.isActive()) {
+            message.run();
         }
 
-        if(words) {
-            launchWords();
+        message.update();
+
+        if (!boxCollider.collisionTile(objectTileMap, dx, 0)) {
+            if(dx > 0) {
+                position.x += dx;
+            } else {
+                position.x += dy;
+            }
+        }
+
+        if (!boxCollider.collisionTile(objectTileMap, 0, dy)) {
+            position.y += Math.min(maxMoveSpeed, dy * Game.deltaTime * speedMultiplier);
         }
     }
 
     @Override
     public void draw(Graphics2D g) {
-        if(talkCollider.collisionPlayer(player) && !words) {
+        if(!Camera.shouldHandleEntity(this)) return;
+
+        g.drawImage(animation.animate(currentAnimation, isIdle ? -1 : 100, 9), (int) position.getWorldPosition().x,
+                (int) position.getWorldPosition().y, width, height, null);
+
+        if(talkCollider.collisionPlayer(player) && !message.isActive()) {
             PlayerHelp.showLetter(g, (int) player.position.x - 20, (int) player.position.y - 20, PlayerHelp.T_ANIMATION);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+
     }
 }

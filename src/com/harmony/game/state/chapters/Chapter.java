@@ -2,6 +2,7 @@ package com.harmony.game.state.chapters;
 
 import com.harmony.game.entity.Player;
 import com.harmony.game.entity.enemy.Enemy;
+import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Console;
 import com.harmony.game.item.Item;
@@ -26,6 +27,7 @@ public abstract class Chapter extends State {
     protected TileManager tileManager;
 
     protected ArrayList<Enemy> enemies = new ArrayList<>();
+    protected ArrayList<NPC> npcs = new ArrayList<>();
 
     public Chapter(String tilemapLocation) { this.tilemapLocation = tilemapLocation; }
 
@@ -34,7 +36,7 @@ public abstract class Chapter extends State {
         tileManager = new TileManager(tilemapLocation);
 
         console = new Console();
-        player = new Player(this, (ObjectTileMap) tileManager.getObjectsMap());
+        player = new Player(this, tileManager.getObjectsMap());
 
         GUI.showGui = true;
     }
@@ -60,6 +62,7 @@ public abstract class Chapter extends State {
         Drops.update(player);
         super.update();
         try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception e) {}
+        for(NPC npc : npcs) npc.update();
         gameObjectCollision();
         console.update();
     }
@@ -70,6 +73,7 @@ public abstract class Chapter extends State {
         Drops.draw(g);
         super.draw(g);
         for(Enemy enemy : enemies) enemy.draw(g);
+        for(NPC npc : npcs) npc.draw(g);
         player.draw(g);
         console.draw(g);
     }
@@ -77,6 +81,9 @@ public abstract class Chapter extends State {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        console.cleanUp();
+        player.onDestroy();
+        for(NPC npc : npcs) npc.onDestroy();
     }
 
     public ArrayList<Enemy> getEnemies() { return enemies; }
