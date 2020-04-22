@@ -26,26 +26,27 @@ public class NPC extends Entity {
     public static final int ANIMATION_DOWN  = 10;
     public static final int ANIMATION_UP    = 8;
 
+    protected final String name;
+
     protected BoxCollider talkCollider;
 
     protected Player player;
-    protected Console console;
-    protected ConsoleMessage message;
-
     protected Sprite sprite;
 
-    /**
-     * @param lines separate by a ~.
-     */
-    public NPC(Vector2f position, ObjectTileMap objectTileMap, Player player, Console console, Sprite sprite,
+    protected Console console;
+    protected ConsoleMessage message;
+    protected boolean isUsed = false;
+
+    public NPC(Vector2f position, String name, ObjectTileMap objectTileMap, Player player, Console console, Sprite sprite,
                int width, int height, String lines) {
         super(position, objectTileMap, width, height);
 
+        this.name = name;
         this.player = player;
         this.console = console;
         this.sprite = sprite;
 
-        message = new ConsoleMessage(console, lines);
+        message = new ConsoleMessage(console, lines, name);
 
         this.onCreate();
     }
@@ -92,7 +93,7 @@ public class NPC extends Entity {
                 (int) position.getWorldPosition().y, width, height, null);
 
         if(talkCollider.collisionPlayer(player) && !message.isActive()) {
-            PlayerHelp.showLetter(g, (int) player.position.x - 20, (int) player.position.y - 20, PlayerHelp.T_ANIMATION);
+            PlayerHelp.showLetter(g, (int) player.position.x - 10, (int) player.position.y - 10, PlayerHelp.T_ANIMATION);
         }
     }
 

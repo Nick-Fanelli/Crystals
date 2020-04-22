@@ -13,6 +13,7 @@ public class Console {
 
     public Font font = Font.TRANSPARENT_FONT;
     public AudioClip typeClip = new AudioClip("/audio/console_letter_sound.wav");
+    public static final String SENDER_DEFAULT = "Crystals";
 
     private boolean showConsole = false;
     private boolean hasText = false;
@@ -27,6 +28,8 @@ public class Console {
 
     private float stopTime;
     private int delayMillis = 1000;
+
+    private String sender = SENDER_DEFAULT;
 
     private BufferedImage consoleImage = ImageUtils.loadImage("/ui/console.png");
 
@@ -66,7 +69,10 @@ public class Console {
     public void draw(Graphics2D g) {
         if(!showConsole) return;
         g.setColor(new Color(28, 28, 28));
-        g.drawImage(consoleImage, 80, 540, null);
+        g.drawImage(consoleImage, 80, 498, null);
+
+        // Draw Sender Name
+        font.drawText(g, sender, Display.width / 2 - (int) (sender.length() * 10 / 1.5), 510, 20);
 
         // Draw Text
         for(int l = 0; l < outputLines.length; l++) {
@@ -76,7 +82,8 @@ public class Console {
         }
     }
 
-    public void pushMessage(String text) {
+    public void pushMessage(String text, String sender) {
+        if(sender != null) this.sender = sender; else this.sender = SENDER_DEFAULT;
         System.out.println("-> Pushing Message: " + text);
         lines = text.split("\n");
         for(int i = 0; i < lines.length; i++) lines[i] += " ";
@@ -90,7 +97,8 @@ public class Console {
         waiting = false;
     }
 
-    public void sendMessage(String text) {
+    public void sendMessage(String text, String sender) {
+        if(sender != null) this.sender = sender; else this.sender = SENDER_DEFAULT;
         System.out.println("-> Sending Message: " + text);
         text += "\nPress Enter To Continue...";
         lines = text.split("\n");

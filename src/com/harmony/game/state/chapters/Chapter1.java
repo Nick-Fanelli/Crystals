@@ -1,7 +1,6 @@
 package com.harmony.game.state.chapters;
 
 import com.harmony.game.Game;
-import com.harmony.game.audio.AudioClip;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.ConsoleMessage;
@@ -28,15 +27,15 @@ public class Chapter1 extends Chapter {
         //BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
         Game.backgroundColor = new Color(0x8FB0BD);
 
-        super.npcs.add(npcMrCrow = new NPC(new Vector2f(1686, 3050), tileManager.getObjectsMap(), player, console,
-                new Sprite("/entity/npc/mr-crow.png", 64, 64), 128, 128,
+        super.npcs.add(npcMrCrow = new NPC(new Vector2f(1686, 3050), "Mr. Crow", tileManager.getObjectsMap(),
+                player, console, new Sprite("/entity/npc/mr-crow.png", 64, 64), 128, 128,
                 "Would you look at my nice wheat. I think it's time to harvest that."));
 
         Camera.position = new Vector2f(1000, 1000);
 
         message = new ConsoleMessage(console, "Hello there... Welcome to the farm of Kebir.~" +
                 "Use W, A, S, D to move around the farm.~" +
-                "Great Job!!! Now try and find some locals to talk to.");
+                "Great Job!!! Now try and find some locals to talk to.", null);
         message.run();
     }
 

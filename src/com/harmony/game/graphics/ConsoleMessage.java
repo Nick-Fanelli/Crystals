@@ -4,13 +4,16 @@ public class ConsoleMessage {
 
     private final Console console;
     private final String[] lines;
+    private final String sender;
     private boolean words = false;
     private int i;
 
-    public ConsoleMessage(Console console, String message) { this(console, message, "~"); }
+    public ConsoleMessage(Console console, String message, String sender) { this(console, message, sender, "~"); }
 
-    public ConsoleMessage(Console console, String message, String regex) {
+    public ConsoleMessage(Console console, String message, String sender, String regex) {
         this.console = console;
+        this.sender = sender;
+
         lines = message.split(regex);
     }
 
@@ -29,7 +32,7 @@ public class ConsoleMessage {
 
         if(i <= 0) console.setShowConsole(true);
 
-        console.sendMessage(lines[i]);
+        console.sendMessage(lines[i], sender);
         i++;
     }
 
