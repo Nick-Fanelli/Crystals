@@ -26,7 +26,6 @@ public class GUI {
     public static boolean hit = false;
     private static Timer hitTimer = new Timer();
 
-
     public static void update() {}
 
     public static void draw(Graphics2D g) {

@@ -19,7 +19,7 @@ public class MenuState extends State {
     private String storyText = "Continue Story";
 
     private final Rectangle storyButton = new Rectangle(Display.width / 2 - 180, Display.height / 2 - 39, 360, 78);
-    private final Rectangle storyTextRect = new Rectangle(Display.width / 2 - 150, Display.height / 2 - 16, 32, 32);
+    private final Rectangle storyTextRect = new Rectangle(0, Display.height / 2 + 6, 32, 32);
 
     @Override
     public void onCreate() {
@@ -55,11 +55,11 @@ public class MenuState extends State {
         g.setColor(new Color(33, 30, 39));
         g.fillRect(0, 0, Display.width, Display.height);
 
-        Font.TRANSPARENT_FONT.drawText(g, "Crystals", Display.width / 2 - 171, 15, 64);
+        Font.STANDARD_FONT.centerTextHorizontal(g, "Crystals", 80, 72);
 
         g.drawImage(buttons.getSprite(storyAnimation, 0), storyButton.x, storyButton.y, storyButton.width,
                 storyButton.height, null);
 
-        Font.TRANSPARENT_FONT.drawText(g, storyText, storyTextRect.x, storyTextRect.y, storyTextRect.width);
+        Font.STANDARD_FONT.centerTextHorizontal(g, storyText, storyTextRect.y, storyTextRect.width);
     }
 }

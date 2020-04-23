@@ -1,14 +1,11 @@
 package com.harmony.game.state.chapters;
 
 import com.harmony.game.animation.controller.C1Controller;
-import com.harmony.game.animation.scene.chapter1.Chapter1Scene1;
-import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.ConsoleMessage;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.object.NextLevelInvisible;
-import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -20,6 +17,7 @@ public class Chapter1 extends Chapter {
     private NPC npcMrCrow = null;
     private NPC npcAmber = null;
     private NPC npcMrsCaren = null;
+    private NPC matt = null;
 
     private NextLevelInvisible nextLevelInvisible;
 
@@ -36,9 +34,9 @@ public class Chapter1 extends Chapter {
     @Override
     public void onCreate() {
         super.onCreate();
-        GameStateManager.showCutScene(new Chapter1Scene1());
+        //GameStateManager.showCutScene(new Chapter1Scene1());
 
-        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
+//        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
         handleNPC();
 
@@ -53,9 +51,6 @@ public class Chapter1 extends Chapter {
                 "Great Job!!! Now try and find some locals to talk to.~" +
                 "I should head towards the North trail and see if I can help...", null);
         message.runTo(3);
-
-//        this.isControlled = true;
-//        controller.onCreate();
     }
 
     private void handleNPC() {
@@ -71,8 +66,15 @@ public class Chapter1 extends Chapter {
                 player, console, new Sprite("/entity/npc/mrs-caren.png", 64, 64), 128, 128,
                 "Hi Deary..."));
 
+        super.npcs.add(matt = new NPC(new Vector2f(2141, 2572), "Matt", tileManager.getObjectsMap(),
+                player, console, new Sprite("/entity/npc/matt.png", 64, 64), 128, 128,
+                "I barley made it out alive. It came attackn' and didn't flinch after hit with an arrow. " +
+                        "It took three whole arrows\nbefore it finally went skablat."));
+
+        matt.hide = true;
         npcAmber.setCurrentAnimation(NPC.ANIMATION_DOWN);
         npcMrsCaren.setCurrentAnimation(NPC.ANIMATION_LEFT);
+        npcMrCrow.setCurrentAnimation(NPC.ANIMATION_DOWN);
     }
 
     @Override
@@ -120,24 +122,25 @@ public class Chapter1 extends Chapter {
     }
 
     public void updateCarenLines() {
-        npcMrsCaren.changeLines("Oh, Hello Deary. I guess you're wondering about \n" +
+        npcMrsCaren.changeLines("Oh, Hello Deary. I guess you're wondering about " +
                 "that slime that attacked dear old Matty Boy. Well...~" +
-                "Let me tell you something. There is an evil in this world that \n" +
+                "Let me tell you something. There is an evil in this world that " +
                 "is far beyond anything you could imagine.~" +
-                "A long time ago there were five crystals, called The Crystals of Everything.\n" +
-                "They were in fact crystals of everything.~" +
+                "A long time ago there were five crystals, called The Crystals of Everything. " +
+                "They were in fact crystals of \n everything.~" +
                 "You see if you were holding the crystals they gave you gift.~" +
-                "You see one gave speed, one gave strength, anther magic,\n" +
-                "the next power of creation, and finally the power of destruction.~" +
+                "You see one gave speed, one gave strength, anther magic, " +
+                "the next power of creation,\nand finally the power of destruction.~" +
                 "These crystals were very valuable because people who had possession of the\n" +
                 "became as powerful as gods.~" +
                 "These crystals were placed by the old ones in the far reaches" +
-                "of the world.\nHere no one could ever have the power of all five crystals at once.~" +
+                "of the world. Here no one could ever have\nthe power of all five crystals at once.~" +
                 "However, rumor has it, someone by the name of The Dark Lord \n" +
                 "gathered up all of the crystals and used them to spread evil throughout the world.~" +
                 "He then banished the crystals so their magic could never be used again.~" +
                 "However rumor has it that someone with pure intention can gather up all\n" +
                 "of the crystals again and restore peace to the world.");
         stage2Done = true;
+        matt.hide = false;
     }
 }

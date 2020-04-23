@@ -53,10 +53,8 @@ public class QuitConfirmation extends State {
                 cancelButton.height, null);
 
         // Draw Text
-        Font.TRANSPARENT_FONT.drawText(g, "Save Before Quitting?", Display.width / 2 - 448, 10, 64);
-        Font.TRANSPARENT_FONT.drawText(g, "Save & Quit", Display.width / 2 - 220, saveQuitButton.y +
-                saveQuitButton.height / 2 - 32, 64);
-        Font.TRANSPARENT_FONT.drawText(g, "Cancel", Display.width / 2 - 128, cancelButton.y +
-                cancelButton.height / 2 - 32, 64);
+        Font.STANDARD_FONT.centerTextHorizontal(g, "Save Before Quitting?", 100, 64);
+        Font.STANDARD_FONT.centerTextHorizontal(g, "Save & Quit", saveQuitButton.y + saveQuitButton.height - 16, 60);
+        Font.STANDARD_FONT.centerTextHorizontal(g, "Cancel", cancelButton.y + cancelButton.height - 16, 60);
     }
 }

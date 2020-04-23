@@ -15,7 +15,7 @@ public class Console {
     public static final int CONSOLE_Y_DEFAULT = 498;
     public static final int CONSOLE_Y_MODIFIED = CONSOLE_Y_DEFAULT - Scene.BAR_HEIGHT;
 
-    public Font font = Font.TRANSPARENT_FONT;
+    public Font font = Font.STANDARD_FONT;
     public AudioClip typeClip = new AudioClip("/audio/console_letter_sound.wav");
     public static final String SENDER_DEFAULT = "You";
 
@@ -78,12 +78,19 @@ public class Console {
         g.drawImage(consoleImage, 80, consoleYPosition, null);
 
         // Draw Sender Name
-        font.drawText(g, sender, Display.width / 2 - (int) (sender.length() * 10 / 1.5), consoleYPosition + 12, 20);
+        font.centerTextHorizontal(g, sender, consoleYPosition + 28, 20);
 
         // Draw Text
         for(int l = 0; l < outputLines.length; l++) {
             for(int i = 0; i < outputLines[l].length(); i++) {
-                font.drawText(g, outputLines[l].substring(0, i), 90, consoleYPosition + 52 + l * 20, 20);
+                if(outputLines[l].charAt(0) == '|') {
+                    if(i > 0) {
+                        font.drawText(g, outputLines[l].substring(1, i), 90, consoleYPosition + 68 + l * 26,
+                                20, new Color(8, 127, 252, 255));
+                    }
+                } else {
+                    font.drawText(g, outputLines[l].substring(0, i), 90, consoleYPosition + 68 + l * 26, 20);
+                }
             }
         }
     }
@@ -106,7 +113,7 @@ public class Console {
     public void sendMessage(String text, String sender) {
         if(sender != null) this.sender = sender; else this.sender = SENDER_DEFAULT;
         System.out.println("-> Sending Message: " + text);
-        text += "\nPress Enter To Continue...";
+        text += "\n|Press Enter To Continue...";
         lines = text.split("\n");
         for(int i = 0; i < lines.length; i++) lines[i] += " ";
         outputLines = new String[lines.length];

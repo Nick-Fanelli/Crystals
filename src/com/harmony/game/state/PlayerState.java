@@ -118,7 +118,7 @@ public class PlayerState extends State {
 
         if(stage == 1) {
             // Header Text
-            Font.TRANSPARENT_FONT.drawText(g, "Choose Gender", Display.width / 2 - 277, 10, 64);
+            Font.STANDARD_FONT.centerTextHorizontal(g, "Choose Gender", 100, 64);
 
             // Selection Images
             g.drawImage(femaleLight, selectionOne.x + selectionOne.width / 2 - 128,
@@ -127,7 +127,7 @@ public class PlayerState extends State {
                     selectionTwo.y + selectionTwo.height / 2 - 128, 256, 256, null);
         } else if(stage == 2) {
             // Header Text
-            Font.TRANSPARENT_FONT.drawText(g, "Choose Skin Tone", Display.width / 2 - 341, 10, 64);
+            Font.STANDARD_FONT.centerTextHorizontal(g, "Choose Skin Tone", 100, 64);
 
             // Selection Images
             g.drawImage(toneOne, selectionOne.x + selectionOne.width / 2 - 128,
@@ -136,7 +136,7 @@ public class PlayerState extends State {
                     selectionTwo.y + selectionTwo.height / 2 - 128, 256, 256, null);
         } else if(stage == 3) {
             // Header Text
-            Font.TRANSPARENT_FONT.drawText(g, "Your Player", Display.width / 2 - 235, 10, 64);
+            Font.STANDARD_FONT.centerTextHorizontal(g, "Your Player", 100, 64);
 
             // Selected Player Image
             g.drawImage(selectedPlayer, Display.width / 2 - 128, Display.height / 2 - 128, 256, 256, null);
@@ -147,10 +147,8 @@ public class PlayerState extends State {
             g.drawImage(buttons.getSprite(discardButtonAnimation, 0), discardButton.x, discardButton.y,
                     discardButton.width, discardButton.height, null);
 
-            Font.TRANSPARENT_FONT.drawText(g, "Keep", keepButton.x + keepButton.width / 2 - 86,
-                    keepButton.y + keepButton.height / 2 - 32, 64);
-            Font.TRANSPARENT_FONT.drawText(g, "Discard", discardButton.x + discardButton.width / 2 - 149,
-                    discardButton.y + discardButton.height / 2 - 32, 64);
+            Font.STANDARD_FONT.centerTextHorizontal(g, "Keep", keepButton.y + keepButton.height - 16, 64);
+            Font.STANDARD_FONT.centerTextHorizontal(g, "Discard", discardButton.y + discardButton.height - 16, 64);
         }
     }
 }

@@ -45,8 +45,12 @@ public class GameStateManager {
     public static void setCurrentState(int currentState) {
         pause = true;
 
-        g.drawImage(loadingImage, -1, -1, Display.width + 2, Display.height + 2, null);
-        Display.update();
+        if(currentState < 0) {
+            g.drawImage(loadingImage, -1, -1, Display.width + 2, Display.height + 2, null);
+            Display.update();
+        } else {
+            showChapter(currentState);
+        }
 
         System.out.println("# Setting Current State To ID: " + currentState);
 
@@ -64,15 +68,17 @@ public class GameStateManager {
 
         if(tempState == null) return;
         GameStateManager.currentState = tempState;
-        showChapter();
         Camera.position.reset();
         tempState.onCreate();
         pause = false;
     }
 
-    private static void showChapter() {
-        if(currentStateId < 0) return;
+    private static void showChapter(int id) {
         timer.delay(3000);
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, Display.width, Display.height);
+        Font.STANDARD_FONT.centerText(g, "Chapter " + id, 100);
+        Display.update();
     }
 
     public void update() {
@@ -102,14 +108,6 @@ public class GameStateManager {
         currentState.draw(g);
         Camera.draw(g);
         GUI.draw(g);
-
-        if(!timer.done()) {
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, Display.width, Display.height);
-            Font.STANDARD_FONT.drawText(g, "Chapter " + currentStateId, (Display.width / 2) - 192,
-                    (Display.height / 2) - 32, 64);
-            Display.update();
-        }
     }
 
     public static void nextLevel() {

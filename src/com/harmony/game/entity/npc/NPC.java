@@ -37,6 +37,8 @@ public class NPC extends Entity {
     protected ConsoleMessage message;
     protected boolean hasTalked = false;
 
+    public boolean hide = false;
+
     public NPC(Vector2f position, String name, ObjectTileMap objectTileMap, Player player, Console console, Sprite sprite,
                int width, int height, String lines) {
         super(position, objectTileMap, width, height);
@@ -64,6 +66,7 @@ public class NPC extends Entity {
 
     @Override
     public void update() {
+        if(hide) return;
         if(!Camera.shouldHandleEntity(this)) return;
 
         if(talkCollider.collisionPlayer(player) && Input.isKeyDown(KeyEvent.VK_T) && !message.isActive()) {
@@ -88,6 +91,7 @@ public class NPC extends Entity {
 
     @Override
     public void draw(Graphics2D g) {
+        if(hide) return;
         if(!Camera.shouldHandleEntity(this)) return;
 
         g.drawImage(animation.animate(currentAnimation, isIdle ? -1 : 100, 9), (int) position.getWorldPosition().x,

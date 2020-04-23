@@ -12,6 +12,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.util.Map;
 
 public class Display {
 
@@ -29,7 +30,7 @@ public class Display {
     private static BufferedImage image;
     private static Canvas canvas;
     private static BufferStrategy bs;
-    private static Graphics g;
+    private static Graphics2D g;
 
     public Display(String title, int width, int height) {
         Display.width = width;
@@ -57,14 +58,16 @@ public class Display {
 
         frame.setLayout(new BorderLayout());
         frame.add(canvas, BorderLayout.CENTER);
-        frame.setIgnoreRepaint(true);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setResizable(true);
 
         canvas.createBufferStrategy(2);
         bs = canvas.getBufferStrategy();
-        g = bs.getDrawGraphics();
+        g = (Graphics2D) bs.getDrawGraphics();
+
+        g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         if(System.getProperty("os.name").equals("Mac OS X")) {
             SwingUtilities.invokeLater(() -> {
@@ -83,7 +86,7 @@ public class Display {
     }
 
     public static void showSplashScreen() {
-        g.drawImage(logo, 0, 0, null);
+        g.drawImage(logo, 0, 0, (int) absWidth, (int) absHeight, null);
         bs.show();
 
         Game.sleep(2000);
@@ -102,7 +105,7 @@ public class Display {
                 absHeight = frame.getHeight();
                 canvas.createBufferStrategy(2);
                 bs = canvas.getBufferStrategy();
-                g = bs.getDrawGraphics();
+                g = (Graphics2D) bs.getDrawGraphics();
             }
         });
     }
