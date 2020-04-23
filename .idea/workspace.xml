@@ -25,32 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/entity/npc/amber.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/entity/npc/matt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/entity/npc/mrs-caren.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/entity/npc/papi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/animation/controller/C1Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/animation/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/object/NextLevelInvisible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Game_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Crystals_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/_save_data/player.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/npc/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/npc/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/ConsoleMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/ConsoleMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/ImageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/Vector2f.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
