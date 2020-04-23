@@ -35,7 +35,7 @@ public class NPC extends Entity {
 
     protected Console console;
     protected ConsoleMessage message;
-    protected boolean isUsed = false;
+    protected boolean hasTalked = false;
 
     public NPC(Vector2f position, String name, ObjectTileMap objectTileMap, Player player, Console console, Sprite sprite,
                int width, int height, String lines) {
@@ -67,6 +67,7 @@ public class NPC extends Entity {
         if(!Camera.shouldHandleEntity(this)) return;
 
         if(talkCollider.collisionPlayer(player) && Input.isKeyDown(KeyEvent.VK_T) && !message.isActive()) {
+            hasTalked = true;
             message.run();
         }
 
@@ -101,4 +102,15 @@ public class NPC extends Entity {
     public void onDestroy() {
 
     }
+
+    public boolean hasTalked() { return hasTalked; }
+    public void setHasTalked(boolean b) { this.hasTalked = b; }
+
+    public void changeLines(String lines) {
+        hasTalked = false;
+        message = new ConsoleMessage(console, lines, name);
+    }
+
+    public ConsoleMessage getMessage() { return message; }
+
 }

@@ -96,4 +96,5 @@ public final class Camera {
                     collisionCam.getWidth(), collisionCam.getHeight());
         }
     }
+
 }

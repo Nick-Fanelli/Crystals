@@ -5,14 +5,13 @@ import com.harmony.game.entity.enemy.Enemy;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Console;
+import com.harmony.game.item.Drops;
 import com.harmony.game.item.Item;
 import com.harmony.game.object.Chest;
 import com.harmony.game.object.Door;
 import com.harmony.game.object.GameObject;
 import com.harmony.game.state.State;
-import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.tiles.TileManager;
-import com.harmony.game.item.Drops;
 import com.harmony.game.utils.GUI;
 
 import java.awt.*;
@@ -28,6 +27,8 @@ public abstract class Chapter extends State {
 
     protected ArrayList<Enemy> enemies = new ArrayList<>();
     protected ArrayList<NPC> npcs = new ArrayList<>();
+
+    protected boolean isControlled = false;
 
     public Chapter(String tilemapLocation) { this.tilemapLocation = tilemapLocation; }
 
@@ -86,5 +87,12 @@ public abstract class Chapter extends State {
         for(NPC npc : npcs) npc.onDestroy();
     }
 
+    public boolean isControlled() { return isControlled; }
     public ArrayList<Enemy> getEnemies() { return enemies; }
+    public Player getPlayer() { return player; }
+    public TileManager getTileManager() { return tileManager; }
+    public Console getConsole() { return console; }
+
+    public void setControlled(boolean controlled) { isControlled = controlled; }
 }
+

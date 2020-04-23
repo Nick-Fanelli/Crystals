@@ -12,10 +12,10 @@ import java.awt.event.KeyEvent;
 
 public class Game implements Runnable {
 
-    public static double targetFps = 60.0;
+    public static final int targetFps = 60;
     public static final double UPDATE_CAP = 1.0 / targetFps;
 
-    public static double deltaTime = 0.02909437066215713;
+    public static final double deltaTime = 0.029;
 
     public static boolean debugMode = false;
 
@@ -31,24 +31,26 @@ public class Game implements Runnable {
     private static boolean isRunning;
 
     public Game() {
+        initialize();
+
         gameThread = new Thread(this, "_GameThread_");
         gameThread.start();
     }
 
     private void initialize() {
-        display = new Display("Game", 1280, 720);
+        display = new Display("Crystals", 1280, 720);
+
         g = (Graphics2D) display.getImage().getGraphics();
 
         input = new Input(display.getFrame(), display.getCanvas());
 
         gsm = new GameStateManager(g);
 
-        GameStateManager.setCurrentState(GameStateManager.CHAPTER_1);
+        GameStateManager.setCurrentState(GameStateManager.MENU_STATE);
     }
 
     @Override
     public void run() {
-        initialize();
         isRunning = true;
 
         boolean draw;

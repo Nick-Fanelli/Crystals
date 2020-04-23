@@ -45,7 +45,7 @@ public class GameStateManager {
     public static void setCurrentState(int currentState) {
         pause = true;
 
-        g.drawImage(loadingImage, 0, 0, Display.width, Display.height, null);
+        g.drawImage(loadingImage, -1, -1, Display.width + 2, Display.height + 2, null);
         Display.update();
 
         System.out.println("# Setting Current State To ID: " + currentState);
@@ -113,9 +113,14 @@ public class GameStateManager {
     }
 
     public static void nextLevel() {
-        MenuState.saveData = new SaveData(currentStateId + 1, MenuState.saveData.playerSave);
-        MenuState.saveData.save();
-        setCurrentState(currentStateId + 1);
+        try {
+            MenuState.saveData = new SaveData(currentStateId + 1, MenuState.saveData.playerSave);
+            MenuState.saveData.save();
+            setCurrentState(currentStateId + 1);
+        } catch (Exception e) {
+            System.err.println("Could not find a chapter with: " + (currentStateId + 1));
+            System.exit(-1);
+        }
     }
 
     public static void requestCloseConfirmation() {

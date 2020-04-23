@@ -1,10 +1,14 @@
 package com.harmony.game.state.chapters;
 
-import com.harmony.game.Game;
+import com.harmony.game.animation.controller.C1Controller;
+import com.harmony.game.animation.scene.chapter1.Chapter1Scene1;
+import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.ConsoleMessage;
 import com.harmony.game.graphics.Sprite;
+import com.harmony.game.object.NextLevelInvisible;
+import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -13,7 +17,17 @@ public class Chapter1 extends Chapter {
 
     private ConsoleMessage message;
 
-    private NPC npcMrCrow;
+    private NPC npcMrCrow = null;
+    private NPC npcAmber = null;
+    private NPC npcMrsCaren = null;
+
+    private NextLevelInvisible nextLevelInvisible;
+
+    private boolean stage1Done = false;
+    private boolean displayedCutScene = false;
+    private boolean stage2Done = false;
+
+    private C1Controller controller;
 
     public Chapter1() {
         super("/tile/places/kebir.tmx");
@@ -22,26 +36,72 @@ public class Chapter1 extends Chapter {
     @Override
     public void onCreate() {
         super.onCreate();
-//        GameStateManager.showCutScene(new Chapter1Scene1());
+        GameStateManager.showCutScene(new Chapter1Scene1());
 
-        //BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
-        Game.backgroundColor = new Color(0x8FB0BD);
+        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
+        handleNPC();
+
+        Camera.position = new Vector2f(1000, 1000);
+
+        controller = new C1Controller(this);
+
+        nextLevelInvisible = new NextLevelInvisible(new Vector2f(2364, 665), player, 320, 64);
+
+        message = new ConsoleMessage(console, "Hello there... Welcome to the farm of Kebir.~" +
+                "Use W, A, S, D to move around the farm.~" +
+                "Great Job!!! Now try and find some locals to talk to.~" +
+                "I should head towards the North trail and see if I can help...", null);
+        message.runTo(3);
+
+//        this.isControlled = true;
+//        controller.onCreate();
+    }
+
+    private void handleNPC() {
         super.npcs.add(npcMrCrow = new NPC(new Vector2f(1686, 3050), "Mr. Crow", tileManager.getObjectsMap(),
                 player, console, new Sprite("/entity/npc/mr-crow.png", 64, 64), 128, 128,
                 "Would you look at my nice wheat. I think it's time to harvest that."));
 
-        Camera.position = new Vector2f(1000, 1000);
+        super.npcs.add(npcAmber = new NPC(new Vector2f(3520, 1974), "Amber", tileManager.getObjectsMap(),
+                player, console, new Sprite("/entity/npc/amber.png", 64, 64), 128, 128,
+                "I sure do love these flowers. I wish they would stay year-round."));
 
-        message = new ConsoleMessage(console, "Hello there... Welcome to the farm of Kebir.~" +
-                "Use W, A, S, D to move around the farm.~" +
-                "Great Job!!! Now try and find some locals to talk to.", null);
-        message.run();
+        super.npcs.add(npcMrsCaren = new NPC(new Vector2f(2644, 1933), "Mrs. Caren", tileManager.getObjectsMap(),
+                player, console, new Sprite("/entity/npc/mrs-caren.png", 64, 64), 128, 128,
+                "Hi Deary..."));
+
+        npcAmber.setCurrentAnimation(NPC.ANIMATION_DOWN);
+        npcMrsCaren.setCurrentAnimation(NPC.ANIMATION_LEFT);
     }
 
     @Override
     public void update() {
         super.update();
+
+        if(isControlled) controller.update();
+
+        if(!stage1Done && npcAmber.hasTalked() && npcMrCrow.hasTalked()) stage1Done = true;
+
+        if(stage1Done && !console.isShowConsole() && !displayedCutScene && !controller.hasControlled() && !isControlled) {
+            displayedCutScene = true;
+        }
+
+        if(displayedCutScene) {
+            displayedCutScene = false;
+            isControlled = true;
+            controller.onCreate();
+        }
+
+        if(stage2Done && npcMrsCaren.hasTalked() && npcMrsCaren.getMessage().getCurrentMessageID() >=
+                npcMrsCaren.getMessage().getLines().length) {
+            stage2Done = false;
+            nextLevelInvisible.shouldDetect = true;
+            message.runTo(4);
+            console.setShowConsole(true);
+        }
+
+        nextLevelInvisible.update();
 
         message.update();
     }
@@ -49,10 +109,35 @@ public class Chapter1 extends Chapter {
     @Override
     public void draw(Graphics2D g) {
         super.draw(g);
+        if(isControlled) { controller.draw(g); }
+        nextLevelInvisible.draw(g);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if(isControlled) controller.onDestroy();
+    }
+
+    public void updateCarenLines() {
+        npcMrsCaren.changeLines("Oh, Hello Deary. I guess you're wondering about \n" +
+                "that slime that attacked dear old Matty Boy. Well...~" +
+                "Let me tell you something. There is an evil in this world that \n" +
+                "is far beyond anything you could imagine.~" +
+                "A long time ago there were five crystals, called The Crystals of Everything.\n" +
+                "They were in fact crystals of everything.~" +
+                "You see if you were holding the crystals they gave you gift.~" +
+                "You see one gave speed, one gave strength, anther magic,\n" +
+                "the next power of creation, and finally the power of destruction.~" +
+                "These crystals were very valuable because people who had possession of the\n" +
+                "became as powerful as gods.~" +
+                "These crystals were placed by the old ones in the far reaches" +
+                "of the world.\nHere no one could ever have the power of all five crystals at once.~" +
+                "However, rumor has it, someone by the name of The Dark Lord \n" +
+                "gathered up all of the crystals and used them to spread evil throughout the world.~" +
+                "He then banished the crystals so their magic could never be used again.~" +
+                "However rumor has it that someone with pure intention can gather up all\n" +
+                "of the crystals again and restore peace to the world.");
+        stage2Done = true;
     }
 }

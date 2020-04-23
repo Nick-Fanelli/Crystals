@@ -47,7 +47,12 @@ public class Display {
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
 
-        frame = new JFrame(title);
+        if(System.getProperty("os.name").equals("Mac OS X")) {
+            frame = new JFrame();
+        } else {
+            frame = new JFrame(title);
+        }
+
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         frame.setLayout(new BorderLayout());
@@ -61,12 +66,20 @@ public class Display {
         bs = canvas.getBufferStrategy();
         g = bs.getDrawGraphics();
 
+        if(System.getProperty("os.name").equals("Mac OS X")) {
+            SwingUtilities.invokeLater(() -> {
+                frame.getRootPane().putClientProperty("apple.awt.fullWindowContent", true);
+                frame.getRootPane().putClientProperty("apple.awt.transparentTitleBar", true);
+            });
+        }
+
         frame.setVisible(true);
 
         handleResize();
         handleQuit();
 
-        showSplashScreen();
+
+        //showSplashScreen();
     }
 
     public static void showSplashScreen() {

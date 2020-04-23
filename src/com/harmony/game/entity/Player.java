@@ -32,6 +32,8 @@ public class Player extends Entity {
     public static final int ANIMATION_ATTACK_DOWN  = 14;
     public static final int ANIMATION_ATTACK_UP    = 12;
 
+    public boolean hide = false;
+
     public static int staticHealth;
 
     private Chapter chapter;
@@ -49,7 +51,7 @@ public class Player extends Entity {
         health = maxHealth = 10;
         this.damage = 2;
 
-        boxCollider = new BoxCollider(this, new Vector2f(12, 40), 42, 20);
+        boxCollider = new BoxCollider(this, new Vector2f(25, width - 40), width - 50, 40);
         attackCollider = new BoxCollider(this, new Vector2f(-30, -30), width + 60, height + 60);
 
         if(MenuState.saveData == null) sprite = new Sprite("/entity/player/male_light.png", 64, 64);
@@ -73,6 +75,7 @@ public class Player extends Entity {
 
     @Override
     public void update() {
+        if(chapter.isControlled()) return;
         if(isDead) respawn();
 
         staticHealth = health;
@@ -145,6 +148,7 @@ public class Player extends Entity {
 
     private void checkAttack() {
         if(chapter == null) return;
+        if(chapter.isControlled()) return;
         for(Enemy enemy : chapter.getEnemies()) {
             if(!Camera.shouldHandleEntity(enemy)) return;
 
@@ -164,6 +168,7 @@ public class Player extends Entity {
 
     @Override
     public void draw(Graphics2D g) {
+        if(hide) return;
         g.drawImage(animation.animate(currentAnimation, getDelay(currentAnimation), getFrames(currentAnimation)), (int) position.x, (int) position.y,
                 width, height, null);
         if(Game.debugMode) {

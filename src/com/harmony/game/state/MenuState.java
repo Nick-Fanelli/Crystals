@@ -5,8 +5,6 @@ import com.harmony.game.graphics.Font;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.save.SaveData;
 import com.harmony.game.utils.Input;
-import com.harmony.game.utils.Vector2f;
-import org.w3c.dom.css.Rect;
 
 import java.awt.*;
 

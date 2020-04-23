@@ -1,5 +1,6 @@
 package com.harmony.game.graphics;
 
+import com.harmony.game.animation.scene.Scene;
 import com.harmony.game.audio.AudioClip;
 import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Input;
@@ -11,9 +12,12 @@ import java.util.Arrays;
 
 public class Console {
 
+    public static final int CONSOLE_Y_DEFAULT = 498;
+    public static final int CONSOLE_Y_MODIFIED = CONSOLE_Y_DEFAULT - Scene.BAR_HEIGHT;
+
     public Font font = Font.TRANSPARENT_FONT;
     public AudioClip typeClip = new AudioClip("/audio/console_letter_sound.wav");
-    public static final String SENDER_DEFAULT = "Crystals";
+    public static final String SENDER_DEFAULT = "You";
 
     private boolean showConsole = false;
     private boolean hasText = false;
@@ -29,6 +33,8 @@ public class Console {
     private float stopTime;
     private int delayMillis = 1000;
 
+    private int consoleYPosition = CONSOLE_Y_DEFAULT;
+
     private String sender = SENDER_DEFAULT;
 
     private BufferedImage consoleImage = ImageUtils.loadImage("/ui/console.png");
@@ -40,7 +46,7 @@ public class Console {
             waiting = false;
         }
 
-        if(!hasText) return;
+        if(!hasText) { return; }
 
         if(delay) {
             stopTime = System.currentTimeMillis() + delayMillis;
@@ -69,15 +75,15 @@ public class Console {
     public void draw(Graphics2D g) {
         if(!showConsole) return;
         g.setColor(new Color(28, 28, 28));
-        g.drawImage(consoleImage, 80, 498, null);
+        g.drawImage(consoleImage, 80, consoleYPosition, null);
 
         // Draw Sender Name
-        font.drawText(g, sender, Display.width / 2 - (int) (sender.length() * 10 / 1.5), 510, 20);
+        font.drawText(g, sender, Display.width / 2 - (int) (sender.length() * 10 / 1.5), consoleYPosition + 12, 20);
 
         // Draw Text
         for(int l = 0; l < outputLines.length; l++) {
             for(int i = 0; i < outputLines[l].length(); i++) {
-                font.drawText(g, outputLines[l].substring(0, i), 90, 550 + l * 20, 20);
+                font.drawText(g, outputLines[l].substring(0, i), 90, consoleYPosition + 52 + l * 20, 20);
             }
         }
     }
@@ -120,9 +126,12 @@ public class Console {
     }
 
     public boolean isWaiting() { return waiting; }
-    public boolean getShowConsole() { return showConsole; }
+    public boolean isShowConsole() { return showConsole; }
 
     public void cleanUp() {
         typeClip.close();
     }
+
+    public void setConsoleYPosition(int position) { this.consoleYPosition = position; }
+    public int getConsoleYPosition() { return consoleYPosition; }
 }
