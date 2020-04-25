@@ -7,7 +7,7 @@ import com.harmony.game.graphics.Font;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.save.SaveData;
 import com.harmony.game.state.chapters.Chapter1;
-import com.harmony.game.utils.GUI;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
@@ -21,6 +21,8 @@ public class GameStateManager {
 
     public static final int MENU_STATE          = -1;
     public static final int PLAYER_STATE        = -2;
+    public static final int SETTINGS_STATE      = -3;
+
     public static final int CHAPTER_1           =  1;
 
     private static QuitConfirmation quitConfirmationState;
@@ -63,6 +65,8 @@ public class GameStateManager {
         switch (currentState) {
             case MENU_STATE:     tempState = new MenuState();           break;
             case PLAYER_STATE:   tempState = new PlayerState();         break;
+            case SETTINGS_STATE: tempState = new SettingsState();       break;
+
             case CHAPTER_1:      tempState = new Chapter1();            break;
         }
 
