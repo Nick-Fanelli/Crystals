@@ -12,7 +12,7 @@ import com.harmony.game.object.Door;
 import com.harmony.game.object.GameObject;
 import com.harmony.game.state.State;
 import com.harmony.game.tiles.TileManager;
-import com.harmony.game.utils.GUI;
+import com.harmony.game.gui.GUI;
 
 import java.awt.*;
 import java.util.ArrayList;
