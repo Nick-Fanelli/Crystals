@@ -4,7 +4,7 @@ import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.state.GameStateManager;
 import com.harmony.game.state.MenuState;
-import com.harmony.game.utils.GUI;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.Input;
 
 import java.awt.*;
