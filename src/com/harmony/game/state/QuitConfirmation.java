@@ -4,13 +4,14 @@ import com.harmony.game.Game;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
 import com.harmony.game.graphics.Sprite;
+import com.harmony.game.gui.Button;
 import com.harmony.game.utils.Input;
 
 import java.awt.*;
 
 public class QuitConfirmation extends State {
 
-    private static final Sprite buttons = new Sprite("/ui/buttons_formatted.png", 120, 26);
+    private static final Sprite buttons = Button.BUTTONS_SPRITE;
 
     private static final Rectangle saveQuitButton = new Rectangle(Display.width / 2 - 300, 300, 625, 75);
     private static final Rectangle cancelButton = new Rectangle(Display.width / 2 - 300, 450, 625, 75);
