@@ -6,7 +6,7 @@ import com.harmony.game.animation.scene.Scene;
 import com.harmony.game.audio.AudioClip;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
-import com.harmony.game.utils.GUI;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Timer;
 
