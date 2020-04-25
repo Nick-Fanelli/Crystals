@@ -3,8 +3,10 @@ package com.harmony.game.state;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
 import com.harmony.game.graphics.Sprite;
+import com.harmony.game.gui.Button;
 import com.harmony.game.save.SaveData;
 import com.harmony.game.utils.Input;
+import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
 
@@ -18,12 +20,15 @@ public class MenuState extends State {
     private int storyAnimation = 0;
     private String storyText = "Continue Story";
 
+    private Button settingsButton = new Button(new Vector2f(Display.width / 2f - 180 , Display.height / 2f + 75),
+            360, 78, "Settings", 32);
+
     private final Rectangle storyButton = new Rectangle(Display.width / 2 - 180, Display.height / 2 - 39, 360, 78);
     private final Rectangle storyTextRect = new Rectangle(0, Display.height / 2 + 6, 32, 32);
 
     @Override
     public void onCreate() {
-        buttons = new Sprite("/ui/buttons_formatted.png", 120, 26);
+        buttons = Button.BUTTONS_SPRITE;
 
         if((saveData = SaveData.loadSaveData()) == null) {
             storyText = "Start Story";
@@ -33,11 +38,15 @@ public class MenuState extends State {
 
     @Override
     public void update() {
+        if(Input.hoverRectangle(storyButton) || Input.hoverRectangle(settingsButton.getRectangle())) Display.setCursor(Cursor.HAND_CURSOR);
+        else Display.setCursor(Cursor.DEFAULT_CURSOR);
+
         if(Input.hoverRectangle(storyButton)) {
-            Display.setCursor(Cursor.HAND_CURSOR);
-            if(Input.isButton(1)) storyAnimation = 1; else storyAnimation = 0;
-            if(Input.isButtonUp(1)) storyPressed = true;
-        } else Display.setCursor(Cursor.DEFAULT_CURSOR);
+            if (Input.isButton(1)) storyAnimation = 1;
+            else storyAnimation = 0;
+            if (Input.isButtonUp(1)) storyPressed = true;
+        }
+
 
         if(storyPressed) {
             if(storyText.equals("Continue Story")) {
@@ -48,6 +57,10 @@ public class MenuState extends State {
                 GameStateManager.setCurrentState(GameStateManager.PLAYER_STATE);
             }
         }
+
+        if(settingsButton.isPressed()) GameStateManager.setCurrentState(GameStateManager.SETTINGS_STATE);
+
+        settingsButton.update();
     }
 
     @Override
@@ -61,5 +74,7 @@ public class MenuState extends State {
                 storyButton.height, null);
 
         Font.STANDARD_FONT.centerTextHorizontal(g, storyText, storyTextRect.y, storyTextRect.width);
+
+        settingsButton.draw(g);
     }
 }
