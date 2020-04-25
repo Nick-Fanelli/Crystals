@@ -1,10 +1,9 @@
 package com.harmony.game.object;
 
 import com.harmony.game.audio.SoundEffects;
-import com.harmony.game.entity.Entity;
 import com.harmony.game.entity.Player;
 import com.harmony.game.item.Item;
-import com.harmony.game.utils.GUI;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.PlayerHelp;
 import com.harmony.game.utils.Vector2f;

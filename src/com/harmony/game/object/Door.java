@@ -1,9 +1,8 @@
 package com.harmony.game.object;
 
-import com.harmony.game.entity.Entity;
 import com.harmony.game.entity.Player;
 import com.harmony.game.state.GameStateManager;
-import com.harmony.game.utils.GUI;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.PlayerHelp;
 import com.harmony.game.utils.Vector2f;
