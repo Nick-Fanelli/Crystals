@@ -11,7 +11,7 @@ import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.state.MenuState;
 import com.harmony.game.state.chapters.Chapter;
 import com.harmony.game.tiles.ObjectTileMap;
-import com.harmony.game.utils.GUI;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.Vector2f;
 
