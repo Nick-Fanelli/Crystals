@@ -11,7 +11,7 @@ import java.awt.*;
 public class SettingsState extends State {
 
     public static boolean isFullscreen = false;
-    public static boolean isBackgroundMusic = false;
+    public static boolean isBackgroundMusic = true;
 
     private static Button backButton = new Button(new Vector2f(10, 10), 40, 40, "X", 32);
     private static Button fullScreenButton = new Button(new Vector2f(Display.width / 2f - 180, Display.height / 2f - 180), 360, 78,
@@ -40,7 +40,7 @@ public class SettingsState extends State {
         if(backgroundMusicButton.isPressed()) isBackgroundMusic = !isBackgroundMusic;
 
         fullScreenButton.setText(isFullscreen ? "Fullscreen: On" : "Fullscreen Off");
-        backgroundMusicButton.setText(isBackgroundMusic ? "Background Music: Off" : "Background Music: On");
+        backgroundMusicButton.setText(isBackgroundMusic ? "Background Music: On" : "Background Music: Off");
 
         backButton.update();
         fullScreenButton.update();

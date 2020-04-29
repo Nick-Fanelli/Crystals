@@ -26,7 +26,7 @@ public class GUI {
     public static boolean hasKey = false;
 
     public static boolean hit = false;
-    private static Timer hitTimer = new Timer();
+    private static final Timer hitTimer = new Timer();
 
     public static void update() {}
 
@@ -72,8 +72,7 @@ public class GUI {
         }
     }
 
-    public Sprite getCollectables() { return collectables; }
-
     public static void cleanUp() {
+        health_holder.flush();
     }
 }

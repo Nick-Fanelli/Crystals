@@ -1,5 +1,6 @@
 package com.harmony.game.state.chapters;
 
+import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.entity.Player;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
@@ -17,10 +18,10 @@ public class Chapter2 extends Chapter {
     public void onCreate() {
         super.onCreate();
 
-//        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
+        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
-//        Camera.position = new Vector2f(2368,4967);
-        Camera.position = new Vector2f(4000, 1072);
+        Camera.position = new Vector2f(2368,4967);
+//        Camera.position = new Vector2f(4000, 1072);
         player.setCurrentAnimation(Player.ANIMATION_ATTACK_UP);
         player.setIdle(true);
 

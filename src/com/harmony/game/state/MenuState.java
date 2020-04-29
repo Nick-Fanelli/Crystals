@@ -20,7 +20,7 @@ public class MenuState extends State {
     private int storyAnimation = 0;
     private String storyText = "Continue Story";
 
-    private Button settingsButton = new Button(new Vector2f(Display.width / 2f - 180 , Display.height / 2f + 75),
+    private final Button settingsButton = new Button(new Vector2f(Display.width / 2f - 180 , Display.height / 2f + 75),
             360, 78, "Settings", 32);
 
     private final Rectangle storyButton = new Rectangle(Display.width / 2 - 180, Display.height / 2 - 39, 360, 78);

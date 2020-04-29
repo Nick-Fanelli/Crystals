@@ -5,14 +5,12 @@ import com.harmony.game.entity.Entity;
 import com.harmony.game.item.drops.Drop;
 import com.harmony.game.object.GameObject;
 import com.harmony.game.physics.collision.BoxCollider;
-import com.harmony.game.tiles.TileManager;
 import com.harmony.game.tiles.block.Block;
 import com.harmony.game.utils.Vector2f;
 
-import javax.swing.*;
 import java.awt.*;
 
-public final class Camera {
+public class Camera {
 
     private static BoxCollider collisionCam;
     private static boolean created = false;
@@ -25,7 +23,7 @@ public final class Camera {
     }
 
     public static void update() {
-        if (!created) return;
+
     }
 
     public static boolean shouldHandleTile(Block block) {
@@ -37,8 +35,7 @@ public final class Camera {
         if (block.getAbsPosition().getWorldPosition().x + block.getWidth() >= collisionCam.getOffset().x)
             if (block.getAbsPosition().getWorldPosition().x + block.getWidth() <= Display.width - collisionCam.getOffset().x + block.getWidth())
                 if (block.getAbsPosition().getWorldPosition().y + block.getHeight() >= collisionCam.getOffset().y)
-                    if (block.getAbsPosition().getWorldPosition().y <= Display.height - collisionCam.getOffset().y)
-                        return true;
+                    return block.getAbsPosition().getWorldPosition().y <= Display.height - collisionCam.getOffset().y;
 
         return false;
     }

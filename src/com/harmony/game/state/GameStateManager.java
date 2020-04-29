@@ -5,22 +5,21 @@ import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.save.SaveData;
 import com.harmony.game.state.chapters.Chapter1;
-import com.harmony.game.gui.GUI;
 import com.harmony.game.state.chapters.Chapter2;
 import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class GameStateManager {
 
-    private static BufferedImage loadingImage = ImageUtils.loadImage("/ui/loading.png");
+    private static final BufferedImage loadingImage = ImageUtils.loadImage("/ui/loading.png");
 
     public static final int MENU_STATE          = -1;
     public static final int PLAYER_STATE        = -2;
@@ -40,12 +39,12 @@ public class GameStateManager {
     private static boolean cutScene = false;
 
     private static Graphics2D g;
-    private static Timer timer = new Timer();
-
-    private Camera camera = new Camera(new BoxCollider(null, new Vector2f(0, 0), Display.width, Display.height));
+    private static final Timer timer = new Timer();
 
     public GameStateManager(Graphics2D g) {
         GameStateManager.g = g;
+
+        new Camera(new BoxCollider(null, new Vector2f(0, 0), Display.width, Display.height));
     }
 
     public static void setCurrentState(int currentState) {

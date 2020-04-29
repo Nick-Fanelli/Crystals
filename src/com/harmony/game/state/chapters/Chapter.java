@@ -133,7 +133,7 @@ public abstract class Chapter extends State {
         player.update();
         Drops.update(player);
         super.update();
-        try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception e) {}
+        try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception ignored) {}
         for(NPC npc : npcs) npc.update();
         gameObjectCollision();
         console.update();
@@ -174,7 +174,6 @@ public abstract class Chapter extends State {
     public boolean isControlled() { return isControlled; }
     public ArrayList<Enemy> getEnemies() { return enemies; }
     public Player getPlayer() { return player; }
-    public TileManager getTileManager() { return tileManager; }
     public Console getConsole() { return console; }
 
     public void setControlled(boolean controlled) { isControlled = controlled; }
