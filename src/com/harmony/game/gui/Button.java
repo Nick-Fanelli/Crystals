@@ -50,6 +50,7 @@ public class Button {
     }
 
     public boolean isPressed() { return isPressed; }
+    public void setPressed(boolean isPressed) { this.isPressed = isPressed; }
 
     public Rectangle getRectangle() { return rectangle; }
 
