@@ -1,6 +1,7 @@
 package com.harmony.game.state;
 
 import com.harmony.game.animation.scene.Scene;
+import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
@@ -8,10 +9,12 @@ import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.save.SaveData;
 import com.harmony.game.state.chapters.Chapter1;
 import com.harmony.game.gui.GUI;
+import com.harmony.game.state.chapters.Chapter2;
 import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -24,6 +27,7 @@ public class GameStateManager {
     public static final int SETTINGS_STATE      = -3;
 
     public static final int CHAPTER_1           =  1;
+    public static final int CHPATER_2           =  2;
 
     private static QuitConfirmation quitConfirmationState;
     private static Scene scene;
@@ -47,6 +51,8 @@ public class GameStateManager {
     public static void setCurrentState(int currentState) {
         pause = true;
 
+        BackgroundAmbience.stopAllBackground();
+
         if(currentState < 0) {
             g.drawImage(loadingImage, -1, -1, Display.width + 2, Display.height + 2, null);
             Display.update();
@@ -68,6 +74,7 @@ public class GameStateManager {
             case SETTINGS_STATE: tempState = new SettingsState();       break;
 
             case CHAPTER_1:      tempState = new Chapter1();            break;
+            case CHPATER_2:      tempState = new Chapter2();            break;
         }
 
         if(tempState == null) return;

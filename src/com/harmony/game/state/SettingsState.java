@@ -11,10 +11,13 @@ import java.awt.*;
 public class SettingsState extends State {
 
     public static boolean isFullscreen = false;
+    public static boolean isBackgroundMusic = false;
 
     private static Button backButton = new Button(new Vector2f(10, 10), 40, 40, "X", 32);
     private static Button fullScreenButton = new Button(new Vector2f(Display.width / 2f - 180, Display.height / 2f - 180), 360, 78,
             "Fullscreen: Off", 32);
+    private static Button backgroundMusicButton = new Button(new Vector2f(Display.width / 2f - 210, Display.height / 2f - 82),
+            420, 78, "Background Music: On", 32);
 
     @Override
     public void onCreate() {
@@ -22,7 +25,8 @@ public class SettingsState extends State {
 
     @Override
     public void update() {
-        if(Input.hoverRectangle(backButton.getRectangle()) || Input.hoverRectangle(fullScreenButton.getRectangle()))
+        if(Input.hoverRectangle(backButton.getRectangle()) || Input.hoverRectangle(fullScreenButton.getRectangle()) ||
+        Input.hoverRectangle(backgroundMusicButton.getRectangle()))
             Display.setCursor(Cursor.HAND_CURSOR);
         else Display.setCursor(Cursor.DEFAULT_CURSOR);
 
@@ -33,10 +37,14 @@ public class SettingsState extends State {
             Display.setFullScreen(isFullscreen);
         }
 
+        if(backgroundMusicButton.isPressed()) isBackgroundMusic = !isBackgroundMusic;
+
         fullScreenButton.setText(isFullscreen ? "Fullscreen: On" : "Fullscreen Off");
+        backgroundMusicButton.setText(isBackgroundMusic ? "Background Music: Off" : "Background Music: On");
 
         backButton.update();
         fullScreenButton.update();
+        backgroundMusicButton.update();
     }
 
     @Override
@@ -45,6 +53,7 @@ public class SettingsState extends State {
 
         backButton.draw(g);
         fullScreenButton.draw(g);
+        backgroundMusicButton.draw(g);
     }
 
     @Override
