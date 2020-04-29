@@ -6,6 +6,7 @@ import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.Vector2f;
 import org.w3c.dom.css.Rect;
 
+import javax.swing.*;
 import java.awt.*;
 
 public abstract class GameObject {
@@ -14,6 +15,8 @@ public abstract class GameObject {
     private final int width;
     private final int height;
     private Rectangle rectangle;
+
+    protected boolean isCollideable = false;
 
     public GameObject(Vector2f position, int width, int height) {
         this.position = position;
@@ -26,10 +29,20 @@ public abstract class GameObject {
 
     public int getWidth()  { return width  ; }
     public int getHeight() { return height ; }
+    public boolean isCollideable() { return isCollideable; }
 
     public boolean isCollidingWith(Player player) {
        return player.getBoxCollider().getBoundsAsAbsRect().intersects(new Rectangle((int) position.getWorldPosition().x - 10,
                 (int) position.getWorldPosition().y - 10, width + 20, height + 20));
+    }
+
+    public boolean isCollidingWithFuture(Player player, float dx, float dy) {
+        Rectangle rectangle = player.getBoxCollider().getBoundsAsAbsRect();
+        rectangle.x += player.dx;
+        rectangle.y += player.dy;
+
+        return rectangle.intersects(new Rectangle((int) position.getWorldPosition().x,
+                (int) position.getWorldPosition().y, width, height));
     }
 
     public abstract void onCreate();
