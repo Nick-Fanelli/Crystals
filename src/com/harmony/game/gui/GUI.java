@@ -17,10 +17,10 @@ public class GUI {
     public static final Sprite orangeCrystals = new Sprite("/item/crystals/orange-crystals.png", 32, 32);
     public static final Sprite yellowCrystals = new Sprite("/item/crystals/yellow-crystals.png", 32, 32);
 
-    private static final BufferedImage mainGUI = ImageUtils.loadImage("/ui/hud/main_gui.png");
-
-    private static final Sprite increments = new Sprite("/ui/hud/increments.png", 8, 12);
     public static final Sprite collectables = new Sprite("/item/collectables.png", 24, 24);
+    public static final Sprite health_points = new Sprite("/ui/hud/health_points.png", 11, 10);
+
+    private static final BufferedImage health_holder = ImageUtils.loadImage("/ui/hud/health_holder.png");
 
     public static boolean showGui = false;
     public static boolean hasKey = false;
@@ -43,18 +43,37 @@ public class GUI {
         }
 
         if(showGui) {
-            g.drawImage(mainGUI, 10, 10, (int) (mainGUI.getWidth() * 1.5), (int) (mainGUI.getHeight() * 1.5), null);
 
-            // Health Points
-            for(int i = 0; i < Player.staticHealth; i++) {
-                g.drawImage(increments.getSprite(0, 0), 136 + (i * 14) - (i / 2), 16, 12, 21,null);
+            g.drawImage(health_holder, 0, 0, 206, 48, null);
+
+            float fullPoints = Player.staticHealth / 2f;
+            float halfPoints = (fullPoints % 1);
+            fullPoints -= halfPoints;
+            halfPoints *= 2;
+
+            float emptyPoints = 5 - (fullPoints + halfPoints);
+            int i = 0;
+
+            while(i < fullPoints) {
+                g.drawImage(health_points.getSprite(0, 0), 22 + i * 30, 7, 24, 24, null);
+                i++;
             }
+
+            for(int j = 0; j < halfPoints; j++) {
+                g.drawImage(health_points.getSprite(1, 0), 22 + i * 30, 7, 24, 24, null);
+                i++;
+            }
+
+            for(int j = 0; j < emptyPoints; j++) {
+                g.drawImage(health_points.getSprite(2, 0), 22 + i * 30, 7, 24, 22, null);
+                i++;
+            }
+
         }
     }
 
     public Sprite getCollectables() { return collectables; }
 
     public static void cleanUp() {
-        mainGUI.flush();
     }
 }
