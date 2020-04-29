@@ -1,11 +1,14 @@
 package com.harmony.game.state.chapters;
 
 import com.harmony.game.animation.controller.C1Controller;
+import com.harmony.game.animation.scene.chapter1.Chapter1Scene1;
+import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.ConsoleMessage;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.object.NextLevelInvisible;
+import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -34,9 +37,9 @@ public class Chapter1 extends Chapter {
     @Override
     public void onCreate() {
         super.onCreate();
-        //GameStateManager.showCutScene(new Chapter1Scene1());
+        GameStateManager.showCutScene(new Chapter1Scene1());
 
-//        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
+        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
         handleNPC();
 
