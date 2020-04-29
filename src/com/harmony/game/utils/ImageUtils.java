@@ -17,4 +17,11 @@ public class ImageUtils implements Serializable {
         }
         return null;
     }
+
+    public static BufferedImage getScaledImage(BufferedImage image, int width, int height) {
+        BufferedImage r = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = r.getGraphics();
+        g.drawImage(image, 0, 0, width, height, null);
+        return r;
+    }
 }
