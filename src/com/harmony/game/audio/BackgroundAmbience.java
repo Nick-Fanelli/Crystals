@@ -1,5 +1,7 @@
 package com.harmony.game.audio;
 
+import com.harmony.game.state.SettingsState;
+
 public class BackgroundAmbience {
 
     public static final int CAVE_AMBIENCE = 0;
@@ -9,6 +11,7 @@ public class BackgroundAmbience {
     private static final AudioClip outsideAmbience = new AudioClip("/audio/ambience/outside_ambience.wav");
 
     public static void playBackgroundAudio(int audio) {
+        if(!SettingsState.isBackgroundMusic) return;
         assert getAudio(audio) != null;
         getAudio(audio).loop();
     }
@@ -16,6 +19,11 @@ public class BackgroundAmbience {
     public static void stopBackgroundAudio(int audio) {
         assert getAudio(audio) != null;
         getAudio(audio).stop();
+    }
+
+    public static void stopAllBackground() {
+        caveAmbience.stop();
+        outsideAmbience.stop();
     }
 
     public static void cleanUp() {
