@@ -11,8 +11,8 @@ import java.awt.*;
 
 public class BoxCollider {
 
-    private Entity entity;
     private Vector2f offset;
+    private Entity entity;
     private int width;
     private int height;
 
