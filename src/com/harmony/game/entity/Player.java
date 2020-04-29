@@ -7,6 +7,7 @@ import com.harmony.game.animation.Animation;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
+import com.harmony.game.object.GameObject;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.state.MenuState;
 import com.harmony.game.state.chapters.Chapter;
@@ -17,6 +18,7 @@ import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class Player extends Entity {
 
@@ -37,6 +39,7 @@ public class Player extends Entity {
     public static int staticHealth;
 
     private Chapter chapter;
+    private ArrayList<GameObject> gameObjects;
 
     private final BoxCollider attackCollider;
 
@@ -51,7 +54,7 @@ public class Player extends Entity {
         health = maxHealth = 10;
         this.damage = 2;
 
-        boxCollider = new BoxCollider(this, new Vector2f(25, width - 40), width - 50, 40);
+        boxCollider = new BoxCollider(this, new Vector2f(40, width - 40), width - 80, 35);
         attackCollider = new BoxCollider(this, new Vector2f(-30, -30), width + 60, height + 60);
 
         if(MenuState.saveData == null) sprite = new Sprite("/entity/player/male_light.png", 64, 64);
@@ -63,6 +66,7 @@ public class Player extends Entity {
     }
 
     public void setSpeed(int speed) { this.maxMoveSpeed = speed; }
+    public void setGameObjects(ArrayList<GameObject> gameObjects) { this.gameObjects = gameObjects; }
 
     @Override
     public void onCreate() {
@@ -137,6 +141,8 @@ public class Player extends Entity {
         dx *= Game.deltaTime * speedMultiplier;
         dy *= Game.deltaTime * speedMultiplier;
 
+        if(collisionWithGameObject(dx, dy)) return;
+
         if (!boxCollider.collisionTilePlayer(objectTileMap, dx, 0)) {
             Camera.position.x += dx;
         }
@@ -144,6 +150,17 @@ public class Player extends Entity {
         if (!boxCollider.collisionTilePlayer(objectTileMap, 0, dy)) {
             Camera.position.y += dy;
         }
+    }
+
+    private boolean collisionWithGameObject(float dx, float dy) {
+        if(gameObjects == null) return false;
+
+        for(GameObject object : gameObjects) {
+            if(!object.isCollideable()) continue;
+            if(object.isCollidingWithFuture(this, dx, dy)) return true;
+        }
+
+        return false;
     }
 
     private void checkAttack() {
@@ -212,4 +229,6 @@ public class Player extends Entity {
                 || animation == ANIMATION_ATTACK_DOWN) return 6;
         return 0;
     }
+
+    public void setIdle(boolean isIdle) { this.isIdle = isIdle; }
 }
