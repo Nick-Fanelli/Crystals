@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Crystals:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Game_jar</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/Crystals_Jar</output-path>
     <root id="archive" name="Crystals.jar">
       <element id="module-output" name="Crystals" />
     </root>

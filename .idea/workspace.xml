@@ -9,51 +9,52 @@
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/buildings/village/fish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/buildings/village/house.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/buildings/village/hut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/buildings/village/inn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/buildings/village/tailor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/buildings/village/tavern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/buildings/village/villa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/tile/places/kebir-town.tmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/gui/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/state/SettingsState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/entity/npc/fish-c2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/entity/npc/tailor-c2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/ui/hud/health_holder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/ui/hud/health_points.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/object/Building.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/Mesh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/MeshCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Crystals_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Crystals_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nick227889.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/_save_data/player.data" beforeDir="false" afterPath="$PROJECT_DIR$/res/_save_data/player.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/buildings/village/house.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/buildings/village/house.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/buildings/village/inn.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/buildings/village/inn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/buildings/village/tavern.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/buildings/village/tavern.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/buildings/village/villa.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/buildings/village/villa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/entity/player/female_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/entity/player/female_dark.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/entity/player/female_light.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/entity/player/female_light.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/entity/player/male_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/entity/player/male_dark.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/entity/player/male_light.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/entity/player/male_light.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tile/places/kebir-town.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/res/tile/places/kebir-town.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ui/hud/increments.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ui/hud/main_gui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/animation/controller/C1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/animation/controller/C1Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/animation/scene/chapter1/Chapter1Scene1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/animation/scene/chapter1/Chapter1Scene1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/audio/BackgroundAmbience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/audio/BackgroundAmbience.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/graphics/Font.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/graphics/Font.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/object/Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/object/Chest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/object/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/object/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/gui/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/gui/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/object/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/BoxCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/physics/collision/BoxCollider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/GameStateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/QuitConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/QuitConfirmation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/SettingsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/SettingsState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/utils/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/utils/Vector2f.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,25 +85,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/ui/hud" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/ui" />
-      <recent name="$PROJECT_DIR$/res/audio/sfx" />
-      <recent name="$PROJECT_DIR$/res/tile" />
-      <recent name="$PROJECT_DIR$/res/scenes/chapter1" />
-      <recent name="$PROJECT_DIR$/res/item/crystals" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/ui/hud" />
       <recent name="$PROJECT_DIR$/res/entity/npc" />
       <recent name="$PROJECT_DIR$/res/scenes/chapter1/characters" />
       <recent name="$PROJECT_DIR$/res/audio/ambience" />
       <recent name="$PROJECT_DIR$/res/audio/sfx" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/ui/hud" />
+      <recent name="$PROJECT_DIR$/res/ui" />
+      <recent name="$PROJECT_DIR$/res/audio/sfx" />
+      <recent name="$PROJECT_DIR$/res/tile" />
       <recent name="$PROJECT_DIR$/res/scenes/chapter1" />
     </key>
   </component>
@@ -174,6 +175,10 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="846" y="379" key="#Custom_Plugin_Repositories/0.23.1920.977@0.23.1920.977" timestamp="1586456924945" />
+    <state x="698" y="254" key="#Images" timestamp="1588004511279">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="698" y="254" key="#Images/0.23.1920.1057@0.23.1920.1057" timestamp="1588004511279" />
     <state x="851" y="381" width="624" height="430" key="#Notifications" timestamp="1586457753653">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -186,56 +191,56 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="699" y="360" key="#com.intellij.fileTypes.FileTypeChooser/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586702503969" />
-    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser" timestamp="1587768071773">
+    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser" timestamp="1587863911926">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1587768071773" />
+    <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1587863911926" />
     <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586820613954" />
     <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586130183786">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1586123875033" />
     <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586130183786" />
-    <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587766406096">
+    <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587925643123">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1587766406096" />
+    <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1587925643123" />
     <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586833351932" />
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587583783629">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1587583783629" />
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586821070937" />
-    <state width="1878" height="188" key="GridCell.Tab.0.bottom" timestamp="1587784554304">
+    <state width="1878" height="181" key="GridCell.Tab.0.bottom" timestamp="1588188145408">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="183" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1587600993198" />
     <state width="1238" height="162" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="188" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1587784554304" />
+    <state width="1878" height="181" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1588188145408" />
     <state width="1878" height="188" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1587671961641" />
     <state width="1238" height="126" key="GridCell.Tab.0.bottom/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848084" />
-    <state width="1878" height="188" key="GridCell.Tab.0.center" timestamp="1587784554304">
+    <state width="1878" height="181" key="GridCell.Tab.0.center" timestamp="1588188145407">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="183" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1587600993197" />
     <state width="1238" height="162" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="188" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1587784554304" />
+    <state width="1878" height="181" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1588188145407" />
     <state width="1878" height="188" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1587671961641" />
     <state width="1238" height="126" key="GridCell.Tab.0.center/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848080" />
-    <state width="1878" height="188" key="GridCell.Tab.0.left" timestamp="1587784554304">
+    <state width="1878" height="181" key="GridCell.Tab.0.left" timestamp="1588188145406">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="183" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1587600993196" />
     <state width="1238" height="162" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1586193470939" />
-    <state width="1878" height="188" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1587784554304" />
+    <state width="1878" height="181" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1588188145406" />
     <state width="1878" height="188" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1587671961640" />
     <state width="1238" height="126" key="GridCell.Tab.0.left/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848078" />
-    <state width="1878" height="188" key="GridCell.Tab.0.right" timestamp="1587784554304">
+    <state width="1878" height="181" key="GridCell.Tab.0.right" timestamp="1588188145407">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="183" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1587600993198" />
     <state width="1238" height="162" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1586193470940" />
-    <state width="1878" height="188" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1587784554304" />
+    <state width="1878" height="181" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1588188145407" />
     <state width="1878" height="188" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1587671961641" />
     <state width="1238" height="126" key="GridCell.Tab.0.right/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125848083" />
     <state width="1878" height="143" key="GridCell.Tab.1.bottom" timestamp="1586137982969">
@@ -262,10 +267,10 @@
     <state width="1238" height="94" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1586124967109" />
     <state width="1878" height="143" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586137982968" />
     <state width="1238" height="94" key="GridCell.Tab.1.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586125953349" />
-    <state x="502" y="151" key="SettingsEditor" timestamp="1587592433741">
+    <state x="502" y="151" key="SettingsEditor" timestamp="1587867396329">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="502" y="151" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1587592433741" />
+    <state x="502" y="151" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1587867396329" />
     <state x="448" y="125" key="SettingsEditor/0.23.1920.977@0.23.1920.977" timestamp="1586457741356" />
     <state x="448" y="133" key="SettingsEditor/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586820226227" />
     <state width="254" height="200" key="ShowFilterAction_Filter_Popup" timestamp="1587662419781">
@@ -276,19 +281,19 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="690" y="290" width="540" height="524" key="StructurePopup/0.23.1920.1057@0.23.1920.1057" timestamp="1587584088917" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1586119482871">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1587918210375">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1586119482871" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1587918210375" />
     <state x="761" y="248" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586135973973">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="761" y="248" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1586135973973" />
-    <state x="648" y="308" width="624" height="486" key="find.popup" timestamp="1587603520423">
+    <state x="648" y="308" width="624" height="486" key="find.popup" timestamp="1588183774795">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="432" y="233" width="666" height="486" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1586125404048" />
-    <state x="648" y="308" width="624" height="486" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1587603520423" />
+    <state x="648" y="308" width="624" height="486" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1588183774795" />
     <state x="648" y="309" width="999" height="662" key="find.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586892158894" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1586700489566">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -299,11 +304,11 @@
     </state>
     <state x="389" y="174" key="new project wizard/0.23.1920.1057@0.23.1920.1057" timestamp="1587491101374" />
     <state x="389" y="174" key="new project wizard/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051094188" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587777829416">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1588187995550">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="417" y="196" width="670" height="497" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1586193390923" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1587777829416" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1588187995550" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586892608377" />
   </component>
 </project>

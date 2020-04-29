@@ -2,12 +2,15 @@
   <dictionary name="nick227889">
     <words>
       <w>ambience</w>
+      <w>chpater</w>
       <w>collectables</w>
+      <w>collidable</w>
+      <w>collideable</w>
       <w>collider</w>
       <w>deserialized</w>
+      <w>enterable</w>
       <w>kebir</w>
       <w>papi</w>
-      <w>scalr</w>
     </words>
   </dictionary>
 </component>

@@ -4,7 +4,11 @@
     <inspection_tool class="MisspelledHeader" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="CUSTOM_HEADERS">
         <header value="Built-By" />
+        <header value="Bundled-By" />
         <header value="Characters-By" />
+        <header value="Engine-By" />
+        <header value="Engine-Creator-By" />
+        <header value="Game-Engine-Name" />
         <header value="Written-By" />
       </option>
     </inspection_tool>
