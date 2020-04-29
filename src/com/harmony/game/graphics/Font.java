@@ -29,6 +29,11 @@ public class Font {
         drawText(g, text, (Display.width / 2) - (g.getFontMetrics(font).stringWidth(text) / 2), y, fontSize);
     }
 
+    public void centerTextHorizontal(Graphics2D g, String text, int y, int fontSize, Color color) {
+        java.awt.Font font = new java.awt.Font(fontName, java.awt.Font.PLAIN, fontSize);
+        drawText(g, text, (Display.width / 2) - (g.getFontMetrics(font).stringWidth(text) / 2), y, fontSize, color);
+    }
+
     public void drawText(Graphics2D g, String text, int x, int y, int fontSize) {
         this.drawText(g, text, x, y, new java.awt.Font(fontName, java.awt.Font.PLAIN, fontSize), Color.WHITE);
     }
