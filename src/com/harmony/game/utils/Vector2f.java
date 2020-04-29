@@ -41,6 +41,8 @@ public class Vector2f {
     public Vector2f mul(Vector2f r) { return new Vector2f(r.x * this.x, r.y * this.y); }
     public Vector2f div(Vector2f r) { return new Vector2f(r.x / this.x, r.y / this.y); }
 
+    public Vector2f inverse() { return this.mul(-1, -1); }
+
     public static float toRelativeX(int x) { return x - Camera.position.x; }
     public static float toRelativeY(int y) { return y - Camera.position.y; }
 }
