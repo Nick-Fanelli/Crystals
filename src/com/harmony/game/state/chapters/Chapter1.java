@@ -7,6 +7,7 @@ import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.ConsoleMessage;
 import com.harmony.game.graphics.Sprite;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.object.NextLevelInvisible;
 import com.harmony.game.state.GameStateManager;
 import com.harmony.game.utils.Vector2f;
@@ -42,6 +43,8 @@ public class Chapter1 extends Chapter {
         BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
         handleNPC();
+
+        GUI.showMap = false;
 
         Camera.position = new Vector2f(1000, 1000);
 

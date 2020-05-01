@@ -21,7 +21,7 @@ public class Game implements Runnable {
 
     public static Color backgroundColor = new Color(34, 30, 39);
 
-    private Thread gameThread;
+    private final Thread gameThread;
     private Display display;
     private Graphics2D g;
 
@@ -92,10 +92,12 @@ public class Game implements Runnable {
         cleanUp();
     }
 
+    public static boolean requestFocus = true;
+
     private synchronized void update() {
         gsm.update();
 
-        display.getFrame().requestFocus();
+        if(requestFocus) display.getFrame().requestFocus();
 
         if(Input.isKeyDown(KeyEvent.VK_F3)) debugMode = !debugMode;
 

@@ -4,9 +4,11 @@ import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.utils.ImageUtils;
+import com.harmony.game.utils.Input;
 import com.harmony.game.utils.Timer;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 public class GUI {
@@ -21,9 +23,13 @@ public class GUI {
     public static final Sprite health_points = new Sprite("/ui/hud/health_points.png", 11, 10);
 
     private static final BufferedImage health_holder = ImageUtils.loadImage("/ui/hud/health_holder.png");
+    private static final BufferedImage mini_map = ImageUtils.loadImage("/ui/hud/mini-map.png");
+    private static final BufferedImage map = ImageUtils.loadImage("/ui/map.png");
 
     public static boolean showGui = false;
     public static boolean hasKey = false;
+    public static boolean showMap = true;
+    public static boolean displayFullMap = false;
 
     public static boolean hit = false;
     private static final Timer hitTimer = new Timer();
@@ -44,6 +50,7 @@ public class GUI {
 
         if(showGui) {
 
+            // Player Health
             g.drawImage(health_holder, 0, 0, 206, 48, null);
 
             float fullPoints = Player.staticHealth / 2f;
@@ -68,6 +75,18 @@ public class GUI {
                 g.drawImage(health_points.getSprite(2, 0), 22 + i * 30, 7, 24, 22, null);
                 i++;
             }
+
+            // Map
+            if(showMap) {
+                g.drawImage(mini_map, Display.width - 110, Display.height - 110, 100, 100, null);
+
+                if(displayFullMap) {
+                    g.setColor(new Color(0x99C9C9C9, true));
+                    g.fillRect(0, 0, Display.width, Display.height);
+                    g.drawImage(map, Display.width / 2 - 320, Display.height / 2 - 320, 640, 640, null);
+                }
+            }
+
 
         }
     }

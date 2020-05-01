@@ -8,6 +8,7 @@ import com.harmony.game.graphics.Console;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
 import com.harmony.game.gui.Button;
+import com.harmony.game.gui.GUI;
 import com.harmony.game.item.Drops;
 import com.harmony.game.item.Item;
 import com.harmony.game.object.Chest;
@@ -16,7 +17,6 @@ import com.harmony.game.object.GameObject;
 import com.harmony.game.state.GameStateManager;
 import com.harmony.game.state.State;
 import com.harmony.game.tiles.TileManager;
-import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.Vector2f;
 
@@ -128,6 +128,8 @@ public abstract class Chapter extends State {
             PAUSE_BUTTON.setPressed(false);
             return;
         }
+
+        if(GUI.showMap && Input.isKeyDown(KeyEvent.VK_M)) GUI.displayFullMap = !GUI.displayFullMap;
 
         player.setGameObjects(getGameObjects());
         player.update();
