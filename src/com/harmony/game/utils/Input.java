@@ -16,6 +16,8 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
     private static final boolean[] buttons     = new boolean[NUM_BUTTONS];
     private static final boolean[] buttonsLast = new boolean[NUM_BUTTONS];
 
+    private static boolean movementKeyPressed = false;
+
     private static final Vector2f mouse = new Vector2f();
     private static int scroll;
 
@@ -32,8 +34,10 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
     }
 
     public void update() {
-        for(int i = 0; i < NUM_KEYS; i++)       keysLast[i] =    keys[i];
-        for(int i = 0; i < NUM_BUTTONS; i++) buttonsLast[i] = buttons[i];
+        System.arraycopy(keys, 0, keysLast, 0, NUM_KEYS);
+        System.arraycopy(buttons, 0, buttonsLast, 0, NUM_BUTTONS);
+
+        movementKeyPressed = keys[KeyEvent.VK_W] || keys[KeyEvent.VK_A] || keys[KeyEvent.VK_S] || keys[KeyEvent.VK_D];
     }
 
     public static boolean hoverRectangle(Rectangle rectangle) {
@@ -56,7 +60,10 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
     public static Vector2f getMouse() { return mouse; }
     public static int getScroll() { return scroll; }
 
-    @Override public void keyPressed(KeyEvent e) { if(e.getKeyCode() <= keys.length) keys[e.getKeyCode()] = true; }
+    @Override public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() <= keys.length) keys[e.getKeyCode()] = true;
+    }
+
     @Override public void keyReleased(KeyEvent e) { if(e.getKeyCode() <= keys.length) keys[e.getKeyCode()] = false; }
 
     @Override public void mousePressed(MouseEvent e) { if(e.getButton() <= buttons.length) buttons[e.getButton()] = true; }
@@ -78,4 +85,6 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
     @Deprecated @Override public void mouseClicked(MouseEvent e) {}
     @Deprecated @Override public void mouseEntered(MouseEvent e) {}
     @Deprecated @Override public void mouseExited(MouseEvent e) {}
+
+    public static boolean movementKeyPressed() { return movementKeyPressed; }
 }

@@ -38,7 +38,7 @@ public class Player extends Entity {
 
     public static int staticHealth;
 
-    private Chapter chapter;
+    private final Chapter chapter;
     private ArrayList<GameObject> gameObjects;
 
     private final BoxCollider attackCollider;
@@ -90,11 +90,7 @@ public class Player extends Entity {
         right = Input.isKey(KeyEvent.VK_D);
         attack = Input.isKey(KeyEvent.VK_SPACE);
 
-        if (Input.isKeyDown(KeyEvent.VK_W)) currentAnimation = ANIMATION_UP;
-        else if (Input.isKeyDown(KeyEvent.VK_A)) currentAnimation = ANIMATION_LEFT;
-        else if (Input.isKeyDown(KeyEvent.VK_S)) currentAnimation = ANIMATION_DOWN;
-        else if (Input.isKeyDown(KeyEvent.VK_D)) currentAnimation = ANIMATION_RIGHT;
-        else if (Input.isKeyDown(KeyEvent.VK_SPACE)) {
+        if (Input.isKeyDown(KeyEvent.VK_SPACE)) {
             if(currentAnimation == ANIMATION_RIGHT || currentAnimation == ANIMATION_ATTACK_RIGHT) {
                 currentAnimation = ANIMATION_ATTACK_RIGHT;
             } else if(currentAnimation == ANIMATION_UP || currentAnimation == ANIMATION_ATTACK_UP) {
@@ -104,9 +100,6 @@ public class Player extends Entity {
             } else if(currentAnimation == ANIMATION_LEFT || currentAnimation == ANIMATION_ATTACK_LEFT) {
                 currentAnimation = ANIMATION_ATTACK_LEFT;
             }
-        }
-        else {
-            isIdle = true;
         }
 
         if (up) {
@@ -133,6 +126,20 @@ public class Player extends Entity {
         else {
             dy = 0;
             dx = 0;
+        }
+
+        if(dx > 0)       currentAnimation = ANIMATION_RIGHT;
+        else if(dx < 0)  currentAnimation = ANIMATION_LEFT;
+        else if(dy > 0)  currentAnimation = ANIMATION_DOWN;
+        else if(dy < 0)  currentAnimation = ANIMATION_UP;
+        else isIdle = true;
+
+        if(Input.isKeyUp(KeyEvent.VK_W) || Input.isKeyUp(KeyEvent.VK_A) || Input.isKeyUp(KeyEvent.VK_S) ||
+                Input.isKeyUp(KeyEvent.VK_D)) {
+            if (Input.isKey(KeyEvent.VK_W)) currentAnimation = ANIMATION_UP;
+            else if (Input.isKey(KeyEvent.VK_A)) currentAnimation = ANIMATION_LEFT;
+            else if (Input.isKey(KeyEvent.VK_S)) currentAnimation = ANIMATION_DOWN;
+            else if (Input.isKey(KeyEvent.VK_D)) currentAnimation = ANIMATION_RIGHT;
         }
 
         checkAttack();
