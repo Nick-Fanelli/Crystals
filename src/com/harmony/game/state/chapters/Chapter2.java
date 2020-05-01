@@ -16,6 +16,8 @@ public class Chapter2 extends Chapter {
     private final String playerQuestion = "Do you have a map I could have?";
     private ConsoleMessage message;
 
+    private NPC mrsClark;
+
     public Chapter2() { super("/tile/places/kebir-town.tmx"); }
 
     @Override
@@ -40,9 +42,10 @@ public class Chapter2 extends Chapter {
                 "What? No...~Look at Miss. Tailor over there! Just because her name is Tailor doesn't mean she's a tailor!!!",
                 playerQuestion));
 
-        super.npcs.add(new NPC(new Vector2f(4926, 1300), "Mrs. Clark", tileManager.getObjectsMap(), player, console,
+        super.npcs.add(mrsClark = new NPC(new Vector2f(4926, 1300), "Mrs. Clark", tileManager.getObjectsMap(), player, console,
                 new Sprite("/entity/npc/mrs-clark-c2.png", 64, 64), 128, 128,
-                "Actually I accidentally bought a second. Here have fun with it.", playerQuestion));
+                "Actually I accidentally bought a second. Here take it...~And remember you can press M at anytime" +
+                        "to view the map completely.", playerQuestion));
 
         super.addGameObject(new Building(new Vector2f(2250, 4521), Building.Type.TAVERN));
         super.addGameObject(new Building(new Vector2f(2206, 873), Building.Type.HUT));
@@ -61,7 +64,7 @@ public class Chapter2 extends Chapter {
     public void update() {
         super.update();
 
-        System.out.println(player.getPosition().add(Camera.position));
+        if(mrsClark.hasTalked() && !GUI.showMap) GUI.showMap = true;
 
         message.update();
     }
