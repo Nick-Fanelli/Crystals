@@ -38,7 +38,9 @@ public class Chapter1 extends Chapter {
     @Override
     public void onCreate() {
         super.onCreate();
-        GameStateManager.showCutScene(new Chapter1Scene1());
+
+        // TODO: Add the cut scene back in!!!
+        // GameStateManager.showCutScene(new Chapter1Scene1());
 
         BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
