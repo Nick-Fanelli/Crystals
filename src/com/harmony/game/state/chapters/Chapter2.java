@@ -13,8 +13,8 @@ import java.awt.*;
 
 public class Chapter2 extends Chapter {
 
-    private final String playerQuestion = "Do you have a map I could have?";
     private ConsoleMessage message;
+    private ConsoleMessage finalMessage;
 
     private NPC mrsClark;
 
@@ -33,6 +33,8 @@ public class Chapter2 extends Chapter {
 
         GUI.showMap = false;
 
+        String playerQuestion = "Do you have a map I could have?";
+
         super.npcs.add(new NPC(new Vector2f(2795, 1726), "Miss. Tailor", tileManager.getObjectsMap(),
                 player, console, new Sprite("/entity/npc/tailor-c2.png", 64, 64), 128, 128,
                 "I'm sorry no.~Ugh. Look at him. He thinks he can just decapitate fish. Not on my watch!!!", playerQuestion));
@@ -44,7 +46,7 @@ public class Chapter2 extends Chapter {
 
         super.npcs.add(mrsClark = new NPC(new Vector2f(4926, 1300), "Mrs. Clark", tileManager.getObjectsMap(), player, console,
                 new Sprite("/entity/npc/mrs-clark-c2.png", 64, 64), 128, 128,
-                "Actually I accidentally bought a second. Here take it...~And remember you can press M at anytime" +
+                "Actually I accidentally bought a second. Here take it...~And remember you can press M at anytime " +
                         "to view the map completely.", playerQuestion));
 
         super.addGameObject(new Building(new Vector2f(2250, 4521), Building.Type.TAVERN));
@@ -55,6 +57,9 @@ public class Chapter2 extends Chapter {
         super.addGameObject(new Building(new Vector2f(3246, 1630), Building.Type.FISH));
         super.addGameObject(new Building(new Vector2f(3227, 2733), Building.Type.INN));
 
+        finalMessage = new ConsoleMessage(console, "According to the map, I should head down the east trail.~" +
+                "The red line is my path, (Hint: I am in the top left to start).", null);
+
         message = new ConsoleMessage(console, "I should see if anyone can give me a map.~" +
                 "Then I can find-out what's happened to my world!", null);
         message.run();
@@ -64,9 +69,13 @@ public class Chapter2 extends Chapter {
     public void update() {
         super.update();
 
-        if(mrsClark.hasTalked() && !GUI.showMap) GUI.showMap = true;
+        if(mrsClark.hasTalked() && !console.isShowConsole() && !GUI.showMap) {
+            GUI.showMap = true;
+            finalMessage.run();
+        }
 
         message.update();
+        finalMessage.update();
     }
 
     @Override
