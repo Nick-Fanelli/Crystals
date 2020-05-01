@@ -36,7 +36,7 @@ public class Player extends Entity {
 
     public boolean hide = false;
 
-    public static int staticHealth;
+    public static int displayedHealth;
 
     private final Chapter chapter;
     private ArrayList<GameObject> gameObjects;
@@ -82,26 +82,17 @@ public class Player extends Entity {
         if(chapter.isControlled()) return;
         if(isDead) respawn();
 
-        staticHealth = health;
+        // Set the displayed health
+        displayedHealth = health;
 
+        // Set player direction based on input
         up = Input.isKey(KeyEvent.VK_W);
         left = Input.isKey(KeyEvent.VK_A);
         down = Input.isKey(KeyEvent.VK_S);
         right = Input.isKey(KeyEvent.VK_D);
         attack = Input.isKey(KeyEvent.VK_SPACE);
 
-        if (Input.isKeyDown(KeyEvent.VK_SPACE)) {
-            if(currentAnimation == ANIMATION_RIGHT || currentAnimation == ANIMATION_ATTACK_RIGHT) {
-                currentAnimation = ANIMATION_ATTACK_RIGHT;
-            } else if(currentAnimation == ANIMATION_UP || currentAnimation == ANIMATION_ATTACK_UP) {
-                currentAnimation = ANIMATION_ATTACK_UP;
-            } else if(currentAnimation == ANIMATION_DOWN || currentAnimation == ANIMATION_ATTACK_DOWN) {
-                currentAnimation = ANIMATION_ATTACK_DOWN;
-            } else if(currentAnimation == ANIMATION_LEFT || currentAnimation == ANIMATION_ATTACK_LEFT) {
-                currentAnimation = ANIMATION_ATTACK_LEFT;
-            }
-        }
-
+        // Find Y Delta
         if (up) {
             dy -= acceleration;
             if (dy < -maxMoveSpeed) dy = -maxMoveSpeed;
@@ -112,6 +103,7 @@ public class Player extends Entity {
             dy = 0;
         }
 
+        // Find X Delta
         if (right) {
             dx += acceleration;
             if (dx > maxMoveSpeed) dx = maxMoveSpeed;
@@ -128,12 +120,14 @@ public class Player extends Entity {
             dx = 0;
         }
 
+        // START MOVEMENT ANIMATION
         if(dx > 0)       currentAnimation = ANIMATION_RIGHT;
         else if(dx < 0)  currentAnimation = ANIMATION_LEFT;
         else if(dy > 0)  currentAnimation = ANIMATION_DOWN;
         else if(dy < 0)  currentAnimation = ANIMATION_UP;
         else isIdle = true;
 
+        // Check for indirect direction change
         if(Input.isKeyUp(KeyEvent.VK_W) || Input.isKeyUp(KeyEvent.VK_A) || Input.isKeyUp(KeyEvent.VK_S) ||
                 Input.isKeyUp(KeyEvent.VK_D)) {
             if (Input.isKey(KeyEvent.VK_W)) currentAnimation = ANIMATION_UP;
@@ -142,18 +136,35 @@ public class Player extends Entity {
             else if (Input.isKey(KeyEvent.VK_D)) currentAnimation = ANIMATION_RIGHT;
         }
 
+        // Attack animation
+        if (Input.isKeyDown(KeyEvent.VK_SPACE)) {
+            if(currentAnimation == ANIMATION_RIGHT || currentAnimation == ANIMATION_ATTACK_RIGHT) {
+                currentAnimation = ANIMATION_ATTACK_RIGHT;
+            } else if(currentAnimation == ANIMATION_UP || currentAnimation == ANIMATION_ATTACK_UP) {
+                currentAnimation = ANIMATION_ATTACK_UP;
+            } else if(currentAnimation == ANIMATION_DOWN || currentAnimation == ANIMATION_ATTACK_DOWN) {
+                currentAnimation = ANIMATION_ATTACK_DOWN;
+            } else if(currentAnimation == ANIMATION_LEFT || currentAnimation == ANIMATION_ATTACK_LEFT) {
+                currentAnimation = ANIMATION_ATTACK_LEFT;
+            }
+        }
+        // END MOVEMENT ANIMATION
+
         checkAttack();
 
         // Adjust for Delta Time
         dx *= Game.deltaTime * speedMultiplier;
         dy *= Game.deltaTime * speedMultiplier;
 
+        // Check game object collision
         if(collisionWithGameObject(dx, dy)) return;
 
+        // Move Camera
         if (!boxCollider.collisionTilePlayer(objectTileMap, dx, 0)) {
             Camera.position.x += dx;
         }
 
+        // Move Camera
         if (!boxCollider.collisionTilePlayer(objectTileMap, 0, dy)) {
             Camera.position.y += dy;
         }

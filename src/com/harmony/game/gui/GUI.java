@@ -4,11 +4,9 @@ import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.utils.ImageUtils;
-import com.harmony.game.utils.Input;
 import com.harmony.game.utils.Timer;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 public class GUI {
@@ -53,7 +51,7 @@ public class GUI {
             // Player Health
             g.drawImage(health_holder, 0, 0, 206, 48, null);
 
-            float fullPoints = Player.staticHealth / 2f;
+            float fullPoints = Player.displayedHealth / 2f;
             float halfPoints = (fullPoints % 1);
             fullPoints -= halfPoints;
             halfPoints *= 2;
