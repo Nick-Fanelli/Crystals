@@ -1,10 +1,2 @@
 Manifest-Version: 1.0
 Main-Class: com.harmony.game.Launcher
-
-Built-By: Nick Fanelli
-Created-By: Nick Fanelli
-Written-By: Nick Fanelli
-Bundled-By: Nick Fanelli
-Characters-By: Marc Fanelli
-Game-Engine-Name: Harmony Engine
-Engine-Creator-By: Nick Fanelli

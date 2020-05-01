@@ -32,10 +32,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Crystals_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Crystals_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/_save_data/player.data" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/res/ui/hud" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -189,11 +189,11 @@
     </state>
     <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1588210047013" />
     <state x="773" y="268" key="#com.intellij.ide.util.MemberChooser/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586820613954" />
-    <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586130183786">
+    <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588360886604">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1586123875033" />
-    <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586130183786" />
+    <state x="698" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588360886604" />
     <state x="519" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587925643123">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -264,12 +264,12 @@
     <state width="1238" height="94" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1586124967109" />
     <state width="1878" height="143" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1586137982968" />
     <state width="1238" height="94" key="GridCell.Tab.1.right/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586125953349" />
-    <state x="502" y="151" key="SettingsEditor" timestamp="1587867396329">
+    <state x="448" y="133" key="SettingsEditor" timestamp="1588360896504">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="502" y="151" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1587867396329" />
     <state x="448" y="125" key="SettingsEditor/0.23.1920.977@0.23.1920.977" timestamp="1586457741356" />
-    <state x="448" y="133" key="SettingsEditor/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586820226227" />
+    <state x="448" y="133" key="SettingsEditor/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588360896504" />
     <state x="100" y="123" width="1720" height="857" key="ShowDiffWithBranchDialog" timestamp="1588201305751">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -294,12 +294,12 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="761" y="248" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1586135973973" />
-    <state x="648" y="309" width="999" height="662" key="find.popup" timestamp="1588360169793">
+    <state x="648" y="309" width="999" height="662" key="find.popup" timestamp="1588360955344">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="432" y="233" width="666" height="486" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1586125404048" />
     <state x="648" y="308" width="624" height="486" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1588209947795" />
-    <state x="648" y="309" width="999" height="662" key="find.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588360169793" />
+    <state x="648" y="309" width="999" height="662" key="find.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588360955344" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1586700489566">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
