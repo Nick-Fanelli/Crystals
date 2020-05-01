@@ -76,7 +76,11 @@ public class GameStateManager {
             case CHPATER_2:      tempState = new Chapter2();            break;
         }
 
-        if(tempState == null) return;
+        if(tempState == null) {
+            System.err.println("Crystals: Could not find a state with the ID of: " + currentState);
+            System.exit(-1);
+        }
+
         GameStateManager.currentState = tempState;
         Camera.position.reset();
         tempState.onCreate();

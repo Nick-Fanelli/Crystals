@@ -12,7 +12,7 @@ public class ImageUtils implements Serializable {
         try {
             return ImageIO.read(ImageUtils.class.getResourceAsStream(path));
         } catch (Exception e) {
-            System.err.println("Could not load resource: \"" + path + "\"");
+            System.err.println("Crystals: Could not load resource: \"" + path + "\"");
             System.exit(-1);
         }
         return null;

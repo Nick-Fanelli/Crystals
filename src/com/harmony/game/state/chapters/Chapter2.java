@@ -1,5 +1,6 @@
 package com.harmony.game.state.chapters;
 
+import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.entity.Player;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
@@ -7,6 +8,7 @@ import com.harmony.game.graphics.ConsoleMessage;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.gui.GUI;
 import com.harmony.game.object.Building;
+import com.harmony.game.object.NextLevelInvisible;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -16,6 +18,8 @@ public class Chapter2 extends Chapter {
     private ConsoleMessage message;
     private ConsoleMessage finalMessage;
 
+    private NextLevelInvisible nextLevelInvisible;
+
     private NPC mrsClark;
 
     public Chapter2() { super("/tile/places/kebir-town.tmx"); }
@@ -24,10 +28,9 @@ public class Chapter2 extends Chapter {
     public void onCreate() {
         super.onCreate();
 
-//        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
+        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
         Camera.position = new Vector2f(2368,4967);
-//        Camera.position = new Vector2f(4000, 1072);
         player.setCurrentAnimation(Player.ANIMATION_ATTACK_UP);
         player.setIdle(true);
 
@@ -48,6 +51,8 @@ public class Chapter2 extends Chapter {
                 new Sprite("/entity/npc/mrs-clark-c2.png", 64, 64), 128, 128,
                 "Actually I accidentally bought a second. Here take it...~And remember you can press M at anytime " +
                         "to view the map completely.", playerQuestion));
+
+        nextLevelInvisible = new NextLevelInvisible(new Vector2f(5400, 2100), player, 20, 350);
 
         super.addGameObject(new Building(new Vector2f(2250, 4521), Building.Type.TAVERN));
         super.addGameObject(new Building(new Vector2f(2206, 873), Building.Type.HUT));
@@ -72,15 +77,19 @@ public class Chapter2 extends Chapter {
         if(mrsClark.hasTalked() && !console.isShowConsole() && !GUI.showMap) {
             GUI.showMap = true;
             finalMessage.run();
+            nextLevelInvisible.shouldDetect = true;
         }
 
         message.update();
         finalMessage.update();
+        nextLevelInvisible.update();
     }
 
     @Override
     public void draw(Graphics2D g) {
         super.draw(g);
+
+        nextLevelInvisible.draw(g);
     }
 
     @Override

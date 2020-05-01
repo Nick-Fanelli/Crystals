@@ -29,7 +29,7 @@ public class AudioClip {
             gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
 
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            System.err.println("Error loading audio clip " + path);
+            System.err.println("Crystals: Error loading audio clip " + path);
             e.printStackTrace();
         }
     }

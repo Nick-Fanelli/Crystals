@@ -75,7 +75,7 @@ public class TileManager {
             }
 
         } catch(Exception e) {
-            System.err.println("Error: Tile Manager");
+            System.err.println("Crystals: Tile Manager");
             e.printStackTrace();
         }
     }

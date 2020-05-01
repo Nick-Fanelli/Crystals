@@ -28,7 +28,7 @@ public class Camera {
 
     public static boolean shouldHandleTile(Block block) {
         if (!created) {
-            System.err.println("Must create the camera first before asking to show tile");
+            System.err.println("Crystals: Must create the camera first before asking to show tile");
             return false;
         }
 
@@ -42,7 +42,7 @@ public class Camera {
 
     public static boolean shouldHandleGameObject(GameObject object) {
         if (!created) {
-            System.err.println("Must create the camera first before asking to show game object");
+            System.err.println("Crystals: Must create the camera first before asking to show game object");
             return false;
         }
 
@@ -57,7 +57,7 @@ public class Camera {
 
     public static boolean shouldHandleEntity(Entity entity) {
         if (!created) {
-            System.err.println("Must create the camera first before asking to show entity");
+            System.err.println("Crystals: Must create the camera first before asking to show entity");
             return false;
         }
 
@@ -72,7 +72,7 @@ public class Camera {
 
     public static boolean shouldHandleDrop(Drop drop) {
         if(!created) {
-            System.err.println("Must create the camera first before asking to show drop");
+            System.err.println("Crystals: Must create the camera first before asking to show drop");
             return false;
         }
 
