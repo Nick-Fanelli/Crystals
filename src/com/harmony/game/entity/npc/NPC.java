@@ -27,6 +27,7 @@ public class NPC extends Entity {
     public static final int ANIMATION_UP    = 8;
 
     protected final String name;
+    protected final String preMessage;
 
     protected BoxCollider talkCollider;
 
@@ -40,17 +41,23 @@ public class NPC extends Entity {
     public boolean hide = false;
 
     public NPC(Vector2f position, String name, ObjectTileMap objectTileMap, Player player, Console console, Sprite sprite,
-               int width, int height, String lines) {
+               int width, int height, String lines, String preMessage) {
         super(position, objectTileMap, width, height);
 
         this.name = name;
         this.player = player;
         this.console = console;
         this.sprite = sprite;
+        this.preMessage = preMessage;
 
         message = new ConsoleMessage(console, lines, name);
 
         this.onCreate();
+    }
+
+    public NPC(Vector2f position, String name, ObjectTileMap objectTileMap, Player player, Console console, Sprite sprite,
+               int width, int height, String lines) {
+        this(position, name, objectTileMap, player, console, sprite, width, height, lines, null);
     }
 
     @Override
@@ -71,6 +78,7 @@ public class NPC extends Entity {
 
         if(talkCollider.collisionPlayer(player) && Input.isKeyDown(KeyEvent.VK_T) && !message.isActive()) {
             hasTalked = true;
+            if(preMessage != null) console.sendMessage(preMessage, null);
             message.run();
         }
 
