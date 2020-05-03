@@ -194,6 +194,10 @@ public class Player extends Entity {
         }
     }
 
+    public void printPosition() {
+        System.out.println("Player: " + position.add(Camera.position));
+    }
+
     public void awardHealth(int amount) {
         System.out.println("-> Awarding Player " + amount + " Health");
         healthPoint.play();
