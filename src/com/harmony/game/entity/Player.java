@@ -214,9 +214,6 @@ public class Player extends Entity {
         System.out.println("-> Awarding Player " + amount + " Health");
         healthPoint.play();
         health = Math.min(health + amount, maxHealth);
-//        if(health > maxHealth) health = maxHealth;
-//        displayedHealth = health;
-        System.out.println("Hey");
     }
 
     @Override
