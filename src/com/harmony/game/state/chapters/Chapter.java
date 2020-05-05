@@ -50,6 +50,8 @@ public abstract class Chapter extends State {
     protected boolean isControlled = false;
     protected boolean isPaused = false;
 
+    protected boolean immobilizeEntities = false;
+
     public Chapter(String tilemapLocation) { this.tilemapLocation = tilemapLocation; }
 
     @Override
@@ -135,7 +137,7 @@ public abstract class Chapter extends State {
         player.update();
         Drops.update(player);
         super.update();
-        try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception ignored) {}
+        if(!immobilizeEntities) try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception ignored) {}
         for(NPC npc : npcs) npc.update();
         gameObjectCollision();
         console.update();

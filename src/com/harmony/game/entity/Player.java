@@ -213,7 +213,7 @@ public class Player extends Entity {
     public void awardHealth(int amount) {
         System.out.println("-> Awarding Player " + amount + " Health");
         healthPoint.play();
-        health = health + amount;
+        health = Math.min(health + amount, maxHealth);
 //        if(health > maxHealth) health = maxHealth;
 //        displayedHealth = health;
         System.out.println("Hey");

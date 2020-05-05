@@ -1,8 +1,10 @@
 package com.harmony.game.state.chapters;
 
+import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.entity.enemy.Slime;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.ConsoleMessage;
+import com.harmony.game.item.Drops;
 import com.harmony.game.object.Building;
 import com.harmony.game.utils.Vector2f;
 
@@ -22,11 +24,22 @@ public class Chapter3 extends Chapter {
 
         super.onCreate();
 
+        BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
+
         super.addGameObject(new Building(new Vector2f(3380, 2574), Building.Type.HUT));
         super.addGameObject(new Building(new Vector2f(3309, 1560), Building.Type.VILLA));
 
         super.enemies.add(new Slime(new Vector2f(2392, 887), this, player, tileManager.getObjectsMap(),
                 64, 64));
+
+        super.enemies.add(new Slime(new Vector2f(3717, 844), this, player, tileManager.getObjectsMap(),
+                64, 64));
+
+        super.enemies.add(new Slime(new Vector2f(6212, 885), this, player, tileManager.getObjectsMap(),
+                64, 64));
+
+        Drops.drop(new Vector2f(5170, 805), Drops.DROP_HEALTH_POINT);
+        Drops.drop(new Vector2f(3076, 830), Drops.DROP_HEALTH_POINT);
 
         message = new ConsoleMessage(console, "I think there's one of those slimes up ahead...~Use the space-bar while facing " +
                 "the slime to attack.~Good Luck...", null);
@@ -38,7 +51,7 @@ public class Chapter3 extends Chapter {
     public void update() {
         super.update();
 
-//        player.printPosition();
+        player.printPosition();
 
         message.update();
     }
