@@ -31,7 +31,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="" />
+    <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tile/places/forest-c3.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/res/tile/places/forest-c3.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tile/terrain_atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/tile/terrain_atlas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/object/Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/object/Chest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -308,12 +313,12 @@
     </state>
     <state x="389" y="174" key="new project wizard/0.23.1920.1057@0.23.1920.1057" timestamp="1587491101374" />
     <state x="389" y="174" key="new project wizard/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051094188" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1588643995441">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1588644926343">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="625" y="231" width="670" height="666" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588523198023" />
     <state x="417" y="196" width="670" height="497" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1586193390923" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1588642895795" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588643995441" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588644926343" />
   </component>
 </project>

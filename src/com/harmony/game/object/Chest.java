@@ -31,9 +31,6 @@ public class Chest extends GameObject {
     public void update() {
         if(isColliding && !collected && Input.isKeyDown(KeyEvent.VK_E)) {
             collected = true;
-            SoundEffects.keyPickup.play();
-            System.out.println("-> Giving Player: Key");
-            GUI.hasKey = true;
         }
     }
 
