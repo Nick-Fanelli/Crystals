@@ -17,8 +17,7 @@ public class HealthPointDrop extends Drop {
 
     @Override
     public void update(Player player) {
-        if(player.getBoxCollider().getBoundsAsAbsRect().intersects(new Rectangle((int) position.getWorldPosition().x,
-                (int) position.getWorldPosition().y, rectangle.width, rectangle.height))) {
+       if(collisionWithPlayer(player)) {
             player.awardHealth(1);
             Drops.remove(this);
         }

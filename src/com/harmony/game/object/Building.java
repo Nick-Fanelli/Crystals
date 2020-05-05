@@ -39,7 +39,7 @@ public class Building extends GameObject {
     private final MeshCollider meshCollider;
 
     public Building(Vector2f position, Type type) {
-        super(position, type.width, type.height);
+        super(position, type.width, type.height, true);
 
         this.type = type;
         this.isCollideable = true;

@@ -46,7 +46,7 @@ public class Game implements Runnable {
 
         gsm = new GameStateManager(g);
 
-        GameStateManager.setCurrentState(GameStateManager.MENU_STATE);
+        GameStateManager.setCurrentState(GameStateManager.CHAPTER_3);
     }
 
     @Override

@@ -45,6 +45,7 @@ public abstract class Chapter extends State {
     protected TileManager tileManager;
 
     protected ArrayList<Enemy> enemies = new ArrayList<>();
+    protected ArrayList<Chest> chests = new ArrayList<>();
     protected ArrayList<NPC> npcs = new ArrayList<>();
 
     protected boolean isControlled = false;
@@ -62,23 +63,6 @@ public abstract class Chapter extends State {
         player = new Player(this, tileManager.getObjectsMap());
 
         GUI.showGui = true;
-    }
-
-    private void gameObjectCollision() {
-        for(GameObject gameObject : getGameObjects()) {
-            if(!Camera.shouldHandleGameObject(gameObject)) continue;
-
-            if(gameObject.isCollideable())
-
-            if(gameObject instanceof Chest) {
-                if(((Chest) gameObject).getItem() == Item.EMPTY) ((Chest) gameObject).setItem(Item.KEY);
-                gameObject.isCollidingWith(player);
-            }
-
-            if(gameObject instanceof Door) {
-                gameObject.isCollidingWith(player);
-            }
-        }
     }
 
     @Override
@@ -139,7 +123,7 @@ public abstract class Chapter extends State {
         super.update();
         if(!immobilizeEntities) try { for (Enemy enemy : enemies) enemy.update(); } catch (Exception ignored) {}
         for(NPC npc : npcs) npc.update();
-        gameObjectCollision();
+        for(Chest chest : chests) { chest.isCollidingWith(player); chest.update(); }
         console.update();
     }
 
@@ -162,6 +146,7 @@ public abstract class Chapter extends State {
         super.draw(g);
         for(Enemy enemy : enemies) enemy.draw(g);
         for(NPC npc : npcs) npc.draw(g);
+        for(Chest chest : chests) { chest.draw(g); }
         player.draw(g);
         console.draw(g);
         PAUSE_BUTTON.draw(g);
@@ -179,6 +164,8 @@ public abstract class Chapter extends State {
     public ArrayList<Enemy> getEnemies() { return enemies; }
     public Player getPlayer() { return player; }
     public Console getConsole() { return console; }
+
+    public void addChest(Chest chest) { chests.add(chest); }
 
     public void setControlled(boolean controlled) { isControlled = controlled; }
 }

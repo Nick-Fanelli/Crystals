@@ -42,11 +42,14 @@ public class Player extends Entity {
     private ArrayList<GameObject> gameObjects;
 
     private final BoxCollider attackCollider;
+    private final Rectangle rectangle;
 
     public Player(Chapter chapter, ObjectTileMap objectTileMap) {
         super(new Vector2f((Display.width / 2f) - 32, (Display.height / 2f) - 32), objectTileMap, 128, 128);
 
         this.chapter = chapter;
+
+        this.rectangle = new Rectangle((int) position.x, (int) position.y, width, height);
 
         this.maxMoveSpeed = 4f; // Default 4
         this.acceleration = 3f; // Default 3
@@ -197,7 +200,7 @@ public class Player extends Entity {
         if(chapter == null) return;
         if(chapter.isControlled()) return;
         for(Enemy enemy : chapter.getEnemies()) {
-            if(!Camera.shouldHandleEntity(enemy)) return;
+            if(!Camera.shouldHandleEntity(enemy)) continue;
 
             if(attack && attackCollider.getBoundsAsAbsRect().intersects(enemy.getBoxCollider().getBoundsAsRelativeRect())) {
                 enemy.hit(damage);
@@ -264,4 +267,6 @@ public class Player extends Entity {
     }
 
     public void setIdle(boolean isIdle) { this.isIdle = isIdle; }
+
+    public Rectangle getRectangle() { return this.rectangle; }
 }

@@ -70,6 +70,8 @@ public class Display {
         frame.setLocationRelativeTo(null);
         frame.setResizable(true);
 
+        frame.getContentPane().setIgnoreRepaint(true);
+
         canvas.createBufferStrategy(2);
         bs = canvas.getBufferStrategy();
         g = (Graphics2D) bs.getDrawGraphics();

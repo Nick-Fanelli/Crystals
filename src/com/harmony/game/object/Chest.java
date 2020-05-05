@@ -1,9 +1,11 @@
 package com.harmony.game.object;
 
-import com.harmony.game.audio.SoundEffects;
 import com.harmony.game.entity.Player;
-import com.harmony.game.item.Item;
+import com.harmony.game.graphics.Camera;
 import com.harmony.game.gui.GUI;
+import com.harmony.game.item.Item;
+import com.harmony.game.state.GameStateManager;
+import com.harmony.game.state.chapters.Chapter;
 import com.harmony.game.utils.Input;
 import com.harmony.game.utils.PlayerHelp;
 import com.harmony.game.utils.Vector2f;
@@ -17,29 +19,36 @@ public class Chest extends GameObject {
     private boolean collected = false;
 
     private boolean isColliding = false;
+    private Player player;
 
     public Chest(Vector2f position, int width, int height) {
-        super(position, width, height);
+        super(position, width, height, false);
+
+        ((Chapter) GameStateManager.getCurrentState()).addChest(this);
     }
 
     @Override
-    public void onCreate() {
-
-    }
+    public void onCreate() {}
 
     @Override
     public void update() {
-        if(isColliding && !collected && Input.isKeyDown(KeyEvent.VK_E)) {
+        if(!Camera.shouldHandleGameObject(this)) return;
+
+        if(isColliding && !collected && Input.isKeyDown(KeyEvent.VK_E) && player != null) {
+            Item.givePlayer(player, item);
             collected = true;
         }
     }
 
     @Override
     public void draw(Graphics2D g) {
-        if(isColliding && !collected) {
-            PlayerHelp.showLetter(g, (int) position.getWorldPosition().x - 20, (int) position.getWorldPosition().y - 20, PlayerHelp.E_ANIMATION);
-            g.drawImage(GUI.collectables.getSprite(1, 0), (int) position.getWorldPosition().x +
-                    ((getWidth() / 2) - 32), (int) position.getWorldPosition().y - getHeight() - 5, 64, 64, null);
+        if(!Camera.shouldHandleGameObject(this)) return;
+
+        if(isColliding && !collected && player != null) {
+            PlayerHelp.showLetter(g, (int) (position.getWorldPosition().x - 20) +
+                            (player.position.x <= position.getWorldPosition().x ? getWidth() : 0),
+                    (int) position.getWorldPosition().y - 20, PlayerHelp.E_ANIMATION);
+            Item.displayItem(g, item, (int) position.getWorldPosition().x, (int) position.getWorldPosition().y - 40, getWidth());
         }
     }
 
@@ -50,10 +59,10 @@ public class Chest extends GameObject {
 
     @Override
     public boolean isCollidingWith(Player player) {
+        if(this.player == null) this.player = player;
         if(!super.isCollidingWith(player)) { isColliding = false; return false; }
-        isColliding = true;
 
-        return true;
+        return isColliding = true;
     }
 
     public int getItem() { return item; }

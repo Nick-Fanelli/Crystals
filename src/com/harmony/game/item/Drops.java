@@ -25,7 +25,6 @@ public class Drops {
         }
     }
 
-
     public static void draw(Graphics2D g) {
         for(Drop drop : drops) if(Camera.shouldHandleDrop(drop)) drop.draw(g);
     }

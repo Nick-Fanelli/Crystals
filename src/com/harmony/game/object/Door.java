@@ -15,7 +15,7 @@ public class Door extends GameObject {
     private boolean isColliding = false;
 
     public Door(Vector2f position, int width, int height) {
-        super(position, width, height);
+        super(position, width, height, false);
     }
 
     @Override

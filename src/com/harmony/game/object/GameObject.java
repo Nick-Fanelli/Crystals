@@ -18,13 +18,13 @@ public abstract class GameObject {
 
     protected boolean isCollideable = false;
 
-    public GameObject(Vector2f position, int width, int height) {
+    public GameObject(Vector2f position, int width, int height, boolean addToCurrentState) {
         this.position = position;
         this.width = width;
         this.height = height;
         this.rectangle = new Rectangle((int) position.x - 5, (int) position.y - 5, width + 10, height + 10);
 
-        GameStateManager.getCurrentState().addGameObject(this);
+        if(addToCurrentState) GameStateManager.getCurrentState().addGameObject(this);
     }
 
     public int getWidth()  { return width  ; }

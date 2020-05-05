@@ -14,7 +14,7 @@ public class NextLevelInvisible extends GameObject {
     public boolean shouldDetect = false;
 
     public NextLevelInvisible(Vector2f position, Player player, int width, int height) {
-        super(position, width, height);
+        super(position, width, height, true);
 
         this.player = player;
     }

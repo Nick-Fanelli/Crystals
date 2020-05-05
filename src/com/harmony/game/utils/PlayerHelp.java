@@ -18,5 +18,4 @@ public class PlayerHelp {
     public static void showLetter(Graphics2D g, int x, int y, int animation) {
         g.drawImage(buttonAnimation.animate(animation, 1000), x, y, buttonSize, buttonSize, null);
     }
-
 }
