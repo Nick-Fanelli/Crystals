@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class Player extends Entity {
 
     public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
-    public static final AudioClip healthPoint = new AudioClip("/audio/health_point_audio.wav");
+    public final AudioClip healthPoint;
 
     public static final int ANIMATION_RIGHT = 11;
     public static final int ANIMATION_LEFT  = 9;
@@ -56,6 +56,8 @@ public class Player extends Entity {
 
         boxCollider = new BoxCollider(this, new Vector2f(40, width - 40), width - 80, 35);
         attackCollider = new BoxCollider(this, new Vector2f(-30, -30), width + 60, height + 60);
+
+        healthPoint = new AudioClip("/audio/health_point_audio.wav");
 
         if(MenuState.saveData == null) sprite = new Sprite("/entity/player/male_light.png", 64, 64);
         else sprite = new Sprite(MenuState.saveData.playerSave.getPlayerImage(), 64, 64);
@@ -121,23 +123,25 @@ public class Player extends Entity {
         }
 
         // START MOVEMENT ANIMATION
-        if(dx > 0)       currentAnimation = ANIMATION_RIGHT;
-        else if(dx < 0)  currentAnimation = ANIMATION_LEFT;
-        else if(dy > 0)  currentAnimation = ANIMATION_DOWN;
-        else if(dy < 0)  currentAnimation = ANIMATION_UP;
-        else isIdle = true;
+        if(!attack) {
+            if (dx > 0) currentAnimation = ANIMATION_RIGHT;
+            else if (dx < 0) currentAnimation = ANIMATION_LEFT;
+            else if (dy > 0) currentAnimation = ANIMATION_DOWN;
+            else if (dy < 0) currentAnimation = ANIMATION_UP;
+            else isIdle = true;
 
-        // Check for indirect direction change
-        if(Input.isKeyUp(KeyEvent.VK_W) || Input.isKeyUp(KeyEvent.VK_A) || Input.isKeyUp(KeyEvent.VK_S) ||
-                Input.isKeyUp(KeyEvent.VK_D)) {
-            if (Input.isKey(KeyEvent.VK_W)) currentAnimation = ANIMATION_UP;
-            else if (Input.isKey(KeyEvent.VK_A)) currentAnimation = ANIMATION_LEFT;
-            else if (Input.isKey(KeyEvent.VK_S)) currentAnimation = ANIMATION_DOWN;
-            else if (Input.isKey(KeyEvent.VK_D)) currentAnimation = ANIMATION_RIGHT;
+            // Check for indirect direction change
+            if (Input.isKeyUp(KeyEvent.VK_W) || Input.isKeyUp(KeyEvent.VK_A) || Input.isKeyUp(KeyEvent.VK_S) ||
+                    Input.isKeyUp(KeyEvent.VK_D)) {
+                if (Input.isKey(KeyEvent.VK_W)) currentAnimation = ANIMATION_UP;
+                else if (Input.isKey(KeyEvent.VK_A)) currentAnimation = ANIMATION_LEFT;
+                else if (Input.isKey(KeyEvent.VK_S)) currentAnimation = ANIMATION_DOWN;
+                else if (Input.isKey(KeyEvent.VK_D)) currentAnimation = ANIMATION_RIGHT;
+            }
         }
 
         // Attack animation
-        if (Input.isKeyDown(KeyEvent.VK_SPACE)) {
+        if (Input.isKey(KeyEvent.VK_SPACE)) {
             if(currentAnimation == ANIMATION_RIGHT || currentAnimation == ANIMATION_ATTACK_RIGHT) {
                 currentAnimation = ANIMATION_ATTACK_RIGHT;
             } else if(currentAnimation == ANIMATION_UP || currentAnimation == ANIMATION_ATTACK_UP) {
@@ -147,6 +151,14 @@ public class Player extends Entity {
             } else if(currentAnimation == ANIMATION_LEFT || currentAnimation == ANIMATION_ATTACK_LEFT) {
                 currentAnimation = ANIMATION_ATTACK_LEFT;
             }
+
+            attack = true;
+            isIdle = false;
+
+            dx = 0;
+            dy = 0;
+        } else {
+            attack = false;
         }
         // END MOVEMENT ANIMATION
 
@@ -201,8 +213,10 @@ public class Player extends Entity {
     public void awardHealth(int amount) {
         System.out.println("-> Awarding Player " + amount + " Health");
         healthPoint.play();
-        health += amount;
-        if(health > maxHealth) health = maxHealth;
+        health = health + amount;
+//        if(health > maxHealth) health = maxHealth;
+//        displayedHealth = health;
+        System.out.println("Hey");
     }
 
     @Override

@@ -63,7 +63,7 @@ public class MenuState extends State {
         }
 
         if(settingsButton.isPressed()) GameStateManager.setCurrentState(GameStateManager.SETTINGS_STATE);
-        if(creditsButton.isPressed()) new Credits();
+        if(creditsButton.isPressed()) { new Credits(); creditsButton.setPressed(false); }
 
         settingsButton.update();
         creditsButton.update();

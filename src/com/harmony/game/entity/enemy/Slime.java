@@ -54,27 +54,32 @@ public class Slime extends Enemy {
         down = false;
 
         if(player.getBoxCollider().getBoundsAsAbsRect().intersects(detectionCollider.getBoundsAsRelativeRect())) {
-            if(player.position.x - position.getWorldPosition().x > 0) {
-                dx = Math.min(maxMoveSpeed, player.position.x - position.getWorldPosition().x);
+            Vector2f pos = player.position.add(player.getBoxCollider().getOffset()).sub(position.getWorldPosition()).inverse();
+
+            if(pos.x > 0) {
+                dx = Math.min(maxMoveSpeed, pos.x);
                 right = true;
-                currentAnimation = ANIMATION_RIGHT;
-            } else if(player.position.x - position.getWorldPosition().x < 0) {
-                dx = Math.max(-maxMoveSpeed, player.position.x - position.getWorldPosition().x);
+            } else if(pos.x < 0) {
+                dx = Math.max(-maxMoveSpeed, pos.x);
                 left = true;
-                currentAnimation = ANIMATION_LEFT;
             }
 
-            if(player.position.y - position.getWorldPosition().y > 0) {
-                dy = Math.min(maxMoveSpeed, player.position.y - position.getWorldPosition().y);
+            if(pos.y > 0) {
+                dy = Math.min(maxMoveSpeed, pos.y);
                 down = true;
-                currentAnimation = ANIMATION_DOWN;
-            } else if(player.position.y - position.getWorldPosition().y < 0) {
-                dy = Math.max(-maxMoveSpeed, player.position.y - position.getWorldPosition().y);
+            } else if(pos.y < 0) {
+                dy = Math.max(-maxMoveSpeed, pos.y);
                 up = true;
-                currentAnimation = ANIMATION_UP;
             }
         } else {
             isIdle = true;
+        }
+
+        if(!isIdle) {
+            if(left) currentAnimation = ANIMATION_LEFT;
+            else if(right) currentAnimation = ANIMATION_RIGHT;
+            else if(up) currentAnimation = ANIMATION_UP;
+            else if(down) currentAnimation = ANIMATION_DOWN;
         }
 
         isIdle = (Math.ceil(dx) == 0 && Math.ceil(dy) == 0) || (Math.floor(dx) == 0 && Math.floor(dy) == 0);

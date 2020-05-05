@@ -13,14 +13,14 @@ public class QuitConfirmation extends State {
 
     private static final Sprite buttons = Button.BUTTONS_SPRITE;
 
-    private static final Rectangle saveQuitButton = new Rectangle(Display.width / 2 - 300, 300, 625, 75);
-    private static final Rectangle cancelButton = new Rectangle(Display.width / 2 - 300, 450, 625, 75);
+    private static final Rectangle saveQuitButton = new Rectangle(Display.width / 2 - 180, 300, 360, 78);
+    private static final Rectangle cancelButton = new Rectangle(Display.width / 2 - 180, 450, 360, 78);
 
     private int saveQuitAnimation = 0;
     private int cancelAnimation = 0;
 
     // TODO: DEPLOY - REMOVE
-    public QuitConfirmation() { /*Game.setIsRunning(false);*/ }
+    public QuitConfirmation() { Game.setIsRunning(false); }
 
     @Override
     public void update() {
@@ -55,7 +55,7 @@ public class QuitConfirmation extends State {
 
         // Draw Text
         Font.STANDARD_FONT.centerTextHorizontal(g, "Save Before Quitting?", 100, 64);
-        Font.STANDARD_FONT.centerTextHorizontal(g, "Save & Quit", saveQuitButton.y + saveQuitButton.height - 16, 60);
-        Font.STANDARD_FONT.centerTextHorizontal(g, "Cancel", cancelButton.y + cancelButton.height - 16, 60);
+        Font.STANDARD_FONT.centerTextRect(g, "Save & Quit", 50, saveQuitButton);
+        Font.STANDARD_FONT.centerTextRect(g, "Cancel",  50, cancelButton);
     }
 }

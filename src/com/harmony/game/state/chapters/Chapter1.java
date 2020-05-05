@@ -1,7 +1,7 @@
 package com.harmony.game.state.chapters;
 
 import com.harmony.game.animation.controller.C1Controller;
-import com.harmony.game.animation.scene.chapter1.Chapter1Scene1;
+import com.harmony.game.animation.scene.Chapter1Scene1;
 import com.harmony.game.audio.BackgroundAmbience;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.Camera;
@@ -39,8 +39,7 @@ public class Chapter1 extends Chapter {
     public void onCreate() {
         super.onCreate();
 
-        // TODO: Add the cut scene back in!!!
-        // GameStateManager.showCutScene(new Chapter1Scene1());
+        GameStateManager.showCutScene(new Chapter1Scene1());
 
         BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 

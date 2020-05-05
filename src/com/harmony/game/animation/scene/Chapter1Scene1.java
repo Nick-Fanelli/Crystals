@@ -1,4 +1,4 @@
-package com.harmony.game.animation.scene.chapter1;
+package com.harmony.game.animation.scene;
 
 import com.harmony.game.Game;
 import com.harmony.game.animation.Animation;

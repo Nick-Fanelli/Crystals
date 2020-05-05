@@ -25,12 +25,15 @@ public class GameStateManager {
     public static final int MENU_STATE          = -1;
     public static final int PLAYER_STATE        = -2;
     public static final int SETTINGS_STATE      = -3;
+    public static final int CONTINUE_STATE      = -4;
 
     public static final int CHAPTER_1           =  1;
     public static final int CHPATER_2           =  2;
     public static final int CHAPTER_3           =  3;
 
     private static QuitConfirmation quitConfirmationState;
+    private static ContinueConfirmation continueConfirmationState;
+
     private static Scene scene;
 
     private static State currentState;
@@ -39,6 +42,7 @@ public class GameStateManager {
     private static boolean pause = true;
     private static boolean quitConfirmation = false;
     private static boolean cutScene = false;
+    private static boolean continueConfirmation = false;
 
     private static Graphics2D g;
     private static final Timer timer = new Timer();
@@ -52,6 +56,7 @@ public class GameStateManager {
     public static void setCurrentState(int currentState) {
         pause = true;
 
+        GUI.showGui = false;
         BackgroundAmbience.stopAllBackground();
 
         if(currentState < 0) {
@@ -70,13 +75,14 @@ public class GameStateManager {
         State tempState = null;
 
         switch (currentState) {
-            case MENU_STATE:     tempState = new MenuState();           break;
-            case PLAYER_STATE:   tempState = new PlayerState();         break;
-            case SETTINGS_STATE: tempState = new SettingsState();       break;
+            case MENU_STATE:     tempState = new MenuState();               break;
+            case PLAYER_STATE:   tempState = new PlayerState();             break;
+            case SETTINGS_STATE: tempState = new SettingsState();           break;
+            case CONTINUE_STATE: tempState = new ContinueConfirmation();    break;
 
-            case CHAPTER_1:      tempState = new Chapter1();            break;
-            case CHPATER_2:      tempState = new Chapter2();            break;
-            case CHAPTER_3:      tempState = new Chapter3();            break;
+            case CHAPTER_1:      tempState = new Chapter1();                break;
+            case CHPATER_2:      tempState = new Chapter2();                break;
+            case CHAPTER_3:      tempState = new Chapter3();                break;
         }
 
         if(tempState == null) {
@@ -99,6 +105,15 @@ public class GameStateManager {
     }
 
     public void update() {
+        if(!quitConfirmation && continueConfirmation) {
+            continueConfirmationState.update();
+
+            if(continueConfirmationState.isDone) {
+                continueConfirmation = false;
+                setCurrentState(currentStateId + 1);
+            }
+        }
+
         if(quitConfirmation) { quitConfirmationState.update(); cutScene = false; }
 
         if(cutScene) {
@@ -119,6 +134,7 @@ public class GameStateManager {
     }
 
     public void draw() {
+        if(!quitConfirmation && continueConfirmation) continueConfirmationState.draw(g);
         if(quitConfirmation) quitConfirmationState.draw(g);
         if(cutScene) scene.draw(g);
         if(currentState == null || pause) return;
@@ -128,14 +144,18 @@ public class GameStateManager {
     }
 
     public static void nextLevel() {
+        pause = true;
+
         try {
             MenuState.saveData = new SaveData(currentStateId + 1, MenuState.saveData.playerSave);
             MenuState.saveData.save();
-            setCurrentState(currentStateId + 1);
         } catch (Exception e) {
             System.err.println("Could not find a chapter with: " + (currentStateId + 1));
             System.exit(-1);
         }
+
+        continueConfirmationState = new ContinueConfirmation();
+        continueConfirmation = true;
     }
 
     public static void requestCloseConfirmation() {
