@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class Player extends Entity {
 
     public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
-    public final AudioClip healthPoint;
+    public AudioClip healthPoint;
 
     public static final int ANIMATION_RIGHT = 11;
     public static final int ANIMATION_LEFT  = 9;
@@ -215,8 +215,8 @@ public class Player extends Entity {
 
     public void awardHealth(int amount) {
         System.out.println("-> Awarding Player " + amount + " Health");
-        healthPoint.play();
         health = Math.min(health + amount, maxHealth);
+        healthPoint.play();
     }
 
     @Override
@@ -245,6 +245,7 @@ public class Player extends Entity {
 
     @Override
     public void onDestroy() {
+        System.out.println("Hey");
         maleAttack.close();
         healthPoint.close();
     }

@@ -65,8 +65,10 @@ public abstract class Entity {
         if(isDead) return;
         health -= damage;
         System.out.println("-> " + getClass().getSimpleName() + " Hit - Damage: " + damage + ", Current Health: " + health);
-        if(health <= 0) isDead = true;
-        onDestroy();
+        if(health <= 0) {
+            isDead = true;
+            onDestroy();
+        }
     }
 
     public abstract void onCreate();
