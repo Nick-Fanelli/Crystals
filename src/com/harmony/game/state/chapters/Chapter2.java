@@ -31,6 +31,8 @@ public class Chapter2 extends Chapter {
         BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 
         Camera.position = new Vector2f(2368,4967);
+        Camera.setDefaultPosition();
+
         player.setCurrentAnimation(Player.ANIMATION_ATTACK_UP);
         player.setIdle(true);
 

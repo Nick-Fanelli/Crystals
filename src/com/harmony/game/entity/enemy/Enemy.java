@@ -82,6 +82,7 @@ public abstract class Enemy extends Entity  {
         if(isDead) {
             playHitEffect();
             chapter.getEnemies().remove(this);
+            this.onDestroy();
             return;
         }
         if(!Camera.shouldHandleEntity(this)) return;

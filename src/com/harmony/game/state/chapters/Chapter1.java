@@ -48,6 +48,7 @@ public class Chapter1 extends Chapter {
         GUI.showMap = false;
 
         Camera.position = new Vector2f(1000, 1000);
+        Camera.setDefaultPosition();
 
         controller = new C1Controller(this);
 

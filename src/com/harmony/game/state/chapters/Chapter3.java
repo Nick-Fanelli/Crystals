@@ -22,8 +22,9 @@ public class Chapter3 extends Chapter {
 
     @Override
     public void onCreate() {
-        Camera.position = new Vector2f(5602, 1598);
-//        Camera.position = new Vector2f(968, 487);
+//        Camera.position = new Vector2f(5602, 1598);
+        Camera.position = new Vector2f(968, 487);
+        Camera.setDefaultPosition();
 
         super.onCreate();
 

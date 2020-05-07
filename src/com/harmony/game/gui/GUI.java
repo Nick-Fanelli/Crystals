@@ -23,16 +23,18 @@ public class GUI {
     private static final BufferedImage health_holder = ImageUtils.loadImage("/ui/hud/health_holder.png");
     private static final BufferedImage mini_map = ImageUtils.loadImage("/ui/hud/mini-map.png");
     private static final BufferedImage map = ImageUtils.loadImage("/ui/map.png");
+    private static final BufferedImage menu = ImageUtils.loadImage("/ui/menu.png");
 
     public static boolean showGui = false;
     public static boolean hasKey = false;
     public static boolean showMap = true;
     public static boolean displayFullMap = false;
+    public static boolean displayMenu = false;
 
     public static boolean hit = false;
     private static final Timer hitTimer = new Timer();
 
-    public static void update() {}
+    public static void update() { }
 
     public static void draw(Graphics2D g) {
         if(hit) {
@@ -48,8 +50,12 @@ public class GUI {
 
         if(showGui) {
 
+            if(displayMenu) {
+                g.drawImage(menu, 40, 40, null);
+            }
+
             // Player Health
-            g.drawImage(health_holder, 0, 0, 206, 48, null);
+            if(!displayMenu) g.drawImage(health_holder, 0, 0, 206, 48, null);
 
             float fullPoints = Player.displayedHealth / 2f;
             float halfPoints = (fullPoints % 1);
@@ -60,22 +66,22 @@ public class GUI {
             int i = 0;
 
             while(i < fullPoints) {
-                g.drawImage(health_points.getSprite(0, 0), 22 + i * 30, 7, 24, 24, null);
+                g.drawImage(health_points.getSprite(0, 0), (displayMenu ? 877 : 22) + (i * 30), displayMenu ? 155 : 7, 24, 24, null);
                 i++;
             }
 
             for(int j = 0; j < halfPoints; j++) {
-                g.drawImage(health_points.getSprite(1, 0), 22 + i * 30, 7, 24, 24, null);
+                g.drawImage(health_points.getSprite(1, 0), (displayMenu ? 877 : 22) + i * 30, displayMenu ? 155 : 7, 24, 24, null);
                 i++;
             }
 
             for(int j = 0; j < emptyPoints; j++) {
-                g.drawImage(health_points.getSprite(2, 0), 22 + i * 30, 7, 24, 22, null);
+                g.drawImage(health_points.getSprite(2, 0), (displayMenu ? 877 : 22) + i * 30, displayMenu ? 155 : 7, 24, 22, null);
                 i++;
             }
 
             // Map
-            if(showMap) {
+            if(showMap && !displayMenu) {
                 g.drawImage(mini_map, Display.width - 110, Display.height - 110, 100, 100, null);
 
                 if(displayFullMap) {

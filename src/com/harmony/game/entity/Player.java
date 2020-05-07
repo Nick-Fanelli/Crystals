@@ -58,7 +58,7 @@ public class Player extends Entity {
         this.damage = 2;
 
         boxCollider = new BoxCollider(this, new Vector2f(40, width - 40), width - 80, 35);
-        attackCollider = new BoxCollider(this, new Vector2f(-30, -30), width + 60, height + 60);
+        attackCollider = new BoxCollider(this, new Vector2f(0, 0), width + 8, height + 8);
 
         healthPoint = new AudioClip("/audio/health_point_audio.wav");
 
@@ -79,7 +79,9 @@ public class Player extends Entity {
     }
 
     private void respawn() {
-        Camera.position.reset();
+        Camera.reset();
+        health = maxHealth;
+        isDead = false;
     }
 
     @Override
@@ -245,7 +247,6 @@ public class Player extends Entity {
 
     @Override
     public void onDestroy() {
-        System.out.println("Hey");
         maleAttack.close();
         healthPoint.close();
     }

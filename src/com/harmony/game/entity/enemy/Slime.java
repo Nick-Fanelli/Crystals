@@ -29,7 +29,7 @@ public class Slime extends Enemy {
         sprite = new Sprite("/entity/enemy/slime.png", 18, 18);
         animation = new Animation(sprite);
 
-        maxMoveSpeed = 1.5f;
+        maxMoveSpeed = 2f;
         health = maxHealth = 4;
         damage = 1;
 

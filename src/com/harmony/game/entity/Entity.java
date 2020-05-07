@@ -22,7 +22,6 @@ public abstract class Entity {
     protected boolean down    = false;
     protected boolean right   = false;
     protected boolean left    = false;
-    protected boolean falling = false;
     protected boolean attack  = false;
     protected boolean isIdle  =  true;
 
@@ -67,7 +66,6 @@ public abstract class Entity {
         System.out.println("-> " + getClass().getSimpleName() + " Hit - Damage: " + damage + ", Current Health: " + health);
         if(health <= 0) {
             isDead = true;
-            onDestroy();
         }
     }
 

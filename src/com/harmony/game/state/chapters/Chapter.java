@@ -71,9 +71,12 @@ public abstract class Chapter extends State {
             isPaused    = !isPaused;
             GUI.showGui = !isPaused;
             Display.setCursor(Cursor.DEFAULT_CURSOR);
+        } else if(Input.isKeyDown(KeyEvent.VK_Q)) {
+            GUI.displayMenu = !GUI.displayMenu;
+            isPaused = !isPaused;
         }
 
-        if(isPaused) {
+        if(isPaused && !GUI.showGui) {
             MENU_BUTTON.update();
             SETTINGS_BUTTON.update();
             CANCEL_BUTTON.update();
@@ -129,7 +132,7 @@ public abstract class Chapter extends State {
 
     @Override
     public void draw(Graphics2D g) {
-        if(isPaused) {
+        if(isPaused && !GUI.showGui) {
             MENU_BUTTON.draw(g);
             SETTINGS_BUTTON.draw(g);
             CANCEL_BUTTON.draw(g);

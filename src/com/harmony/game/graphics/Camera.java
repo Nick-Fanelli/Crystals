@@ -15,16 +15,15 @@ public class Camera {
     private static BoxCollider collisionCam;
     private static boolean created = false;
 
-    public static Vector2f position = new Vector2f(0, 0);
+    public static Vector2f position = new Vector2f();
+    public static Vector2f defaultPosition = new Vector2f();
 
     public Camera(BoxCollider collisionCam) {
         Camera.collisionCam = collisionCam;
         created = true;
     }
 
-    public static void update() {
-
-    }
+    public static void update() {}
 
     public static boolean shouldHandleTile(Block block) {
         if (!created) {
@@ -94,4 +93,7 @@ public class Camera {
         }
     }
 
+    public static void reset() { Camera.position = new Vector2f(Camera.defaultPosition); }
+
+    public static void setDefaultPosition() { Camera.defaultPosition = new Vector2f(Camera.position); }
 }

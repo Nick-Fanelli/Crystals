@@ -15,9 +15,9 @@ public class Vector2f {
         this.y = y;
     }
 
-    public Vector2f() {
-        this(0, 0);
-    }
+    public Vector2f() { this(0, 0); }
+
+    public Vector2f(Vector2f r) { this(r.x, r.y); }
 
     public Vector2f getWorldPosition() { return new Vector2f(this.x - Camera.position.x, this.y - Camera.position.y); }
 
