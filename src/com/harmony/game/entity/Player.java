@@ -22,7 +22,8 @@ import java.util.ArrayList;
 
 public class Player extends Entity {
 
-    public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
+//    public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
+    public static final AudioClip coinPickup = new AudioClip("/audio/coin_pickup.wav");
     public AudioClip healthPoint;
 
     public static final int ANIMATION_RIGHT = 11;
@@ -44,6 +45,10 @@ public class Player extends Entity {
     private final BoxCollider attackCollider;
     private final Rectangle rectangle;
 
+    public static int xp;
+    public static int currency;
+    public static int magicPoints;
+
     public Player(Chapter chapter, ObjectTileMap objectTileMap) {
         super(new Vector2f((Display.width / 2f) - 32, (Display.height / 2f) - 32), objectTileMap, 128, 128);
 
@@ -59,6 +64,11 @@ public class Player extends Entity {
 
         boxCollider = new BoxCollider(this, new Vector2f(40, width - 40), width - 80, 35);
         attackCollider = new BoxCollider(this, new Vector2f(0, 0), width + 8, height + 8);
+
+        health = MenuState.saveData.playerSave.health;
+        xp = MenuState.saveData.playerSave.xp;
+        currency = MenuState.saveData.playerSave.currency;
+        magicPoints = MenuState.saveData.playerSave.magicPoints;
 
         healthPoint = new AudioClip("/audio/health_point_audio.wav");
 
@@ -217,8 +227,14 @@ public class Player extends Entity {
 
     public void awardHealth(int amount) {
         System.out.println("-> Awarding Player " + amount + " Health");
-        health = Math.min(health + amount, maxHealth);
         healthPoint.play();
+        health = Math.min(health + amount, maxHealth);
+    }
+
+    public void awardCurrency(int amount) {
+        System.out.println("-> Awarding Player " + amount + " Currency");
+        coinPickup.play();
+        currency += amount;
     }
 
     @Override
@@ -247,7 +263,7 @@ public class Player extends Entity {
 
     @Override
     public void onDestroy() {
-        maleAttack.close();
+        coinPickup.close();
         healthPoint.close();
     }
 

@@ -2,11 +2,13 @@ package com.harmony.game.state;
 
 import com.harmony.game.animation.scene.Scene;
 import com.harmony.game.audio.BackgroundAmbience;
+import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
 import com.harmony.game.gui.GUI;
 import com.harmony.game.physics.collision.BoxCollider;
+import com.harmony.game.save.PlayerSave;
 import com.harmony.game.save.SaveData;
 import com.harmony.game.state.chapters.Chapter1;
 import com.harmony.game.state.chapters.Chapter2;
@@ -147,7 +149,8 @@ public class GameStateManager {
         pause = true;
 
         try {
-            MenuState.saveData = new SaveData(currentStateId + 1, MenuState.saveData.playerSave);
+            MenuState.saveData = new SaveData(currentStateId + 1, new PlayerSave(MenuState.saveData.playerSave.gender,
+                    MenuState.saveData.playerSave.skinTone, Player.displayedHealth, Player.xp, Player.magicPoints, Player.currency));
             MenuState.saveData.save();
         } catch (Exception e) {
             System.err.println("Could not find a chapter with: " + (currentStateId + 1));

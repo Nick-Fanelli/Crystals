@@ -2,7 +2,6 @@ package com.harmony.game.object;
 
 import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Camera;
-import com.harmony.game.gui.GUI;
 import com.harmony.game.item.Item;
 import com.harmony.game.state.GameStateManager;
 import com.harmony.game.state.chapters.Chapter;
@@ -34,7 +33,7 @@ public class Chest extends GameObject {
     public void update() {
         if(!Camera.shouldHandleGameObject(this)) return;
 
-        if(isColliding && !collected && Input.isKeyDown(KeyEvent.VK_E) && player != null) {
+        if(isColliding && !collected && Input.isKeyDown(KeyEvent.VK_Q) && player != null) {
             Item.givePlayer(player, item);
             collected = true;
         }
@@ -47,7 +46,7 @@ public class Chest extends GameObject {
         if(isColliding && !collected && player != null) {
             PlayerHelp.showLetter(g, (int) (position.getWorldPosition().x - 20) +
                             (player.position.x <= position.getWorldPosition().x ? getWidth() : 0),
-                    (int) position.getWorldPosition().y - 20, PlayerHelp.E_ANIMATION);
+                    (int) position.getWorldPosition().y - 20, PlayerHelp.Q_ANIMATION);
             Item.displayItem(g, item, (int) position.getWorldPosition().x, (int) position.getWorldPosition().y - 40, getWidth());
         }
     }

@@ -1,7 +1,10 @@
 package com.harmony.game;
 
 import com.harmony.game.audio.BackgroundAmbience;
+import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Display;
+import com.harmony.game.save.PlayerSave;
+import com.harmony.game.save.SaveData;
 import com.harmony.game.state.GameStateManager;
 import com.harmony.game.state.MenuState;
 import com.harmony.game.gui.GUI;
@@ -42,11 +45,14 @@ public class Game implements Runnable {
 
         g = (Graphics2D) display.getImage().getGraphics();
 
+        // TODO: Remove for launch
+        MenuState.saveData = SaveData.loadSaveData();
+
         input = new Input(display.getFrame(), display.getCanvas());
 
         gsm = new GameStateManager(g);
 
-        GameStateManager.setCurrentState(GameStateManager.MENU_STATE);
+        GameStateManager.setCurrentState(GameStateManager.CHAPTER_3);
     }
 
     @Override
@@ -111,7 +117,12 @@ public class Game implements Runnable {
     }
 
     private void cleanUp() {
-        if(MenuState.saveData != null) MenuState.saveData.save();
+        if(MenuState.saveData != null) {
+            MenuState.saveData = new SaveData(MenuState.saveData.currentLevel, new PlayerSave(MenuState.saveData.playerSave.gender,
+                    MenuState.saveData.playerSave.skinTone, Player.displayedHealth, Player.xp, Player.magicPoints,
+                    Player.currency));
+            MenuState.saveData.save();
+        }
 
         BackgroundAmbience.cleanUp();
         GUI.cleanUp();

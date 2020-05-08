@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class PlayerHelp {
 
-    public static final int E_ANIMATION = 0;
+    public static final int Q_ANIMATION = 0;
     public static final int T_ANIMATION = 1;
 
     private static Sprite buttonSprites = new Sprite("/ui/button_guides.png", 21, 21);

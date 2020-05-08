@@ -38,6 +38,8 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
         System.arraycopy(buttons, 0, buttonsLast, 0, NUM_BUTTONS);
 
         movementKeyPressed = keys[KeyEvent.VK_W] || keys[KeyEvent.VK_A] || keys[KeyEvent.VK_S] || keys[KeyEvent.VK_D];
+
+//        System.out.println(mouse);
     }
 
     public static boolean hoverRectangle(Rectangle rectangle) {

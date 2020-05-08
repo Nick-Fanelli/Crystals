@@ -2,6 +2,7 @@ package com.harmony.game.gui;
 
 import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Display;
+import com.harmony.game.graphics.Font;
 import com.harmony.game.graphics.Sprite;
 import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Timer;
@@ -52,6 +53,9 @@ public class GUI {
 
             if(displayMenu) {
                 g.drawImage(menu, 40, 40, null);
+                Font.STANDARD_FONT.drawText(g, Player.currency + "", 935, 280, 32, new Color(0xFFE5D836));
+                Font.STANDARD_FONT.drawText(g, Player.magicPoints + "", 935, 402, 32, new Color(0xFF00CFFF));
+                Font.STANDARD_FONT.drawText(g, Player.xp + "", 935, 518, 32, new Color(0xFF00FF80));
             }
 
             // Player Health

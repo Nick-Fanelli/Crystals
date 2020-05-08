@@ -18,9 +18,19 @@ public class PlayerSave implements Serializable {
     public final Gender gender;
     public final SkinTone skinTone;
 
-    public PlayerSave(Gender gender, SkinTone skinTone) {
+    public final int health;
+    public final int xp;
+    public final int magicPoints;
+    public final int currency;
+
+    public PlayerSave(Gender gender, SkinTone skinTone, int health, int xp, int magicPoints, int currency) {
         this.gender = gender;
         this.skinTone = skinTone;
+
+        this.health = health;
+        this.xp = xp;
+        this.magicPoints = magicPoints;
+        this.currency = currency;
     }
 
     public BufferedImage getPlayerImage() {

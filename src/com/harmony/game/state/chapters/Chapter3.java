@@ -46,7 +46,7 @@ public class Chapter3 extends Chapter {
         Drops.drop(new Vector2f(3076, 830), Drops.DROP_HEALTH_POINT);
 
         for(Chest chest : chests) {
-            chest.setItem(Item.HEALTH_POINT);
+            chest.setItem(Item.CURRENCY_10);
         }
 
         super.immobilizeEntities = false;

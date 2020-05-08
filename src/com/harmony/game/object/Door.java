@@ -35,7 +35,7 @@ public class Door extends GameObject {
     @Override
     public void draw(Graphics2D g) {
         if(isColliding && GUI.hasKey) {
-            PlayerHelp.showLetter(g, (int) position.getWorldPosition().x - 20, (int) position.getWorldPosition().y - 20, PlayerHelp.E_ANIMATION);
+            PlayerHelp.showLetter(g, (int) position.getWorldPosition().x - 20, (int) position.getWorldPosition().y - 20, PlayerHelp.Q_ANIMATION);
         }
     }
 

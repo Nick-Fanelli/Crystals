@@ -71,7 +71,7 @@ public abstract class Chapter extends State {
             isPaused    = !isPaused;
             GUI.showGui = !isPaused;
             Display.setCursor(Cursor.DEFAULT_CURSOR);
-        } else if(Input.isKeyDown(KeyEvent.VK_Q)) {
+        } else if(Input.isKeyDown(KeyEvent.VK_E)) {
             GUI.displayMenu = !GUI.displayMenu;
             isPaused = !isPaused;
         }

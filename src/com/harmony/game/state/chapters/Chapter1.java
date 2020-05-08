@@ -39,7 +39,8 @@ public class Chapter1 extends Chapter {
     public void onCreate() {
         super.onCreate();
 
-        GameStateManager.showCutScene(new Chapter1Scene1());
+        // TODO: Uncomment Following Line
+//        GameStateManager.showCutScene(new Chapter1Scene1());
 
         BackgroundAmbience.playBackgroundAudio(BackgroundAmbience.OUTSIDE_AMBIENCE);
 

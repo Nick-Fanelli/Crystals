@@ -1,5 +1,6 @@
 package com.harmony.game.state;
 
+import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Display;
 import com.harmony.game.graphics.Font;
 import com.harmony.game.graphics.Sprite;
@@ -94,7 +95,7 @@ public class PlayerState extends State {
             else Display.setCursor(Cursor.DEFAULT_CURSOR);
 
             if(Input.hoverRectangle(keepButton) && Input.isButtonUp(1)) {
-                MenuState.saveData = new SaveData(1, new PlayerSave(gender, skinTone));
+                MenuState.saveData = new SaveData(1, new PlayerSave(gender, skinTone, 10, 0, 0, 0));
                 MenuState.saveData.save();
                 GameStateManager.setCurrentState(MenuState.saveData.currentLevel);
             } else if(Input.hoverRectangle(discardButton) && Input.isButtonUp(1)) {
