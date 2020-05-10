@@ -24,6 +24,21 @@ public abstract class Enemy extends Entity  {
     protected int ANIMATION_UP    = 2;
     protected int ANIMATION_DOWN  = 3;
 
+    protected int rewardedCoins;
+    protected int rewardedXp;
+
+    protected boolean isInvincible = false;
+
+    private int totalMoveX;
+    private int totalMoveY;
+    private MoveDirection xMoveDirection;
+    private MoveDirection yMoveDirection;
+
+    protected int moveBackDistance = 100;
+    protected int moveBackSpeed = 15;
+
+    public enum MoveDirection { POSITIVE, NEGATIVE };
+
     public Enemy(Vector2f position, Chapter chapter, Player player, ObjectTileMap objectTileMap, int width, int height) {
         super(position, objectTileMap, width, height);
 
@@ -32,7 +47,11 @@ public abstract class Enemy extends Entity  {
     }
 
     private void playHitEffect() {
-        if(getClass() == Slime.class) Slime.slimeEffect.play();
+        if(getClass() == Slime.class) Slime.slimeAttack.play();
+    }
+
+    private void playHurtEffect() {
+        if(getClass() == Slime.class) Slime.slimeHurt.play();
     }
 
     protected void playerPathfinderAI() {
@@ -80,12 +99,37 @@ public abstract class Enemy extends Entity  {
     @Override
     public void update() {
         if(isDead) {
-            playHitEffect();
+            playHurtEffect();
+            onDeath();
             chapter.getEnemies().remove(this);
             this.onDestroy();
             return;
         }
+
         if(!Camera.shouldHandleEntity(this)) return;
+
+        if(isInvincible) {
+            dx = 0;
+            dy = 0;
+
+            if(xMoveDirection == MoveDirection.POSITIVE) {
+                dx = moveBackSpeed;
+            } else {
+                dx = -moveBackSpeed;
+            }
+
+            if(yMoveDirection == MoveDirection.POSITIVE) {
+                dy = moveBackSpeed;
+            } else {
+                System.out.println("Hey");
+                dy = -moveBackSpeed;
+            }
+
+            totalMoveX += dx;
+            totalMoveY += dy;
+
+            if(Math.abs(totalMoveX) >= moveBackDistance && Math.abs(totalMoveY) >= moveBackDistance) isInvincible = false;
+        }
 
         if(boxCollider.collisionPlayer(player)) {
             playHitEffect();
@@ -119,13 +163,25 @@ public abstract class Enemy extends Entity  {
         }
     }
 
+    public void onDeath() {
+        player.awardCurrency(rewardedCoins);
+        player.awardXp(rewardedXp);
+    }
+
     @Override
     public void hit(int damage) {
         if(damage > 0)
             super.hit(damage);
-        if(player.position.y <= position.getWorldPosition().y) dy += 100;
-        else if(player.position.y > position.getWorldPosition().y)  dy -= 100;
-        if(player.position.x <= position.getWorldPosition().x) dx += 100;
-        else if(player.position.x > position.getWorldPosition().x)  dx -= 100;
+
+        totalMoveX = 0;
+        totalMoveY = 0;
+
+        isInvincible = true;
+
+        if(player.position.x <= position.getWorldPosition().x) xMoveDirection = MoveDirection.POSITIVE;
+        else xMoveDirection = MoveDirection.NEGATIVE;
+
+        if(player.position.y <= position.getWorldPosition().y) yMoveDirection = MoveDirection.POSITIVE;
+        else yMoveDirection = MoveDirection.NEGATIVE;
     }
 }
