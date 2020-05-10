@@ -15,10 +15,16 @@ import java.awt.*;
 
 public class Slime extends Enemy {
 
-    public static final AudioClip slimeEffect = new AudioClip("/audio/entity/slime/slime_hurt.wav");
+    public static final AudioClip slimeAttack = new AudioClip("/audio/entity/slime/slime_attack.wav");
+    public static final AudioClip slimeHurt   = new AudioClip("/audio/entity/slime/slime_hurt.wav");
+
+    static { slimeHurt.setGain(6f); }
 
     public Slime(Vector2f position, Chapter chapter, Player player, ObjectTileMap objectTileMap, int width, int height) {
         super(position, chapter, player, objectTileMap, width, height);
+
+        this.rewardedCoins = 1;
+        this.rewardedXp = 2;
     }
 
     @Override
@@ -57,6 +63,18 @@ public class Slime extends Enemy {
         }
 
         super.draw(g);
+    }
+
+    @Override
+    public void hit(int damage) {
+        super.hit(damage);
+        slimeHurt.play();
+    }
+
+    @Override
+    public void onDeath() {
+        player.awardXp(rewardedXp);
+        player.awardCurrency((int) (Math.random() * 6));
     }
 
     @Override
