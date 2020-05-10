@@ -8,7 +8,6 @@ import java.io.InputStream;
 public class AudioClip {
 
     private Clip clip = null;
-    private FloatControl gainControl;
 
     public AudioClip(String path) {
         try {
@@ -26,16 +25,13 @@ public class AudioClip {
             clip = AudioSystem.getClip();
             clip.open(dais);
 
-            gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             System.err.println("Crystals: Error loading audio clip " + path);
             e.printStackTrace();
         }
     }
 
-    public void setGain(float gain) { this.gainControl.setValue(gain); }
-    public float getGain() { return this.gainControl.getValue(); }
+    public void setGain(float gain) { ((FloatControl) this.clip.getControl(FloatControl.Type.MASTER_GAIN)).setValue(gain); }
     public boolean isActive() { return clip.isRunning(); }
     public boolean isPlaying() { return clip.isActive(); }
     public Clip getClip() { return clip; }
