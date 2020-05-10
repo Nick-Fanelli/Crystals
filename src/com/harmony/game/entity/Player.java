@@ -2,6 +2,7 @@ package com.harmony.game.entity;
 
 import com.harmony.game.Game;
 import com.harmony.game.audio.AudioClip;
+import com.harmony.game.audio.SoundEffects;
 import com.harmony.game.entity.enemy.Enemy;
 import com.harmony.game.animation.Animation;
 import com.harmony.game.graphics.Camera;
@@ -14,6 +15,7 @@ import com.harmony.game.state.chapters.Chapter;
 import com.harmony.game.tiles.ObjectTileMap;
 import com.harmony.game.gui.GUI;
 import com.harmony.game.utils.Input;
+import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;
@@ -23,7 +25,6 @@ import java.util.ArrayList;
 public class Player extends Entity {
 
 //    public static final AudioClip maleAttack = new AudioClip("/audio/player/male/attack_male.wav");
-    public static final AudioClip coinPickup = new AudioClip("/audio/coin_pickup.wav");
     public AudioClip healthPoint;
 
     public static final int ANIMATION_RIGHT = 11;
@@ -63,12 +64,18 @@ public class Player extends Entity {
         this.damage = 2;
 
         boxCollider = new BoxCollider(this, new Vector2f(40, width - 40), width - 80, 35);
-        attackCollider = new BoxCollider(this, new Vector2f(0, 0), width + 8, height + 8);
+        attackCollider = new BoxCollider(this, new Vector2f(-10, -10), width + 28, height + 28);
 
-        health = MenuState.saveData.playerSave.health;
-        xp = MenuState.saveData.playerSave.xp;
-        currency = MenuState.saveData.playerSave.currency;
-        magicPoints = MenuState.saveData.playerSave.magicPoints;
+        if(MenuState.saveData != null){
+            health = MenuState.saveData.playerSave.health;
+            xp = MenuState.saveData.playerSave.xp;
+            currency = MenuState.saveData.playerSave.currency;
+            magicPoints = MenuState.saveData.playerSave.magicPoints;
+        } else {
+            xp = 0;
+            currency = 0;
+            magicPoints = 0;
+        }
 
         healthPoint = new AudioClip("/audio/health_point_audio.wav");
 
@@ -208,6 +215,8 @@ public class Player extends Entity {
         return false;
     }
 
+    private final Timer timer = new Timer();
+
     private void checkAttack() {
         if(chapter == null) return;
         if(chapter.isControlled()) return;
@@ -215,7 +224,9 @@ public class Player extends Entity {
             if(!Camera.shouldHandleEntity(enemy)) continue;
 
             if(attack && attackCollider.getBoundsAsAbsRect().intersects(enemy.getBoxCollider().getBoundsAsRelativeRect())) {
+                if(!timer.done()) continue;
                 enemy.hit(damage);
+                timer.delay(150);
                 attack = false;
             }
         }
@@ -233,8 +244,13 @@ public class Player extends Entity {
 
     public void awardCurrency(int amount) {
         System.out.println("-> Awarding Player " + amount + " Currency");
-        coinPickup.play();
+        SoundEffects.coinPickup.play();
         currency += amount;
+    }
+
+    public void awardXp(int amount) {
+        System.out.println("-> Awarding Player " + amount + " XP");
+        xp += amount;
     }
 
     @Override
@@ -263,7 +279,6 @@ public class Player extends Entity {
 
     @Override
     public void onDestroy() {
-        coinPickup.close();
         healthPoint.close();
     }
 
