@@ -10,6 +10,7 @@ class Chapter4 : Chapter("/tile/places/forest-c3.tmx") {
         super.onCreate()
 
         Camera.position = Vector2f(968f, 487f)
+        Camera.setDefaultPosition()
 
         super.enemies.add(Spider(Vector2f(1568f, 850f), this, player, tileManager.objectsMap))
     }
