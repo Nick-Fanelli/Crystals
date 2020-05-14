@@ -5,8 +5,8 @@ import com.harmony.game.animation.Animation;
 import com.harmony.game.entity.npc.NPC;
 import com.harmony.game.graphics.*;
 import com.harmony.game.state.chapters.Chapter;
-import com.harmony.game.state.chapters.Chapter1;
 import com.harmony.game.gui.GUI;
+import com.harmony.game.state.chapters.Chapter1;
 import com.harmony.game.utils.Vector2f;
 
 import java.awt.*;

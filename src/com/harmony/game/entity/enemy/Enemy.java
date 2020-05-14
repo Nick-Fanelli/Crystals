@@ -121,7 +121,6 @@ public abstract class Enemy extends Entity  {
             if(yMoveDirection == MoveDirection.POSITIVE) {
                 dy = moveBackSpeed;
             } else {
-                System.out.println("Hey");
                 dy = -moveBackSpeed;
             }
 
@@ -131,7 +130,7 @@ public abstract class Enemy extends Entity  {
             if(Math.abs(totalMoveX) >= moveBackDistance && Math.abs(totalMoveY) >= moveBackDistance) isInvincible = false;
         }
 
-        if(boxCollider.collisionPlayer(player)) {
+        if(boxCollider.collisionPlayer(player) && !isInvincible) {
             playHitEffect();
             player.hit(damage);
             this.hit(0);

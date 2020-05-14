@@ -54,13 +54,9 @@ public class Slime extends Enemy {
     @Override
     public void draw(Graphics2D g) {
         if(!Camera.shouldHandleEntity(this)) return;
-        if(!isIdle) {
-            g.drawImage(animation.animate(currentAnimation, 100), (int) position.getWorldPosition().x,
-                    (int) position.getWorldPosition().y, width, height, null);
-        } else {
-            g.drawImage(animation.animate(currentAnimation, -1), (int) position.getWorldPosition().x,
-                    (int) position.getWorldPosition().y, width, height, null);
-        }
+
+        g.drawImage(animation.animate(currentAnimation, isIdle ? -1 : 100), (int) position.getWorldPosition().x,
+                (int) position.getWorldPosition().y, width, height, null);
 
         super.draw(g);
     }
