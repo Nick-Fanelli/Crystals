@@ -10,9 +10,7 @@ import com.harmony.game.gui.GUI;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.save.PlayerSave;
 import com.harmony.game.save.SaveData;
-import com.harmony.game.state.chapters.Chapter1;
-import com.harmony.game.state.chapters.Chapter2;
-import com.harmony.game.state.chapters.Chapter3;
+import com.harmony.game.state.chapters.*;
 import com.harmony.game.utils.ImageUtils;
 import com.harmony.game.utils.Timer;
 import com.harmony.game.utils.Vector2f;
@@ -30,8 +28,9 @@ public class GameStateManager {
     public static final int CONTINUE_STATE      = -4;
 
     public static final int CHAPTER_1           =  1;
-    public static final int CHPATER_2           =  2;
+    public static final int CHAPTER_2           =  2;
     public static final int CHAPTER_3           =  3;
+    public static final int CHAPTER_4           =  4;
 
     private static QuitConfirmation quitConfirmationState;
     private static ContinueConfirmation continueConfirmationState;
@@ -83,8 +82,9 @@ public class GameStateManager {
             case CONTINUE_STATE: tempState = new ContinueConfirmation();    break;
 
             case CHAPTER_1:      tempState = new Chapter1();                break;
-            case CHPATER_2:      tempState = new Chapter2();                break;
+            case CHAPTER_2:      tempState = new Chapter2();                break;
             case CHAPTER_3:      tempState = new Chapter3();                break;
+            case CHAPTER_4:      tempState = new Chapter4();                break;
         }
 
         if(tempState == null) {
