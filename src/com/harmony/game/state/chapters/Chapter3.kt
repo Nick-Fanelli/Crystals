@@ -55,8 +55,6 @@ class Chapter3 : Chapter("/tile/places/forest-c3.tmx") {
 
         message.update()
         nextLevelInvisible.update()
-
-        player.printPosition()
     }
 
     override fun draw(g: Graphics2D?) {
