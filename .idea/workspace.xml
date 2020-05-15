@@ -33,12 +33,6 @@
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/_save_data/player.data" beforeDir="false" afterPath="$PROJECT_DIR$/res/_save_data/player.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tile/places/forest-c3.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/res/tile/places/forest-c3.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Slime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/entity/enemy/Spider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
