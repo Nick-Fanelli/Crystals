@@ -57,8 +57,8 @@ public class Player extends Entity {
 
         this.rectangle = new Rectangle((int) position.x, (int) position.y, width, height);
 
-        this.maxMoveSpeed = 4f; // Default 4
-        this.acceleration = 3f; // Default 3
+        this.maxMoveSpeed = 15f; // Default 4
+        this.acceleration = 15f; // Default 3
 
         health = maxHealth = 10;
         this.damage = 2;
