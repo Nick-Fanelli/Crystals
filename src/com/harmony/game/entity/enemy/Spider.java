@@ -1,9 +1,11 @@
 package com.harmony.game.entity.enemy;
 
 import com.harmony.game.animation.Animation;
+import com.harmony.game.audio.AudioClip;
 import com.harmony.game.entity.Player;
 import com.harmony.game.graphics.Camera;
 import com.harmony.game.graphics.Sprite;
+import com.harmony.game.item.Drops;
 import com.harmony.game.physics.collision.BoxCollider;
 import com.harmony.game.state.chapters.Chapter;
 import com.harmony.game.tiles.ObjectTileMap;
@@ -12,6 +14,9 @@ import com.harmony.game.utils.Vector2f;
 import java.awt.*;
 
 public class Spider extends Enemy {
+
+    public static final AudioClip spiderHurt   = new AudioClip("/audio/entity/spider/spider_hurt.wav")   ;
+    public static final AudioClip spiderAttack = new AudioClip("/audio/entity/spider/spider_attack.wav") ;
 
     public Spider(Vector2f position, Chapter chapter, Player player, ObjectTileMap objectTileMap) {
         super(position, chapter, player, objectTileMap, 64, 42);
@@ -44,6 +49,15 @@ public class Spider extends Enemy {
     }
 
     @Override
+    public void hit(int damage) {
+        super.hit(damage);
+        playAttackEffect();
+    }
+
+    @Override public void playAttackEffect() { spiderAttack.play(); }
+    @Override public void playHurtEffect() { spiderHurt.play(); }
+
+    @Override
     public void draw(Graphics2D g) {
         if(!Camera.shouldHandleEntity(this)) return;
 
@@ -53,8 +67,5 @@ public class Spider extends Enemy {
         super.draw(g);
     }
 
-    @Override
-    public void onDestroy() {
-
-    }
+    @Override public void onDestroy() { if(isDead) { Drops.drop(position, Drops.DROP_HEALTH_POINT); } }
 }

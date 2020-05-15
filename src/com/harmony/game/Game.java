@@ -24,7 +24,6 @@ public class Game implements Runnable {
 
     public static Color backgroundColor = new Color(34, 30, 39);
 
-    private final Thread gameThread;
     private Display display;
     private Graphics2D g;
 
@@ -36,7 +35,7 @@ public class Game implements Runnable {
     public Game() {
         initialize();
 
-        gameThread = new Thread(this, "_GameThread_");
+        Thread gameThread = new Thread(this, "_GameThread_");
         gameThread.start();
     }
 

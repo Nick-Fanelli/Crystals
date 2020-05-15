@@ -46,13 +46,8 @@ public abstract class Enemy extends Entity  {
         this.player = player;
     }
 
-    private void playHitEffect() {
-        if(getClass() == Slime.class) Slime.slimeAttack.play();
-    }
-
-    private void playHurtEffect() {
-        if(getClass() == Slime.class) Slime.slimeHurt.play();
-    }
+    public abstract void playAttackEffect();
+    public abstract void playHurtEffect();
 
     protected void playerPathfinderAI() {
 
@@ -131,7 +126,7 @@ public abstract class Enemy extends Entity  {
         }
 
         if(boxCollider.collisionPlayer(player) && !isInvincible) {
-            playHitEffect();
+            playAttackEffect();
             player.hit(damage);
             this.hit(0);
         }
@@ -171,6 +166,8 @@ public abstract class Enemy extends Entity  {
     public void hit(int damage) {
         if(damage > 0)
             super.hit(damage);
+
+        playHurtEffect();
 
         totalMoveX = 0;
         totalMoveY = 0;

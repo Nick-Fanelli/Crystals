@@ -73,6 +73,9 @@ public class Slime extends Enemy {
         player.awardCurrency((int) (Math.random() * 6));
     }
 
+    @Override public void playAttackEffect() { slimeAttack.play(); }
+    @Override public void playHurtEffect() { slimeHurt.play(); }
+
     @Override
     public void onDestroy() {
         if(isDead) Drops.drop(position, Drops.DROP_HEALTH_POINT);
