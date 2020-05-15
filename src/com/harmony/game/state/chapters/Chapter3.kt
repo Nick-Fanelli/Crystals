@@ -46,7 +46,7 @@ class Chapter3 : Chapter("/tile/places/forest-c3.tmx") {
             chest.item = Item.CURRENCY_10
         }
 
-        nextLevelInvisible = NextLevelInvisible(Vector2f(4952f, 7498f), player, 400, 32)
+        nextLevelInvisible = NextLevelInvisible(Vector2f(7769f, 7144f), player, 32, 400)
         nextLevelInvisible.shouldDetect = true
     }
 
@@ -55,6 +55,8 @@ class Chapter3 : Chapter("/tile/places/forest-c3.tmx") {
 
         message.update()
         nextLevelInvisible.update()
+
+        player.printPosition()
     }
 
     override fun draw(g: Graphics2D?) {
