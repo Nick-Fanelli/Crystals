@@ -33,6 +33,10 @@
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter4.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,13 +330,13 @@
     </state>
     <state x="389" y="174" key="new project wizard/0.23.1920.1057@0.23.1920.1057" timestamp="1589668467757" />
     <state x="389" y="174" key="new project wizard/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1586051094188" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1589569618796">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1589669322884">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="625" y="231" width="670" height="666" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588523198023" />
     <state x="417" y="196" width="670" height="497" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1586193390923" />
     <state x="521" y="218" width="670" height="561" key="search.everywhere.popup/0.23.1600.877@0.23.1600.877" timestamp="1588882074634" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1589569618796" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1589669322884" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588644926343" />
   </component>
 </project>
