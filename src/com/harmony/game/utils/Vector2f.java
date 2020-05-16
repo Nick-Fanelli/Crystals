@@ -31,6 +31,8 @@ public class Vector2f {
     @Override public String toString() { return "X: " + x + ", Y: " + y; }
     @Override public boolean equals(Object obj) { return ((Vector2f) obj).x == this.x && ((Vector2f) obj).y == this.y; }
 
+    public boolean equals(float x, float y) { return this.x == x && this.y == y; }
+
     public Vector2f add(float x, float y) { return new Vector2f(this.x + x, this.y + y); }
     public Vector2f sub(float x, float y) { return new Vector2f(this.x - x, this.y - y); }
     public Vector2f mul(float x, float y) { return new Vector2f(this.x * x, this.y * y); }
