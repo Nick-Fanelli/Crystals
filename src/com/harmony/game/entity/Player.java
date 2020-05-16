@@ -57,8 +57,8 @@ public class Player extends Entity {
 
         this.rectangle = new Rectangle((int) position.x, (int) position.y, width, height);
 
-        this.maxMoveSpeed = 15f; // Default 4
-        this.acceleration = 15f; // Default 3
+        this.maxMoveSpeed = 4f; // Default 4
+        this.acceleration = 3f; // Default 3
 
         health = maxHealth = 10;
         this.damage = 2;
@@ -67,7 +67,6 @@ public class Player extends Entity {
         attackCollider = new BoxCollider(this, new Vector2f(-10, -10), width + 28, height + 28);
 
         if(MenuState.saveData != null){
-            health = MenuState.saveData.playerSave.health;
             xp = MenuState.saveData.playerSave.xp;
             currency = MenuState.saveData.playerSave.currency;
             magicPoints = MenuState.saveData.playerSave.magicPoints;
