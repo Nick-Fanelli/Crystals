@@ -33,10 +33,7 @@
   <component name="ChangeListManager">
     <list default="true" id="722f5ca9-6249-42b8-9048-831c82d77ea2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter4.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/harmony/game/state/chapters/Chapter4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crystals.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Crystals.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -95,6 +92,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.harmony.game.Launcher" />
       <module name="Crystals" />
       <extension name="coverage">
@@ -185,9 +184,14 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="560" y="199" key="#Plugins/0.23.1920.1057@0.23.1920.1057" timestamp="1589401905160" />
-    <state x="2024" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586125844914">
-      <screen x="1920" y="23" width="1280" height="777" />
+    <state x="448" y="133" key="#Project_Structure" timestamp="1589670601939">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state x="448" y="133" key="#Project_Structure/0.23.1920.1057@0.23.1920.1057" timestamp="1589670601939" />
+    <state x="694" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589670677340">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="694" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1589670677340" />
     <state x="2024" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.23.1280.777/0.23.1920.1057@1920.23.1280.777" timestamp="1586125844914" />
     <state x="699" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586702503969">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -283,10 +287,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="548" y="301" key="IDE.errors.dialog/0.23.1920.1057@0.23.1920.1057" timestamp="1589569534625" />
-    <state x="502" y="151" key="SettingsEditor" timestamp="1589563574824">
+    <state x="502" y="151" key="SettingsEditor" timestamp="1589670665995">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="502" y="151" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1589563574824" />
+    <state x="502" y="151" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1589670665995" />
     <state x="448" y="125" key="SettingsEditor/0.23.1920.977@0.23.1920.977" timestamp="1586457741356" />
     <state x="448" y="133" key="SettingsEditor/1920.23.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1588360896504" />
     <state x="100" y="123" width="1720" height="857" key="ShowDiffWithBranchDialog" timestamp="1588643459374">
