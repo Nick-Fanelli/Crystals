@@ -10,8 +10,8 @@ import java.awt.image.BufferedImage;
 
 public abstract class Block {
 
-    public static final int CHEST_TILE_POSITION = 4097;
-    public static final int LEVEL_DOOR_POSITION = 170;
+    public static int CHEST_TILE_POSITION = 4097;
+    public static int LEVEL_DOOR_POSITION = 170;
 
     public static final int TYPE_NORMAL = 0;
     public static final int TYPE_HOLE   = 1;

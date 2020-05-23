@@ -24,6 +24,11 @@ public class TileManager {
         addTileMap(path, 64, 64);
     }
 
+    public TileManager(String path, int blockWidth, int blockHeight) {
+        this();
+        addTileMap(path, blockWidth, blockHeight);
+    }
+
     private void addTileMap(String path, int blockWidth, int blockHeight) {
         String imagePath;
 

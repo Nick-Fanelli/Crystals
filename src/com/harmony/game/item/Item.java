@@ -12,6 +12,7 @@ public class Item {
     public static final int EMPTY = 0;
     public static final int HEALTH_POINT = 1;
     public static final int CURRENCY_10  = 2;
+    public static final int XP_10        = 3;
 
     public static void givePlayer(Player player, int item) {
         switch (item) {
@@ -23,6 +24,10 @@ public class Item {
 
             case CURRENCY_10:
                 player.awardCurrency(10);
+                break;
+
+            case XP_10:
+                player.awardXp(10);
                 break;
         }
     }
